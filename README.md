@@ -1,6 +1,6 @@
 # Iron Coffee Lovers Web App ☕️
 
-![Coffee Lovers](assets/images/coffee-hero.jpg)
+![Coffee Lovers](assets/coffee-hero.jpg)
 
 ## Descripción
 
@@ -30,7 +30,7 @@ Este proyecto está organizado de manera modular para facilitar su mantenimiento
 - **CoffeeForm.jsx**: Formulario para que el usuario seleccione su tipo de máquina de café.
 - **CoffeeResults.jsx**: Muestra los resultados de las recomendaciones basadas en la selección del usuario.
 
-![Coffee Selector](assets/images/coffee-selector.png)
+![Coffee Selector](assets/coffee-selector.png)
 
 ### WikiCoffee
 
@@ -40,7 +40,7 @@ Este proyecto está organizado de manera modular para facilitar su mantenimiento
 - **VideoGallery.jsx**: Galería de videos relacionados con el café, incluyendo tutoriales y reseñas.
 - **WikiCoffee.jsx**: Componente principal que combina todos los elementos de la sección WikiCoffee.
 
-![Wiki Coffee](assets/images/wiki-coffee.png)
+![Wiki Coffee](assets/wiki-coffee.png)
 
 ### CoffeePot
 
