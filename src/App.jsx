@@ -6,12 +6,20 @@ import AboutPage from './Pages/AboutPage/AboutPage'
 import ErrorPage from './Pages/ErrorPage/ErrorPage'
 import CoffeeSelectorPage from './Pages/CoffeeSelectorPage/CoffeeSelectorPage'
 import CoffeeDetails from './Pages/CoffeeDetails/CoffeeDetails'
+import Navigation from './components/Navbar/Navigation'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 
 function App() {
 
   return (
     <>
       <h1>WebApp</h1>
+
+      <Navigation />
+
       <Routes>
         <Route path='/' element={<Homepage />}></Route>
         <Route path='/coffee-selector' element={<CoffeeSelectorPage />}></Route>
