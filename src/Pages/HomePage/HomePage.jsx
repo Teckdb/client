@@ -1,12 +1,15 @@
-import { CardBody, Col, Row } from "react-bootstrap"
+import { CardBody, Col, Container, Row } from "react-bootstrap"
+import "./HomePage.css"
 
 const Homepage = () => {
     return (
-        <Row className="flex-column h-100 g-0">
-            <Col xxl>
-                <h1>Soy Homepage</h1>
-            </Col>
-        </Row>
+        <Container fluid className="bg-secondary m-0 flex-grow-1 text-white d-flex justify-content-center align-items-center">
+            <Row>
+                <Col xxl>
+                    <h1>Soy Homepage</h1>
+                </Col>
+            </Row>
+        </Container>
 
     )
 }

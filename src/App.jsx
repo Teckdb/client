@@ -3,14 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Route, Routes } from 'react-router-dom'
 
-import Homepage from './Pages/HomePage/HomePage'
-import WikiCoffeePage from './Pages/WikiCoffeePage/WikiCoffeePage'
-import AboutPage from './Pages/AboutPage/AboutPage'
-import ErrorPage from './Pages/ErrorPage/ErrorPage'
-import CoffeeSelectorPage from './Pages/CoffeeSelectorPage/CoffeeSelectorPage'
-import CoffeeDetails from './Pages/CoffeeDetails/CoffeeDetails'
-import CoffeeLoadingPage from './Pages/CoffeeLoadingPage/CoffeeLoadingPage'
-import CoffeeResultPage from './Pages/CoffeeResultPage/CoffeeResultPage'
+import Homepage from './pages/HomePage/HomePage'
+import WikiCoffeePage from './pages/WikiCoffeePage/WikiCoffeePage'
+import AboutPage from './pages/AboutPage/AboutPage'
+import ErrorPage from './pages/ErrorPage/ErrorPage'
+import CoffeeSelectorPage from './pages/CoffeeSelectorPage/CoffeeSelectorPage'
+import CoffeeDetails from './pages/CoffeeDetails/CoffeeDetails'
+import CoffeeLoadingPage from './pages/CoffeeLoadingPage/CoffeeLoadingPage'
+import CoffeeResultPage from './pages/CoffeeResultPage/CoffeeResultPage'
 import Footer from './components/Footer/Footer'
 import { CardBody, CardFooter, Container, Navbar } from 'react-bootstrap'
 import Navigation from './components/Navbar/Navigation';
@@ -24,9 +24,11 @@ function App() {
 
   return (
     <>
-      <Navigation />
 
-      <Container className="flex-grow-1 mt-5 pt-3">
+      <div className="d-flex flex-column min-vh-100">
+
+        <Navigation />
+
         <Routes>
           <Route path='/' element={<Homepage />}></Route>
           <Route path='/coffee-selector' element={<CoffeeSelectorPage />}></Route>
@@ -37,10 +39,12 @@ function App() {
           <Route path='/about' element={<AboutPage />}></Route>
           <Route path='*' element={<ErrorPage />}></Route>
         </Routes>
-      </Container>
-      <CardFooter>
-        <Footer />
-      </CardFooter>
+
+        <CardFooter>
+          <Footer />
+        </CardFooter>
+      </div>
+
     </>
   )
 }
