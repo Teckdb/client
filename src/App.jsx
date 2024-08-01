@@ -9,17 +9,12 @@ import AboutPage from './Pages/AboutPage/AboutPage'
 import ErrorPage from './Pages/ErrorPage/ErrorPage'
 import CoffeeSelectorPage from './Pages/CoffeeSelectorPage/CoffeeSelectorPage'
 import CoffeeDetails from './Pages/CoffeeDetails/CoffeeDetails'
-<<<<<<< HEAD
 import CoffeeLoadingPage from './Pages/CoffeeLoadingPage/CoffeeLoadingPage'
 import CoffeeResultPage from './Pages/CoffeeResultPage/CoffeeResultPage'
 import Footer from './components/Footer/Footer'
 import { CardBody, CardFooter, Container, Navbar } from 'react-bootstrap'
 
 
-=======
-import Navigation from './components/Navbar/Navigation'
-import 'bootstrap/dist/css/bootstrap.min.css';
->>>>>>> 347acb1f1a9e208c980f9c7eeb078c491ba8b610
 
 
 
@@ -28,10 +23,7 @@ function App() {
 
   return (
     <>
-<<<<<<< HEAD
-      <Navbar>
-        Hola soy navbar
-      </Navbar>
+      <Navigation />
 
       <Container className="flex-grow-1 mt-5 pt-3">
         <Routes>
@@ -48,20 +40,6 @@ function App() {
       <CardFooter>
         <Footer />
       </CardFooter>
-=======
-      <h1>WebApp</h1>
-
-      <Navigation />
-
-      <Routes>
-        <Route path='/' element={<Homepage />}></Route>
-        <Route path='/coffee-selector' element={<CoffeeSelectorPage />}></Route>
-        <Route path='/coffee/:id' element={<CoffeeDetails />}></Route>
-        <Route path='/wiki-coffee' element={<WikiCoffeePage />}></Route>
-        <Route path='/about' element={<AboutPage />}></Route>
-        <Route path='*' element={<ErrorPage />}></Route>
-      </Routes>
->>>>>>> 347acb1f1a9e208c980f9c7eeb078c491ba8b610
     </>
   )
 }
