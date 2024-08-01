@@ -1,4 +1,4 @@
-<img src="assets/images/coffee-hero.jpg" alt="Coffee Lovers" width="400"/>
+<img src="assets/coffee-hero.jpg" alt="Coffee Lovers" width="400"/>
 
 # Iron Coffee Lovers Web App ☕️
 
