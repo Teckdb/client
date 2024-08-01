@@ -1,6 +1,6 @@
 # Iron Coffee Lovers Web App ☕️
 
-![Coffee Lovers](assets/coffee-hero.jpg)
+![Coffee Lovers](src/assets/coffee-hero.jpg)
 
 ## Descripción
 
