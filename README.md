@@ -1,3 +1,5 @@
+<img src="assets/images/coffee-hero.jpg" alt="Coffee Lovers" width="800"/>
+
 # Iron Coffee Lovers Web App ☕️
 
 ![Coffee Lovers](src/assets/coffee-hero.jpg)
