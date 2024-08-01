@@ -13,6 +13,7 @@ import CoffeeLoadingPage from './Pages/CoffeeLoadingPage/CoffeeLoadingPage'
 import CoffeeResultPage from './Pages/CoffeeResultPage/CoffeeResultPage'
 import Footer from './components/Footer/Footer'
 import { CardBody, CardFooter, Container, Navbar } from 'react-bootstrap'
+import Navigation from './components/Navbar/Navigation';
 
 
 
