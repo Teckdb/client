@@ -1,0 +1,12 @@
+body {
+    padding-top: 56px;
+    /* Height of the navbar */
+    padding-bottom: 56px;
+    /* Height of the footer */
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
