@@ -8,7 +8,7 @@ import WikiCoffeePage from './pages/WikiCoffeePage/WikiCoffeePage'
 import AboutPage from './pages/AboutPage/AboutPage'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 import CoffeeSelectorPage from './pages/CoffeeSelectorPage/CoffeeSelectorPage'
-import CoffeeDetails from './pages/CoffeeDetails/CoffeeDetails'
+import CoffeeDetailsPage from './pages/CoffeeDetailsPage/CoffeeDetailsPage'
 import CoffeeLoadingPage from './pages/CoffeeLoadingPage/CoffeeLoadingPage'
 import CoffeeResultPage from './pages/CoffeeResultPage/CoffeeResultPage'
 import Footer from './components/Footer/Footer'
@@ -33,7 +33,7 @@ function App() {
           <Route path='/coffee-selector' element={<CoffeeSelectorPage />}></Route>
           <Route path='/coffee-loading' element={<CoffeeLoadingPage />}></Route>
           <Route path='/coffee-result' element={<CoffeeResultPage />}></Route>
-          <Route path='/coffee/:id' element={<CoffeeDetails />}></Route>
+          <Route path='/coffee/:id' element={<CoffeeDetailsPage />}></Route>
           <Route path='/wiki-coffee' element={<WikiCoffeePage />}></Route>
           <Route path='/about' element={<AboutPage />}></Route>
           <Route path='/admin' element={<AdminPage />}></Route>

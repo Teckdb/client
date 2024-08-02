@@ -1,13 +1,14 @@
 import { Button, Col, Container, Row, } from "react-bootstrap"
 import './CoffeeSelectorPage.css'
 import Form from 'react-bootstrap/Form';
+import CoffeePotCard from "../../components/CoffeePot/CoffeePotCard/CoffeePotCard";
 
 const CoffeeSelectorPage = () => {
     return (
         <Container fluid className="bg-secondary m-0 p-0 flex-grow-1 text-white d-flex justify-content-center align-items-center">
-            <Row className="w-100 m-0 p-0">
-                <Col sm={8} className="select bg-primary">
-                    <h1>Soy Coffee Selector izquierda</h1>
+            <Row className="w-100 m-0 p-0 ">
+                <Col sm={8} className="select bg-primary d-flex justify-content-center align-items-center">
+                    <CoffeePotCard />
                 </Col>
                 <Col sm={4} className="">
                     <Form.Select aria-label="Default select example">

@@ -1,0 +1,6 @@
+.img-limited-height {
+    max-height: 400px;
+    /* Ajusta este valor según tus necesidades */
+    width: auto;
+    /* Mantiene la proporción de la imagen */
+}
