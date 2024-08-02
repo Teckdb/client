@@ -16,7 +16,8 @@ import { CardFooter } from 'react-bootstrap'
 import Navigation from './components/Navbar/Navigation';
 import AdminPage from './pages/Admin/AdminPage';
 import AdminCoffeesPage from './pages/Admin/AdminCoffee/AdminCoffeesPage';
-import AdminCoffeePotsPage from './pages/Admin/AdminCoffeePots/AdminCoffeePotsPage';
+import NewCoffeePotsPage from './pages/Admin/AdminCoffeePots/NewCoffeePotsPage';
+import EditCoffeePotForm from './pages/Admin/AdminCoffeePots/EditCoffeePotPage';
 
 
 
@@ -39,7 +40,8 @@ function App() {
           <Route path='/about' element={<AboutPage />}></Route>
           <Route path='/admin' element={<AdminPage />}></Route>
           <Route path='/admin-coffees' element={<AdminCoffeesPage />}></Route>
-          <Route path='/admin-coffee-pots' element={<AdminCoffeePotsPage />}></Route>
+          <Route path='/admin-coffee-pots/new' element={<NewCoffeePotsPage />}></Route>
+          <Route path='/admin-coffee-pots/edit/:id' element={<EditCoffeePotForm />}></Route>
           <Route path='*' element={<ErrorPage />}></Route>
         </Routes>
 

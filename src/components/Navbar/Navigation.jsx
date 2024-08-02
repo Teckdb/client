@@ -7,7 +7,7 @@ const Navigation = () => {
             <Container>
                 <Navbar.Brand as={Link} to="/">
                     <img
-                        src="src/assets/LOGO CLANDESTINO blanco.png"
+                        src='src/assets/LOGO CLANDESTINO blanco.png'
                         width="50"
                         height="50"
                         className="d-inline-block align-top"
