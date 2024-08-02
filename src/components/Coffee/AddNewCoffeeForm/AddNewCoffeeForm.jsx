@@ -1,15 +1,17 @@
-import { useState } from 'react'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 
+const API_URL = 'http://localhost:5005'
 
-
-const AddNewCoffeeForm = () => {
+const AddNewCoffeeForm = ({ addNewCoffe }) => {
 
     const [coffeeData, setCoffeeData] = useState({
+        coffeePotId: 0,
         name: '',
         available: true,
         stock: 0,
-        package: '',
+        pack: '',
         grames: 0,
         price: 0,
         image: '',
@@ -27,8 +29,55 @@ const AddNewCoffeeForm = () => {
         setCoffeeData({ ...coffeeData, [name]: value })
     }
 
+    // useEffect(() => {
+    //     fetchCoffeeData()
+    // }, [])
+
+    // const fetchCoffeeData = () => {
+    //     axios
+    //         .get(`${API_URL}/coffees`)
+    //         .then(response => {
+    //             setCoffeeData(response.data)
+    //         })
+    //         .catch(err => console.log(err))
+    // }
+
+    const handleFormSubmit = e => {
+        e.preventDefault()
+
+        const newCoffee = {
+            coffeePotId,
+            name,
+            available,
+            stock,
+            pack,
+            grames,
+            price,
+            image,
+            rating,
+            altitude,
+            variety,
+            process,
+            cataNotes,
+            grinding,
+            description
+        }
+
+
+
+
+    }
+
     return (
-        <Form >
+        <Form onSubmit={handleFormSubmit}>
+
+            <Form.Group as={Row} className="mb-3" controlId="coffeePotIdField">
+                <Form.Label column sm={2}> CoffeePotId </Form.Label>
+                <Col sm={10}>
+                    <Form.Control type="number" value={coffeeData.coffeePotId} onChange={handleInputChange} name="coffeePotId" />
+                </Col>
+            </Form.Group>
+
             <Form.Group as={Row} className="mb-3" controlId="nameField">
                 <Form.Label column sm={2}> Name </Form.Label>
                 <Col sm={10}>
@@ -51,10 +100,10 @@ const AddNewCoffeeForm = () => {
                 </Col>
             </Form.Group>
 
-            <Form.Group as={Row} className="mb-3" controlId="packageField">
-                <Form.Label column sm={2}> Package </Form.Label>
+            <Form.Group as={Row} className="mb-3" controlId="packField">
+                <Form.Label column sm={2}> Pack </Form.Label>
                 <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.package} onChange={handleInputChange} name="package" />
+                    <Form.Control type="text" value={coffeeData.pack} onChange={handleInputChange} name="pack" />
                 </Col>
             </Form.Group>
 
@@ -157,10 +206,14 @@ const AddNewCoffeeForm = () => {
             <Form.Group as={Row} className="mb-3">
                 <Col sm={{ span: 10, offset: 2 }}>
                     <Button type="submit">Sign in</Button>
+
                 </Col>
             </Form.Group>
+
         </Form>
+
     );
 }
 
 export default AddNewCoffeeForm
+

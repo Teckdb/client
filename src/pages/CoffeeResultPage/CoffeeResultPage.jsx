@@ -12,6 +12,7 @@ const CoffeeResultPage = () => {
 
                 <CoffeeCard />
 
+
             </Row>
         </Container>
     )

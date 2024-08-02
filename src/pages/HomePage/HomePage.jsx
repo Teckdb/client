@@ -1,4 +1,4 @@
-import { CardBody, Col, Container, Row } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import "./HomePage.css"
 
 const Homepage = () => {
