@@ -12,7 +12,7 @@ import CoffeeDetailsPage from './pages/CoffeeDetailsPage/CoffeeDetailsPage'
 import CoffeeLoadingPage from './pages/CoffeeLoadingPage/CoffeeLoadingPage'
 import CoffeeResultPage from './pages/CoffeeResultPage/CoffeeResultPage'
 import Footer from './components/Footer/Footer'
-import { CardBody, CardFooter, Container, Navbar } from 'react-bootstrap'
+import { CardFooter } from 'react-bootstrap'
 import Navigation from './components/Navbar/Navigation';
 import AdminPage from './pages/Admin/AdminPage';
 import AdminCoffeesPage from './pages/Admin/AdminCoffee/AdminCoffeesPage';
@@ -71,12 +71,13 @@ export default App
           │   │   ├── PreparationMethods.jsx
           │   │   ├── VideoGallery.jsx
           │   │   ├── WikiCoffee.jsx
-          │   ├── CoffeePot/
+          │   ├── CoffeePots/
           │   │   ├── CoffeePotCard.jsx
-          │   │   ├── CoffeePotList.jsx
+          │   │   ├── CoffeePotsList.jsx
           │   │   ├── AddNewCoffeePotForm.jsx
           │   │   ├── EditCoffeePotForm.jsx
           │   │   ├── DeleteCoffeePotForm.jsx
+          │   │   ├── CoffeePotForm.jsx
           │   ├── Coffee/
           │   │   ├── CoffeeCard.jsx
           │   │   ├── CoffeeList.jsx
@@ -94,7 +95,13 @@ export default App
           │
           ├── pages/
           │   ├── HomePage.jsx
+          │   ├── Admin/
+          │   │   ├── AdminCoffee.jsx
+          │   │   ├── AdminCoffeePots.jsx
+          │   │   ├── AdminPage.jsx
           │   ├── CoffeeSelectorPage.jsx
+          │   ├── CoffeeLoadingPage.jsx
+          │   ├── CoffeeResultPage.jsx
           │   ├── CoffeeDetails.jsx
           │   ├── WikiCoffeePage.jsx
           │   ├── AboutPage.jsx
