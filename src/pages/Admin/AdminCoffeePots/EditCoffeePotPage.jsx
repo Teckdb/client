@@ -1,13 +1,14 @@
 import { Col, Container, Row } from "react-bootstrap"
+import EditCoffeePotForm from "../../../components/CoffeePots/EditCoffeePotForm/EditCoffeePotForm"
 
-const AdminCoffeesPotsPage = () => {
+const EditCoffeePotPage = () => {
 
 
     return (
         <Container fluid className="bg-secondary m-0 flex-grow-1 text-white d-flex justify-content-center align-items-center">
             <Row>
-                <Col xxl>
-                    <h1>Admin Coffees Pots Page</h1>
+                <Col>
+                    <EditCoffeePotForm />
                 </Col>
             </Row>
         </Container>
@@ -15,4 +16,4 @@ const AdminCoffeesPotsPage = () => {
     )
 }
 
-export default AdminCoffeesPotsPage
+export default EditCoffeePotPage

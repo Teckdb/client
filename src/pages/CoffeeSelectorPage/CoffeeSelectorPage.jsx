@@ -1,7 +1,7 @@
 import { Button, Col, Container, Row, } from "react-bootstrap"
 import './CoffeeSelectorPage.css'
 import CoffeePotCard from "../../components/CoffeePots/CoffeePotCard/CoffeePotCard";
-import CoffeePotForm from "../../components/CoffeePots/CoffeePotForm/CoffeePotForm";
+import CoffeePotSelector from "../../components/CoffeePots/CoffeePotSelector/CoffeePotSelector";
 
 const CoffeeSelectorPage = () => {
     return (
@@ -11,8 +11,7 @@ const CoffeeSelectorPage = () => {
                     <CoffeePotCard />
                 </Col>
                 <Col sm={4} className="">
-                    <CoffeePotForm />
-                    <Button variant="info">Take it!</Button>{' '}
+                    <CoffeePotSelector />
                 </Col>
             </Row>
         </Container>

@@ -1,38 +1,34 @@
-
-
 # Iron Coffee Lovers Web App ☕️
-
 
 <img src="src/assets/coffee-hero.jpg" alt="Coffee Lovers" width="400"/>
 
+## Description
 
-## Descripción
+Welcome to **Iron Coffee Lovers Web App**, a web application dedicated to coffee lovers. Here you can find coffee recommendations based on your machine, preparation tips, instructional videos, and much more.
 
-Bienvenido a **Iron Coffee Lovers Web App**, una aplicación web dedicada a los amantes del café. Aquí podrás encontrar recomendaciones de café según tu máquina, consejos sobre preparación, videos instructivos y mucho más.
+## Project Structure
 
-## Estructura del Proyecto
+This project is organized modularly to facilitate maintenance and scalability. Below is a detailed structure and function of each component.
 
-Este proyecto está organizado de manera modular para facilitar su mantenimiento y escalabilidad. A continuación, se detalla la estructura del proyecto y la función de cada componente.
-
-### Componentes Principales
+### Main Components
 
 - **Header**
-  - **Header.jsx**: Renderiza el encabezado del sitio web con el logotipo y la navegación principal.
+  - **Header.jsx**: Renders the website's header with the logo and main navigation.
 
 - **Navbar**
-  - **Navbar.jsx**: Barra de navegación con enlaces a las diferentes páginas de la aplicación.
+  - **Navbar.jsx**: Navigation bar with links to the different pages of the application.
 
 - **Footer**
-  - **Footer.jsx**: Pie de página con enlaces de contacto y términos de servicio.
+  - **Footer.jsx**: Footer with contact links and terms of service.
 
 - **Hero**
-  - **Hero.jsx**: Sección de héroe en la página principal con una imagen o video destacado.
+  - **Hero.jsx**: Hero section on the main page with a featured image or video.
 
 ### CoffeeSelector
 
-- **CoffeeSelector.jsx**: Componente principal del selector de café.
-- **CoffeeForm.jsx**: Formulario para que el usuario seleccione su tipo de máquina de café.
-- **CoffeeResults.jsx**: Muestra los resultados de las recomendaciones basadas en la selección del usuario.
+- **CoffeeSelector.jsx**: Main component for the coffee selector.
+- **CoffeeForm.jsx**: Form for users to select their type of coffee machine.
+- **CoffeeResults.jsx**: Displays the recommendations based on the user's selection.
 
 <p align="center">
 <img src="src/assets/coffee-selector.png" alt="Coffee Selector" width="400"/>
@@ -40,72 +36,71 @@ Este proyecto está organizado de manera modular para facilitar su mantenimiento
 
 ### WikiCoffee
 
-- **CoffeeCollection.jsx**: Muestra una colección de artículos sobre diferentes tipos de café.
-- **TipsSection.jsx**: Proporciona consejos sobre el café, como almacenamiento y preparación.
-- **PreparationMethods.jsx**: Muestra diferentes métodos de preparación de café con detalles.
-- **VideoGallery.jsx**: Galería de videos relacionados con el café, incluyendo tutoriales y reseñas.
-- **WikiCoffee.jsx**: Componente principal que combina todos los elementos de la sección WikiCoffee.
-  
+- **CoffeeCollection.jsx**: Displays a collection of articles about different types of coffee.
+- **TipsSection.jsx**: Provides coffee tips, such as storage and preparation.
+- **PreparationMethods.jsx**: Shows different coffee preparation methods with details.
+- **VideoGallery.jsx**: Gallery of coffee-related videos, including tutorials and reviews.
+- **WikiCoffee.jsx**: Main component that combines all elements of the WikiCoffee section.
+
 <p align="center">
 <img src="src/assets/wiki-Coffee.png" alt="Wiki-Coffee" width="400"/>
 </p>
 
 ### CoffeePot
 
-- **CoffeePotCard.jsx**: Tarjeta individual para mostrar información sobre una cafetera.
-- **CoffeePotList.jsx**: Lista de todas las cafeteras disponibles.
-- **AddNewCoffeePotForm.jsx**: Formulario para agregar una nueva cafetera.
-- **EditCoffeePotForm.jsx**: Formulario para editar una cafetera existente.
-- **DeleteCoffeePotForm.jsx**: Formulario para eliminar una cafetera.
+- **CoffeePotCard.jsx**: Individual card to display information about a coffee pot.
+- **CoffeePotList.jsx**: List of all available coffee pots.
+- **AddNewCoffeePotForm.jsx**: Form to add a new coffee pot.
+- **EditCoffeePotForm.jsx**: Form to edit an existing coffee pot.
+- **DeleteCoffeePotForm.jsx**: Form to delete a coffee pot.
 
 ### Coffee
 
-- **CoffeeCard.jsx**: Tarjeta individual para mostrar información sobre un café.
-- **CoffeeList.jsx**: Lista de todos los cafés disponibles.
-- **AddNewCoffeeForm.jsx**: Formulario para agregar un nuevo café.
-- **EditCoffeeForm.jsx**: Formulario para editar un café existente.
-- **DeleteCoffeeForm.jsx**: Formulario para eliminar un café.
+- **CoffeeCard.jsx**: Individual card to display information about a coffee.
+- **CoffeeList.jsx**: List of all available coffees.
+- **AddNewCoffeeForm.jsx**: Form to add a new coffee.
+- **EditCoffeeForm.jsx**: Form to edit an existing coffee.
+- **DeleteCoffeeForm.jsx**: Form to delete a coffee.
 
 ### Shared Components
 
-- **Button.jsx**: Componente de botón reutilizable.
-- **Select.jsx**: Componente de selección reutilizable.
-- **Input.jsx**: Componente de entrada de texto reutilizable.
-- **Carousel.jsx**: Componente para crear carruseles de imágenes o contenido.
-- **Placeholders.jsx**: Marcadores de posición mientras se carga el contenido.
-- **Spinner.jsx**: Spinners de carga.
-- **WarningDeleteAdvice.jsx**: Advertencias y consejos antes de realizar una acción de eliminación.
+- **Button.jsx**: Reusable button component.
+- **Select.jsx**: Reusable select component.
+- **Input.jsx**: Reusable input text component.
+- **Carousel.jsx**: Component to create carousels of images or content.
+- **Placeholders.jsx**: Placeholders while content is loading.
+- **Spinner.jsx**: Loading spinners.
+- **WarningDeleteAdvice.jsx**: Warnings and advice before performing a delete action.
 
-### Páginas
+### Pages
 
-- **HomePage.jsx**: Página principal de la aplicación.
-- **CoffeePage.jsx**: Página dedicada al selector de café.
-- **WikiCoffeePage.jsx**: Página de WikiCoffee con consejos, preparaciones, videos, etc.
-- **AboutPage.jsx**: Página sobre la empresa o el proyecto.
-- **ErrorPage.jsx**: Página de error para rutas no encontradas.
+- **HomePage.jsx**: Main page of the application.
+- **CoffeePage.jsx**: Page dedicated to the coffee selector.
+- **WikiCoffeePage.jsx**: WikiCoffee page with tips, preparations, videos, etc.
+- **AboutPage.jsx**: Page about the company or project.
+- **ErrorPage.jsx**: Error page for non-found routes.
 
-### Recursos
+### Assets
 
-- **assets/images/**: Carpeta para imágenes utilizadas en la aplicación.
-- **assets/styles/**: Carpeta para archivos CSS.
-  - **main.css**: Estilos globales.
-  - **CoffeeSelector.css**: Estilos específicos para el selector de café.
-  - **WikiCoffee.css**: Estilos específicos para la sección WikiCoffee.
+- **assets/images/**: Folder for images used in the application.
+- **assets/styles/**: Folder for CSS files.
+  - **main.css**: Global styles.
+  - **CoffeeSelector.css**: Specific styles for the coffee selector.
+  - **WikiCoffee.css**: Specific styles for the WikiCoffee section.
 
-## Instalación
+## Installation
 
-Para ejecutar este proyecto en tu máquina local:
+To run this project on your local machine:
 
-1. Clona este repositorio: `git clone https://github.com/tu-usuario/iron-coffee-lovers-web-app.git`
-2. Navega al directorio del proyecto: `cd iron-coffee-lovers-web-app`
-3. Instala las dependencias: `npm install`
-4. Ejecuta la aplicación: `npm start`
+1. Clone this repository: `git clone https://github.com/your-username/iron-coffee-lovers-web-app.git`
+2. Navigate to the project directory: `cd iron-coffee-lovers-web-app`
+3. Install dependencies: `npm install`
+4. Run the application: `npm start`
 
-## Contribuir
+## Contributing
 
-Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para discutir cualquier cambio que te gustaría realizar.
+Contributions are welcome. Please open an issue or pull request to discuss any changes you would like to make.
 
-## Licencia
+## License
 
-Este proyecto está bajo la licencia MIT.
-
+This project is licensed under the MIT License.

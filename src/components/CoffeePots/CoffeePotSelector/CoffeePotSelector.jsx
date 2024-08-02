@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 
-const CoffeePotForm = () => {
+const CoffeePotSelector = () => {
     return (
         <Form.Select aria-label="Default select example">
             <option>Open this select menu</option>
@@ -17,4 +17,4 @@ const CoffeePotForm = () => {
     )
 }
 
-export default CoffeePotForm
+export default CoffeePotSelector
