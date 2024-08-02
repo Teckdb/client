@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap"
 
-const CoffeeDetails = () => {
+const CoffeeDetailsPage = () => {
 
 
     return (
@@ -15,4 +15,4 @@ const CoffeeDetails = () => {
     )
 }
 
-export default CoffeeDetails
+export default CoffeeDetailsPage
