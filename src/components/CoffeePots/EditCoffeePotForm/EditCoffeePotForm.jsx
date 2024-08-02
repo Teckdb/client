@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import { Col, FloatingLabel, Row } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Col, FloatingLabel, Row, Button, Form, InputGroup, Modal } from 'react-bootstrap';
+import { useNavigate, useParams } from 'react-router-dom';
+const API_URL = 'http://localhost:5005'
 
 const EditCoffeePotForm = () => {
 
@@ -16,18 +15,54 @@ const EditCoffeePotForm = () => {
         description: ""
     })
 
+    const { id } = useParams()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        fetchCoffeePotData()
+    }, [])
+
+    const fetchCoffeePotData = () => {
+        axios
+            .get(`${API_URL}/coffeePots/${id}`)
+            .then(res => setCoffeePotData(res.data))
+            .catch(err => console.log(err))
+    }
+
+    const deleteCoffeePot = () => {
+        axios
+            .delete(`${API_URL}/coffeePots/${id}`)
+            .then(res => navigate(`/admin`))
+            .catch(err => console.log(err))
+    }
+
+    const handleCoffeePotSubmit = e => {
+        e.preventDefault()
+
+        axios
+            .put(`${API_URL}/coffeePots/${id}`, CoffeePotData)
+            .then(res => alert("send"))
+            .catch(err => console.log(err))
+    }
+
     const handleInputChange = e => {
         const { value, name } = e.target
         setCoffeePotData({ ...CoffeePotData, [name]: value })
     }
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
-        <Form>
+        <Form onSubmit={handleCoffeePotSubmit}>
+            <Form.Label className='h1'>Edit Coffee Pot</Form.Label>
+            <hr></hr>
             <Row className="mb-3">
-                <Form.Label className='h1'>Edit Coffee Pot</Form.Label>
-                <hr></hr>
+
                 <Form.Group as={Col} className="mb-3" controlId="potIdField">
-                    <Form.Label>Coffee Pot ID</Form.Label>
+
                     <FloatingLabel
                         controlId="potIdField"
                         label="Coffee Pot ID"
@@ -35,6 +70,7 @@ const EditCoffeePotForm = () => {
                     >
                         <Form.Control
                             type="text"
+                            value={CoffeePotData.potId}
                             name='potId'
                             placeholder="Coffee Pot"
                             onChange={handleInputChange} />
@@ -43,7 +79,7 @@ const EditCoffeePotForm = () => {
                 </Form.Group>
 
                 <Form.Group as={Col} className="mb-3" controlId="nameField">
-                    <Form.Label>Name</Form.Label>
+
                     <FloatingLabel
                         controlId="nameField"
                         label="Name"
@@ -62,51 +98,71 @@ const EditCoffeePotForm = () => {
             <Row>
                 <Col lg={8}>
                     <Form.Group className="mb-3" controlId="extractionField">
-                        <Form.Label>Extraction Method</Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={CoffeePotData.extraction}
-                            name='extraction'
-                            placeholder="Extraction Method"
-                            onChange={handleInputChange} />
 
+                        <FloatingLabel
+                            controlId="extractionField"
+                            label="Extraction Method"
+                            className="mb-3"
+                        >
+                            <Form.Control
+                                type="text"
+                                value={CoffeePotData.extraction}
+                                name='extraction'
+                                placeholder="Extraction Method"
+                                onChange={handleInputChange} />
+                        </FloatingLabel>
                     </Form.Group>
                 </Col>
                 <Col lg={4}>
                     <Form.Group className="mb-3" controlId="barPressureField">
-                        <Form.Label>Bar Pressure</Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={CoffeePotData.barPressure}
-                            name='barPressure'
-                            placeholder="Bar Pressure"
-                            onChange={handleInputChange} />
 
+                        <FloatingLabel
+                            controlId="barPressureField"
+                            label="Bar Pressure"
+                            className="mb-3"
+                        >
+                            <Form.Control
+                                type="text"
+                                value={CoffeePotData.barPressure}
+                                name='barPressure'
+                                placeholder="Bar Pressure"
+                                onChange={handleInputChange} />
+                        </FloatingLabel>
                     </Form.Group>
                 </Col>
             </Row>
 
             <Form.Group className="mb-3" controlId="imagenField">
-                <Form.Label>Image URL</Form.Label>
-                <Form.Control
-                    type="text"
-                    value={CoffeePotData.imagen}
-                    name='imagen'
-                    placeholder="Image URL"
-                    onChange={handleInputChange} />
 
+                <FloatingLabel
+                    controlId="imagenField"
+                    label="Image URL"
+                    className="mb-3"
+                >
+                    <Form.Control
+                        type="text"
+                        value={CoffeePotData.imagen}
+                        name='imagen'
+                        placeholder="Image URL"
+                        onChange={handleInputChange} />
+                </FloatingLabel>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="descriptionField">
                 <InputGroup>
-                    <Form.Control
-                        as="textarea"
-                        value={CoffeePotData.description}
-                        name='description'
-                        aria-label="With textarea"
-                        placeholder='Description'
-                        onChange={handleInputChange} />
-
+                    <FloatingLabel
+                        controlId="descriptionField"
+                        label="Description"
+                        className="mb-3"
+                    >
+                        <Form.Control
+                            as="textarea"
+                            value={CoffeePotData.description}
+                            name='description'
+                            aria-label="With textarea"
+                            placeholder='Description'
+                            onChange={handleInputChange} />
+                    </FloatingLabel>
                 </InputGroup>
             </Form.Group>
 
@@ -114,8 +170,30 @@ const EditCoffeePotForm = () => {
                 Submit
             </Button>
 
+            <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>Confirm Deletion</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    Are you sure you want to delete this item? This action cannot be undone.
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="danger" onClick={deleteCoffeePot}>
+                        Delete this item
+                    </Button>
+
+                </Modal.Footer>
+            </Modal>
+            <Button variant='danger' onClick={handleShow} className='ms-3'>
+                Delete
+            </Button>
+
         </Form >
     )
 }
-
 export default EditCoffeePotForm

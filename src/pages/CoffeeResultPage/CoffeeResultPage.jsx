@@ -1,7 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
 import CoffeeCard from "../../components/Coffee/CoffeeCard/CoffeeCard"
-import AddNewCoffeeForm from "../../components/Coffee/AddNewCoffeeForm/AddNewCoffeeForm"
-
 
 const CoffeeResultPage = () => {
     return (

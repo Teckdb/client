@@ -1,6 +1,7 @@
+import axios from 'axios';
 import { useState } from 'react';
 import { Col, FloatingLabel, Row, Button, Form, InputGroup } from 'react-bootstrap';
-
+const API_URL = 'http://localhost:5005'
 
 const AddNewCoffeePotForm = () => {
 
@@ -18,25 +19,23 @@ const AddNewCoffeePotForm = () => {
         setCoffeePotData({ ...CoffeePotData, [name]: value })
     }
 
+    const handleCoffeePotSubmit = e => {
+        e.preventDefault()
+
+        axios
+            .post(`${API_URL}/coffeePots`, CoffeePotData)
+            .then(alert("ready"))
+            .catch(err => console.log(err))
+    }
+
     return (
-        <Form>
+        <Form onSubmit={handleCoffeePotSubmit}>
             <Form.Label className='h1'>New Coffee Pot</Form.Label>
             <hr></hr>
-
-
-
-            <FloatingLabel
-                controlId="floatingTextarea"
-                label="Comments"
-                className="mt-5 mb-5"
-            >
-                <Form.Control as="textarea" placeholder="Leave a comment here" />
-            </FloatingLabel>
-
             <Row className="mb-3">
 
                 <Form.Group as={Col} className="mb-3" controlId="potIdField">
-                    <Form.Label>Coffee Pot ID</Form.Label>
+
                     <FloatingLabel
                         controlId="potIdField"
                         label="Coffee Pot ID"
@@ -52,7 +51,7 @@ const AddNewCoffeePotForm = () => {
                 </Form.Group>
 
                 <Form.Group as={Col} className="mb-3" controlId="nameField">
-                    <Form.Label>Name</Form.Label>
+
                     <FloatingLabel
                         controlId="nameField"
                         label="Name"
@@ -71,51 +70,71 @@ const AddNewCoffeePotForm = () => {
             <Row>
                 <Col lg={8}>
                     <Form.Group className="mb-3" controlId="extractionField">
-                        <Form.Label>Extraction Method</Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={CoffeePotData.extraction}
-                            name='extraction'
-                            placeholder="Extraction Method"
-                            onChange={handleInputChange} />
 
+                        <FloatingLabel
+                            controlId="extractionField"
+                            label="Extraction Method"
+                            className="mb-3"
+                        >
+                            <Form.Control
+                                type="text"
+                                value={CoffeePotData.extraction}
+                                name='extraction'
+                                placeholder="Extraction Method"
+                                onChange={handleInputChange} />
+                        </FloatingLabel>
                     </Form.Group>
                 </Col>
                 <Col lg={4}>
                     <Form.Group className="mb-3" controlId="barPressureField">
-                        <Form.Label>Bar Pressure</Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={CoffeePotData.barPressure}
-                            name='barPressure'
-                            placeholder="Bar Pressure"
-                            onChange={handleInputChange} />
 
+                        <FloatingLabel
+                            controlId="barPressureField"
+                            label="Bar Pressure"
+                            className="mb-3"
+                        >
+                            <Form.Control
+                                type="text"
+                                value={CoffeePotData.barPressure}
+                                name='barPressure'
+                                placeholder="Bar Pressure"
+                                onChange={handleInputChange} />
+                        </FloatingLabel>
                     </Form.Group>
                 </Col>
             </Row>
 
             <Form.Group className="mb-3" controlId="imagenField">
-                <Form.Label>Image URL</Form.Label>
-                <Form.Control
-                    type="text"
-                    value={CoffeePotData.imagen}
-                    name='imagen'
-                    placeholder="Image URL"
-                    onChange={handleInputChange} />
 
+                <FloatingLabel
+                    controlId="imagenField"
+                    label="Image URL"
+                    className="mb-3"
+                >
+                    <Form.Control
+                        type="text"
+                        value={CoffeePotData.imagen}
+                        name='imagen'
+                        placeholder="Image URL"
+                        onChange={handleInputChange} />
+                </FloatingLabel>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="descriptionField">
                 <InputGroup>
-                    <Form.Control
-                        as="textarea"
-                        value={CoffeePotData.description}
-                        name='description'
-                        aria-label="With textarea"
-                        placeholder='Description'
-                        onChange={handleInputChange} />
-
+                    <FloatingLabel
+                        controlId="descriptionField"
+                        label="Description"
+                        className="mb-3"
+                    >
+                        <Form.Control
+                            as="textarea"
+                            value={CoffeePotData.description}
+                            name='description'
+                            aria-label="With textarea"
+                            placeholder='Description'
+                            onChange={handleInputChange} />
+                    </FloatingLabel>
                 </InputGroup>
             </Form.Group>
 
