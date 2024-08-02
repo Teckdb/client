@@ -1,4 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap"
+import CoffeeCard from "../../components/Coffee/CoffeeCard/CoffeeCard"
+import AddNewCoffeeForm from "../../components/Coffee/AddNewCoffeeForm/AddNewCoffeeForm"
 
 
 const CoffeeResultPage = () => {
@@ -8,6 +10,8 @@ const CoffeeResultPage = () => {
                 <Col xxl>
                     <h1>Soy CoffeeResult Page</h1>
                 </Col>
+                <CoffeeCard />
+
             </Row>
         </Container>
     )
