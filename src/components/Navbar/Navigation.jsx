@@ -1,5 +1,6 @@
 import { Container, Nav, Navbar, NavbarBrand } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import logo from './../../assets/logo.png'
 
 const Navigation = () => {
     return (
@@ -7,7 +8,7 @@ const Navigation = () => {
             <Container>
                 <Navbar.Brand as={Link} to="/">
                     <img
-                        src='src/assets/LOGO CLANDESTINO blanco.png'
+                        src={logo}
                         width="50"
                         height="50"
                         className="d-inline-block align-top"

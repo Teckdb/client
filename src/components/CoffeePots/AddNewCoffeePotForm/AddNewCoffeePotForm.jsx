@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import { Col, FloatingLabel, Row } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+import { Col, FloatingLabel, Row, Button, Form, InputGroup } from 'react-bootstrap';
 
 
 const AddNewCoffeePotForm = () => {
@@ -23,9 +20,21 @@ const AddNewCoffeePotForm = () => {
 
     return (
         <Form>
+            <Form.Label className='h1'>New Coffee Pot</Form.Label>
+            <hr></hr>
+
+
+
+            <FloatingLabel
+                controlId="floatingTextarea"
+                label="Comments"
+                className="mt-5 mb-5"
+            >
+                <Form.Control as="textarea" placeholder="Leave a comment here" />
+            </FloatingLabel>
+
             <Row className="mb-3">
-                <Form.Label className='h1'>New Coffee Pot</Form.Label>
-                <hr></hr>
+
                 <Form.Group as={Col} className="mb-3" controlId="potIdField">
                     <Form.Label>Coffee Pot ID</Form.Label>
                     <FloatingLabel
