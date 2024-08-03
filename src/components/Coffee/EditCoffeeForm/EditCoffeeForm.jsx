@@ -1,4 +1,9 @@
+import axios from 'axios'
 import { Button, Col, Form, Row, Modal } from 'react-bootstrap'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+
+const API_URL = 'http://localhost:5005'
 
 const EditCoffeeForm = () => {
 
@@ -19,39 +24,47 @@ const EditCoffeeForm = () => {
         grinding: '',
         description: ''
     })
-    const [show, setShow] = useState(false)
 
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
+    const { Id } = useParams()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        fetchCoffeeData()
+    })
+
+    const fetchCoffeeData = () => {
+        axios
+            .get(`${API_URL}/coffees/${Id}`)
+            .then(res => setCoffeeData(res.data))
+            .catch(err => console.log(err))
+    }
+
+    const deleteCoffee = () => {
+        axios
+            .delete(`${API_URL}/coffees/${Id}`)
+            .then(res => navigate(`/admin`))
+            .catch(err => console.log(err))
+    }
+
+    const handleFormSubmit = e => {
+        e.preventDefault()
+
+        axios
+            .put(`${API_URL}/coffees/${id}`, coffeeData)
+            .then(res => alert("send"))
+            .catch(err => console.log(err))
+    }
+
 
     const handleInputChange = e => {
         const { value, name } = e.target
         setCoffeeData({ ...coffeeData, [name]: value })
     }
 
-    const handleFormSubmit = e => {
-        e.preventDefault()
+    const [show, setShow] = useState(false)
 
-        const newCoffee = {
-            coffeePotId,
-            name,
-            available,
-            stock,
-            pack,
-            grames,
-            price,
-            image,
-            rating,
-            altitude,
-            variety,
-            process,
-            cataNotes,
-            grinding,
-            description
-        }
-
-
-    }
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
 
     return (
         <Form onSubmit={handleFormSubmit}>
@@ -206,7 +219,7 @@ const EditCoffeeForm = () => {
                             Are you sure you want to delete this item? This action cannot be undone.
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button variant="danger">
+                            <Button variant="danger" onClick={deleteCoffee}>
                                 Delete this item
                             </Button>
                         </Modal.Footer>
