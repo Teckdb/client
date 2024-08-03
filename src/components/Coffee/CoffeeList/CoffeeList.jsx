@@ -1,18 +1,45 @@
-import { useState } from "react"
-import AddNewCoffeeForm from "../AddNewCoffeeForm/AddNewCoffeeForm"
+import { useEffect, useState } from "react"
+import axios from "axios"
+import CoffeeCard from "../CoffeeCard/CoffeeCard"
+import { Link, useNavigate } from "react-router-dom"
+
+const API_URL = 'http://localhost:5005'
 
 const CoffeeList = () => {
 
-    const [coffee, setCoffee] = useState()
+    const [coffees, setCoffees] = useState([])
 
-    // const addNewCoffee = newCoffee => {
-    //     const fullCoffeeList = [newCoffee, ...coffee]
-    //     setCoffee(fullCoffeeList)
-    // }
+    useEffect(() => {
+        fetchAllCoffees()
+    }, [])
+
+    const fetchAllCoffees = () => {
+        axios
+            .get(`${API_URL}/coffees`)
+            .then((res) => setCoffees(res.data))
+            .catch((err) => console.log(err))
+
+    }
 
     return (
-        // <AddNewCoffeeForm addNewCoffee={addNewCoffee} />
-        <h1>hola</h1>
+        <div className="CoffeeList">
+
+            {
+                coffees.map((coffees) => {
+                    return (
+                        <div className="CoffeCard card" key={coffees.id}>
+                            <Link to={`/coffees/${coffees.id}`}>
+
+                                <CoffeeCard />
+                            </Link>
+                        </div>
+
+                    )
+                })
+            }
+
+
+        </div>
     )
 }
 
