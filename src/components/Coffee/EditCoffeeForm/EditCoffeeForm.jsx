@@ -1,4 +1,9 @@
+import axios from 'axios'
 import { Button, Col, Form, Row, Modal } from 'react-bootstrap'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+
+const API_URL = 'http://localhost:5005'
 
 const EditCoffeeForm = () => {
 
@@ -7,9 +12,11 @@ const EditCoffeeForm = () => {
         name: '',
         available: true,
         stock: 0,
-        pack: '',
-        grames: 0,
-        price: 0,
+        pack: {
+            grames: 0,
+            price: 0
+        },
+
         image: '',
         rating: 0,
         altitude: 0,
@@ -19,39 +26,57 @@ const EditCoffeeForm = () => {
         grinding: '',
         description: ''
     })
-    const [show, setShow] = useState(false)
 
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
+    const { id } = useParams()
+    const navigate = useNavigate()
 
-    const handleInputChange = e => {
-        const { value, name } = e.target
-        setCoffeeData({ ...coffeeData, [name]: value })
+    useEffect(() => {
+        fetchCoffeeData()
+    }, [])
+
+    const fetchCoffeeData = () => {
+        axios
+            .get(`${API_URL}/coffees/${id}`)
+            .then(res => setCoffeeData(res.data))
+            .catch(err => console.log(err))
+    }
+
+    const deleteCoffee = () => {
+        axios
+            .delete(`${API_URL}/coffees/${id}`)
+            .then(res => navigate(`/admin`))
+            .catch(err => console.log(err))
     }
 
     const handleFormSubmit = e => {
         e.preventDefault()
 
-        const newCoffee = {
-            coffeePotId,
-            name,
-            available,
-            stock,
-            pack,
-            grames,
-            price,
-            image,
-            rating,
-            altitude,
-            variety,
-            process,
-            cataNotes,
-            grinding,
-            description
-        }
-
-
+        axios
+            .put(`${API_URL}/coffees/${id}`, coffeeData)
+            .then(res => alert("Coffee updated successfully"))
+            .catch(err => console.log(err))
     }
+
+
+    const handleInputChange = e => {
+        const { value, name } = e.target;
+
+        if (['grames', 'price'].includes(name)) {
+
+            setCoffeeData({
+                ...coffeeData, pack: { ...coffeeData.pack, [name]: value }
+            });
+        } else {
+            setCoffeeData({ ...coffeeData, [name]: value })
+
+        }
+    }
+
+    const [show, setShow] = useState(false)
+
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
+
 
     return (
         <Form onSubmit={handleFormSubmit}>
@@ -73,7 +98,7 @@ const EditCoffeeForm = () => {
             <Form.Group as={Row} className="mb-3" controlId="availableField">
                 <Form.Label column sm={2}> Available </Form.Label>
                 <Col sm={10}>
-                    <Form.Control type="boolean" value={coffeeData.available} onChange={handleInputChange} name="available" />
+                    <Form.Control type="text" value={coffeeData.available} onChange={handleInputChange} name="available" />
                 </Col>
             </Form.Group>
 
@@ -93,7 +118,7 @@ const EditCoffeeForm = () => {
             </Form.Group>
 
 
-            <Form.Group as={Row} className="mb-3">
+            <Form.Group as={Row} className="mb-3" controlId="gramesField">
                 <Form.Label as="legend" column sm={2}>
                     Grames
                 </Form.Label>
@@ -103,6 +128,7 @@ const EditCoffeeForm = () => {
                         label="250gr"
                         name="grames"
                         value={250}
+                        checked={coffeeData.pack.grames === 250}
                         onChange={handleInputChange}
                     />
                     <Form.Check
@@ -110,6 +136,7 @@ const EditCoffeeForm = () => {
                         label="500gr"
                         name="grames"
                         value={500}
+                        checked={coffeeData.pack.grames === 500}
                         onChange={handleInputChange}
                     />
                     <Form.Check
@@ -117,6 +144,7 @@ const EditCoffeeForm = () => {
                         label="1kg"
                         name="grames"
                         value={1000}
+                        checked={coffeeData.pack.grames === 1000}
                         onChange={handleInputChange}
                     />
                 </Col>
@@ -127,7 +155,11 @@ const EditCoffeeForm = () => {
             <Form.Group as={Row} className="mb-3" controlId="priceField">
                 <Form.Label column sm={2}> Price </Form.Label>
                 <Col sm={10}>
-                    <Form.Control type="number" value={coffeeData.price} onChange={handleInputChange} name="price" />
+                    <Form.Control
+                        type="number"
+                        value={coffeeData.pack.price}
+                        onChange={handleInputChange}
+                        name="price" />
                 </Col>
             </Form.Group>
 
@@ -206,7 +238,7 @@ const EditCoffeeForm = () => {
                             Are you sure you want to delete this item? This action cannot be undone.
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button variant="danger">
+                            <Button variant="danger" onClick={deleteCoffee}>
                                 Delete this item
                             </Button>
                         </Modal.Footer>

@@ -1,10 +1,10 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 
 const API_URL = 'http://localhost:5005'
 
-const AddNewCoffeeForm = ({ addNewCoffe }) => {
+const AddNewCoffeeForm = () => {
 
     const [coffeeData, setCoffeeData] = useState({
         coffeePotId: 0,
@@ -29,40 +29,35 @@ const AddNewCoffeeForm = ({ addNewCoffe }) => {
         setCoffeeData({ ...coffeeData, [name]: value })
     }
 
-    // useEffect(() => {
-    //     fetchCoffeeData()
-    // }, [])
 
-    // const fetchCoffeeData = () => {
-    //     axios
-    //         .get(`${API_URL}/coffees`)
-    //         .then(response => {
-    //             setCoffeeData(response.data)
-    //         })
-    //         .catch(err => console.log(err))
-    // }
+
 
     const handleFormSubmit = e => {
         e.preventDefault()
 
         const newCoffee = {
-            coffeePotId,
-            name,
-            available,
-            stock,
-            pack,
-            grames,
-            price,
-            image,
-            rating,
-            altitude,
-            variety,
-            process,
-            cataNotes,
-            grinding,
-            description
+            coffeePotId: coffeeData.coffeePotId,
+            name: coffeeData.name,
+            available: coffeeData.available,
+            stock: coffeeData.stock,
+            pack: coffeeData.pack,
+            grames: coffeeData.grames,
+            price: coffeeData.price,
+            image: coffeeData.image,
+            rating: coffeeData.rating,
+            altitude: coffeeData.altitude,
+            variety: coffeeData.variety,
+            process: coffeeData.process,
+            cataNotes: coffeeData.cataNotes,
+            grinding: coffeeData.grinding,
+            description: coffeeData.description
         }
 
+        axios.post(`${API_URL}/coffees`, newCoffee)
+            .then(response => {
+                setCoffeeData(response.data)
+            })
+            .catch(err => console.log(err))
 
 
 

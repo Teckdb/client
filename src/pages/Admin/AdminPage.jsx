@@ -1,4 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
+import CoffeeList from "../../components/Coffee/CoffeeList/CoffeeList"
 
 const adminPage = () => {
 
@@ -8,6 +9,7 @@ const adminPage = () => {
             <Row>
                 <Col xxl>
                     <h1>Admin Page</h1>
+                    <CoffeeList />
                 </Col>
             </Row>
         </Container>

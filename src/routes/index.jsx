@@ -13,6 +13,7 @@ import EditCoffeePotForm from '../pages/Admin/AdminCoffeePots/EditCoffeePotPage'
 
 
 import { Route, Routes } from "react-router-dom"
+import EditCoffeePage from '../pages/Admin/AdminCoffee/EditCoffeePage'
 
 const AppRoutes = () => {
     return (
@@ -25,6 +26,7 @@ const AppRoutes = () => {
             <Route path='/about' element={<AboutPage />}></Route>
             <Route path='/admin' element={<AdminPage />}></Route>
             <Route path='/admin-coffees' element={<AdminCoffeesPage />}></Route>
+            <Route path='/admin-coffees/edit/:id' element={<EditCoffeePage />}> </Route>
             <Route path='/admin-coffee-pots/new' element={<NewCoffeePotsPage />}></Route>
             <Route path='/admin-coffee-pots/edit/:id' element={<EditCoffeePotForm />}></Route>
             <Route path='*' element={<ErrorPage />}></Route>
