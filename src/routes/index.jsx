@@ -1,15 +1,15 @@
-import Homepage from './../pages/HomePage/HomePage'
-import WikiCoffeePage from './../pages/WikiCoffeePage/WikiCoffeePage'
-import AboutPage from './../pages/AboutPage/AboutPage'
-import ErrorPage from './../pages/ErrorPage/ErrorPage'
-import CoffeeSelectorPage from './../pages/CoffeeSelectorPage/CoffeeSelectorPage'
-import CoffeeDetailsPage from './../pages/CoffeeDetailsPage/CoffeeDetailsPage'
-import CoffeeResultPage from './../pages/CoffeeResultPage/CoffeeResultPage'
+import Homepage from '../pages/HomePage/HomePage'
+import WikiCoffeePage from '../pages/WikiCoffeePage/WikiCoffeePage'
+import AboutPage from '../pages/AboutPage/AboutPage'
+import ErrorPage from '../pages/ErrorPage/ErrorPage'
+import CoffeeSelectorPage from '../pages/CoffeeSelectorPage/CoffeeSelectorPage'
+import CoffeeDetailsPage from '../pages/CoffeeDetailsPage/CoffeeDetailsPage'
+import CoffeeResultPage from '../pages/CoffeeResultPage/CoffeeResultPage'
 
-import AdminPage from './../pages/Admin/AdminPage';
-import AdminCoffeesPage from './../pages/Admin/AdminCoffee/AdminCoffeesPage';
-import NewCoffeePotsPage from './../pages/Admin/AdminCoffeePots/NewCoffeePotsPage';
-import EditCoffeePotForm from './../pages/Admin/AdminCoffeePots/EditCoffeePotPage';
+import AdminPage from '../pages/Admin/AdminPage';
+import AdminCoffeesPage from '../pages/Admin/AdminCoffee/AdminCoffeesPage';
+import NewCoffeePotsPage from '../pages/Admin/AdminCoffeePots/NewCoffeePotsPage';
+import EditCoffeePotForm from '../pages/Admin/AdminCoffeePots/EditCoffeePotPage';
 
 
 import { Route, Routes } from "react-router-dom"
