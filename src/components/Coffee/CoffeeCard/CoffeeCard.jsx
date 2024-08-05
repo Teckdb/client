@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import testIMG from './../../../assets/coffee-pots/test.jpg'
+
 import './CoffeeCard.css'
 import { Link } from 'react-router-dom';
 

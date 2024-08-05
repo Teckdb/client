@@ -18,18 +18,18 @@ import EditCoffeePage from '../pages/Admin/AdminCoffee/EditCoffeePage'
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path='/' element={<Homepage />}></Route>
-            <Route path='/coffee-selector' element={<CoffeeSelectorPage />}></Route>
-            <Route path='/coffee-selector/coffee-result/:potId' element={<CoffeeResultPage />}></Route>
-            <Route path='/coffee/:id' element={<CoffeeDetailsPage />}></Route>
-            <Route path='/wiki-coffee' element={<WikiCoffeePage />}></Route>
-            <Route path='/about' element={<AboutPage />}></Route>
-            <Route path='/admin' element={<AdminPage />}></Route>
-            <Route path='/admin-coffees' element={<AdminCoffeesPage />}></Route>
+            <Route path='/' element={<Homepage />} />
+            <Route path='/coffee-selector' element={<CoffeeSelectorPage />} />
+            <Route path='/coffee-selector/coffee-result/:potId' element={<CoffeeResultPage />} />
+            <Route path='/coffee/:id' element={<CoffeeDetailsPage />} />
+            <Route path='/wiki-coffee' element={<WikiCoffeePage />} />
+            <Route path='/about' element={<AboutPage />} />
+            <Route path='/admin' element={<AdminPage />} />
+            <Route path='/admin-coffees' element={<AdminCoffeesPage />} />
             <Route path='/admin-coffees/edit/:id' element={<EditCoffeePage />}> </Route>
-            <Route path='/admin-coffee-pots/new' element={<NewCoffeePotsPage />}></Route>
-            <Route path='/admin-coffee-pots/edit/:id' element={<EditCoffeePotForm />}></Route>
-            <Route path='*' element={<ErrorPage />}></Route>
+            <Route path='/admin-coffee-pots/new' element={<NewCoffeePotsPage />} />
+            <Route path='/admin-coffee-pots/edit/:id' element={<EditCoffeePotForm />} />
+            <Route path='*' element={<ErrorPage />} />
         </Routes>
     )
 }
