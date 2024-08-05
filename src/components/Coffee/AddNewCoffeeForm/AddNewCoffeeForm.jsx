@@ -26,11 +26,16 @@ const AddNewCoffeeForm = () => {
 
     const handleInputChange = e => {
         const { value, name } = e.target
-        setCoffeeData({ ...coffeeData, [name]: value })
+
+        if (['grames', 'price'].includes(name)) {
+            setCoffeeData({
+                ...coffeeData, pack: { ...coffeeData.pack, [name]: value }
+            })
+        } else {
+            setCoffeeData({ ...coffeeData, [name]: value })
+        }
+
     }
-
-
-
 
     const handleFormSubmit = e => {
         e.preventDefault()
@@ -40,8 +45,8 @@ const AddNewCoffeeForm = () => {
             name: coffeeData.name,
             available: coffeeData.available,
             stock: coffeeData.stock,
-            pack: coffeeData.pack,
-            grames: coffeeData.grames,
+            pack: coffeeData.pack.grames,
+            grames: coffeeData.pack,
             price: coffeeData.price,
             image: coffeeData.image,
             rating: coffeeData.rating,
@@ -53,10 +58,9 @@ const AddNewCoffeeForm = () => {
             description: coffeeData.description
         }
 
-        axios.post(`${API_URL}/coffees`, newCoffee)
-            .then(response => {
-                setCoffeeData(response.data)
-            })
+        axios
+            .post(`${API_URL}/coffees`, newCoffee)
+            .then(alert("send!"))
             .catch(err => console.log(err))
 
 
@@ -87,19 +91,8 @@ const AddNewCoffeeForm = () => {
                 </Col>
             </Form.Group>
 
-
-            <Form.Group as={Row} className="mb-3" controlId="stockField">
-                <Form.Label column sm={2}> Stock </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="number" value={coffeeData.stock} onChange={handleInputChange} name="stock" />
-                </Col>
-            </Form.Group>
-
             <Form.Group as={Row} className="mb-3" controlId="packField">
                 <Form.Label column sm={2}> Pack </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.pack} onChange={handleInputChange} name="pack" />
-                </Col>
             </Form.Group>
 
 
