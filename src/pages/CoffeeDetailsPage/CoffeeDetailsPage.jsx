@@ -1,6 +1,5 @@
 import { Accordion, Card, Col, Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
-import testIMG from './../../assets/coffee-pots/test.jpg'
 import { useEffect, useState } from "react"
 import axios from "axios"
 const API_URL = 'http://localhost:5005'

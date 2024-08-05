@@ -26,7 +26,7 @@ const AppRoutes = () => {
             <Route path='/about' element={<AboutPage />} />
             <Route path='/admin' element={<AdminPage />} />
             <Route path='/admin-coffees' element={<AdminCoffeesPage />} />
-            <Route path='/admin-coffees/edit/:id' element={<EditCoffeePage />} />
+            <Route path='/admin-coffees/edit/:id' element={<EditCoffeePage />}> </Route>
             <Route path='/admin-coffee-pots/new' element={<NewCoffeePotsPage />} />
             <Route path='/admin-coffee-pots/edit/:id' element={<EditCoffeePotForm />} />
             <Route path='*' element={<ErrorPage />} />
