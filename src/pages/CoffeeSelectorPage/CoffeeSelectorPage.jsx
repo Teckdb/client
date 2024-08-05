@@ -1,6 +1,5 @@
-import { Button, Col, Container, Row, } from "react-bootstrap"
+import { Container, Row, } from "react-bootstrap"
 import './CoffeeSelectorPage.css'
-import CoffeePotSelector from "../../components/CoffeePots/CoffeePotSelector/CoffeePotSelector";
 import CoffeePotsList from "../../components/CoffeePots/CoffeePotsList/CoffeePotsList";
 
 const CoffeeSelectorPage = () => {
