@@ -28,11 +28,13 @@ const CoffeePotsList = () => {
 
     return (
         <>
-            {coffeePots.map((elm) =>
-                <Col key={elm.id}>
-                    <CoffeePotCard  {...elm} />
-                </Col>
-            )}
+            {
+                coffeePots.map((elm) =>
+                    <Col key={elm.id}>
+                        <CoffeePotCard  {...elm} />
+                    </Col>
+                )
+            }
         </>
     )
 }

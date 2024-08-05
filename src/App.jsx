@@ -15,6 +15,7 @@ function App() {
       <AppRoutes />
 
       <Footer />
+
     </div>
 
   )

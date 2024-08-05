@@ -5,7 +5,7 @@ const API_URL = 'http://localhost:5005'
 
 const AddNewCoffeePotForm = () => {
 
-    const [CoffeePotData, setCoffeePotData] = useState({
+    const [coffeePotData, setCoffeePotData] = useState({
         potId: 0,
         name: "",
         extraction: "",
@@ -16,14 +16,14 @@ const AddNewCoffeePotForm = () => {
 
     const handleInputChange = e => {
         const { value, name } = e.target
-        setCoffeePotData({ ...CoffeePotData, [name]: value })
+        setCoffeePotData({ ...coffeePotData, [name]: value })
     }
 
     const handleCoffeePotSubmit = e => {
         e.preventDefault()
 
         axios
-            .post(`${API_URL}/coffeePots`, CoffeePotData)
+            .post(`${API_URL}/coffeePots`, coffeePotData)
             .then(alert("ready"))
             .catch(err => console.log(err))
     }
@@ -59,7 +59,7 @@ const AddNewCoffeePotForm = () => {
                     >
                         <Form.Control
                             type="text"
-                            value={CoffeePotData.name}
+                            value={coffeePotData.name}
                             name='name'
                             placeholder="Name"
                             onChange={handleInputChange} />
@@ -78,7 +78,7 @@ const AddNewCoffeePotForm = () => {
                         >
                             <Form.Control
                                 type="text"
-                                value={CoffeePotData.extraction}
+                                value={coffeePotData.extraction}
                                 name='extraction'
                                 placeholder="Extraction Method"
                                 onChange={handleInputChange} />
@@ -95,7 +95,7 @@ const AddNewCoffeePotForm = () => {
                         >
                             <Form.Control
                                 type="text"
-                                value={CoffeePotData.barPressure}
+                                value={coffeePotData.barPressure}
                                 name='barPressure'
                                 placeholder="Bar Pressure"
                                 onChange={handleInputChange} />
@@ -113,7 +113,7 @@ const AddNewCoffeePotForm = () => {
                 >
                     <Form.Control
                         type="text"
-                        value={CoffeePotData.imagen}
+                        value={coffeePotData.imagen}
                         name='imagen'
                         placeholder="Image URL"
                         onChange={handleInputChange} />
@@ -129,7 +129,7 @@ const AddNewCoffeePotForm = () => {
                     >
                         <Form.Control
                             as="textarea"
-                            value={CoffeePotData.description}
+                            value={coffeePotData.description}
                             name='description'
                             aria-label="With textarea"
                             placeholder='Description'

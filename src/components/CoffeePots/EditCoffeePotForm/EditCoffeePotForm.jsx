@@ -6,7 +6,7 @@ const API_URL = 'http://localhost:5005'
 
 const EditCoffeePotForm = () => {
 
-    const [CoffeePotData, setCoffeePotData] = useState({
+    const [coffeePotData, setCoffeePotData] = useState({
         potId: 0,
         name: "",
         extraction: "",
@@ -40,14 +40,14 @@ const EditCoffeePotForm = () => {
         e.preventDefault()
 
         axios
-            .put(`${API_URL}/coffeePots/${id}`, CoffeePotData)
+            .put(`${API_URL}/coffeePots/${id}`, coffeePotData)
             .then(res => alert("send"))
             .catch(err => console.log(err))
     }
 
     const handleInputChange = e => {
         const { value, name } = e.target
-        setCoffeePotData({ ...CoffeePotData, [name]: value })
+        setCoffeePotData({ ...coffeePotData, [name]: value })
     }
 
     const [show, setShow] = useState(false);
@@ -70,7 +70,7 @@ const EditCoffeePotForm = () => {
                     >
                         <Form.Control
                             type="text"
-                            value={CoffeePotData.potId}
+                            value={coffeePotData.potId}
                             name='potId'
                             placeholder="Coffee Pot"
                             onChange={handleInputChange} />
@@ -87,7 +87,7 @@ const EditCoffeePotForm = () => {
                     >
                         <Form.Control
                             type="text"
-                            value={CoffeePotData.name}
+                            value={coffeePotData.name}
                             name='name'
                             placeholder="Name"
                             onChange={handleInputChange} />
@@ -106,7 +106,7 @@ const EditCoffeePotForm = () => {
                         >
                             <Form.Control
                                 type="text"
-                                value={CoffeePotData.extraction}
+                                value={coffeePotData.extraction}
                                 name='extraction'
                                 placeholder="Extraction Method"
                                 onChange={handleInputChange} />
@@ -123,7 +123,7 @@ const EditCoffeePotForm = () => {
                         >
                             <Form.Control
                                 type="text"
-                                value={CoffeePotData.barPressure}
+                                value={coffeePotData.barPressure}
                                 name='barPressure'
                                 placeholder="Bar Pressure"
                                 onChange={handleInputChange} />
@@ -141,7 +141,7 @@ const EditCoffeePotForm = () => {
                 >
                     <Form.Control
                         type="text"
-                        value={CoffeePotData.imagen}
+                        value={coffeePotData.imagen}
                         name='imagen'
                         placeholder="Image URL"
                         onChange={handleInputChange} />
@@ -157,7 +157,8 @@ const EditCoffeePotForm = () => {
                     >
                         <Form.Control
                             as="textarea"
-                            value={CoffeePotData.description}
+                            rows={10}
+                            value={coffeePotData.description}
                             name='description'
                             aria-label="With textarea"
                             placeholder='Description'

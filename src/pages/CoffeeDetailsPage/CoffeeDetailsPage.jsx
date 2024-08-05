@@ -10,14 +10,14 @@ const CoffeeDetailsPage = () => {
 
     const { id } = useParams()
 
-    const [coffee, setCoffee] = useState([])
+    const [coffee, setCoffee] = useState({})
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetchAllCoffees()
+        fetchCoffe()
     }, [])
 
-    const fetchAllCoffees = () => {
+    const fetchCoffe = () => {
         axios
             .get(`${API_URL}/coffees/${id}`)
             .then((res) => {
@@ -30,50 +30,44 @@ const CoffeeDetailsPage = () => {
     return (
         <Container fluid className="bg-secondary m-0 p-5 flex-grow-1">
             <Row>
-                <Col className="p-5 m-0 d-flex justify-content-center align-items-center">
+                <Col xs={{ span: 5 }} className="p-5 m-0 d-flex justify-content-center align-items-center">
                     <Card.Img variant="top" src={testIMG} className='img-fluid img-limited-height' />
                 </Col>
-                <Col xs={7} className="p-5 m-0 d-flex justify-content-center flex-column">
+                <Col xs={{ span: 7 }} className="p-5 m-0 d-flex justify-content-center flex-column">
                     <Card.Title>{coffee.name}</Card.Title>
                     <Card.Text>
                         {coffee.cata_notes}
                     </Card.Text>
                 </Col>
             </Row>
-            <Container>
-                <Row>
-                    <Col>
-                        <Accordion>
-                            <Accordion.Item eventKey="0">
-                                <Accordion.Header>Description</Accordion.Header>
-                                <Accordion.Body>
-                                    <p>{coffee.description}</p>
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion>
-                            <Accordion.Item eventKey="1">
-                                <Accordion.Header>Pack Options</Accordion.Header>
-                                <Accordion.Body>
-                                    {loading ? (
-                                        <>
-                                            <p>No pack options available.</p>
-                                        </>
-                                    ) : (
-                                        <>
-                                            {
-                                                coffee.pack.map(((elm, idx) => {
-                                                    return (<p key={idx}>{elm.grames} grams with a price of {elm.price}$</p>)
-                                                }))
-                                            }
-                                        </>
-                                    )}
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                    </Col>
-                </Row>
-            </Container>
+            <Accordion>
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header>Description</Accordion.Header>
+                    <Accordion.Body>
+                        <p>{coffee.description}</p>
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
+            <Accordion>
+                <Accordion.Item eventKey="1">
+                    <Accordion.Header>Pack Options</Accordion.Header>
+                    <Accordion.Body>
+                        {loading ? (
+                            <>
+                                <p>No pack options available.</p>
+                            </>
+                        ) : (
+                            <>
+                                {
+                                    coffee.pack.map(((elm, idx) => {
+                                        return (<p key={idx}>{elm.grames} grams with a price of {elm.price}$</p>)
+                                    }))
+                                }
+                            </>
+                        )}
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
         </Container>
 
     )
