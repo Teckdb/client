@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { Button, Col, Collapse, FloatingLabel, Form, FormControl, FormGroup, FormLabel, Row, InputGroup } from 'react-bootstrap'
+import { Button, Col, Collapse, FloatingLabel, Form, FormControl, FormGroup, FormLabel, Row, InputGroup, FormSelect } from 'react-bootstrap'
 
 const API_URL = 'http://localhost:5005'
 
@@ -26,6 +26,12 @@ const AddNewCoffeeForm = () => {
         ]
     )
 
+    const [grindingData, setGriding] = useState(
+        [
+            { grinding: '' }
+        ]
+    )
+
 
 
 
@@ -42,6 +48,15 @@ const AddNewCoffeeForm = () => {
         packsCopy[currentIndex][name] = value
 
         setPackData(packsCopy)
+    }
+
+    const handleGridingChange = (event, currentIndex) => {
+        const { value, name } = event.target
+
+        const grindingCopy = [...grindingData]
+        grindingCopy[currentIndex][name] = value
+
+        setCoffeeData(grindingCopy)
     }
 
     const addNewCoffee = () => {
@@ -104,7 +119,7 @@ const AddNewCoffeeForm = () => {
 
                     <FloatingLabel
                         controlId='nameField'
-                        label='name'
+                        label='Name'
                         className='mb-3'
                     >
 
@@ -120,15 +135,159 @@ const AddNewCoffeeForm = () => {
                     <FormGroup className='mb-3' controlId='available'>
 
                         <FloatingLabel
-                            controlId='available'
                             label='Available Coffees'
                             className='mb-3'
+
+                        >
+
+                            <Form.Select onChange={handleInputChange} >
+                                <option value="">Choose...</option>
+                                <option value="true" name="true">True</option>
+                                <option value="false">False</option>
+
+                            </Form.Select>
+
+                        </FloatingLabel>
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+
+                <Col>
+                    <FormGroup as={Col} className="mb-3" controlId="imageField">
+
+                        <FloatingLabel
+                            controlId="imageIdField"
+                            label="Image"
+                            className="mb-3"
+                        >
+
+                            <Form.Control
+                                type="text"
+                                value={coffeeData.image}
+                                name="image"
+                                placeholder='Image'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+                    </FormGroup>
+                </Col>
+                <Col>
+                    <FormGroup as={Col} className="mb-3" controlId="ratingField">
+
+                        <FloatingLabel
+                            controlId="ratingField"
+                            label="Rating"
+                            className="mb-3"
+                        >
+
+                            <Form.Control
+                                type="number"
+                                value={coffeeData.rating}
+                                name="rating"
+                                placeholder='Rating'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+                    </FormGroup>
+                </Col>
+
+                <Col>
+                    <FormGroup as={Col} className="mb-3" controlId="altitudeField">
+
+                        <FloatingLabel
+                            controlId="altitudeField"
+                            label="Altitude"
+                            className="mb-3"
+                        >
+
+                            <Form.Control
+                                type="number"
+                                value={coffeeData.altitude}
+                                name="altitude"
+                                placeholder='Altitude'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <FormGroup as={Col} className="mb-3" controlId="varietyField">
+
+                        <FloatingLabel
+                            controlId="varityField"
+                            label="Variety"
+                            className="mb-3"
+                        >
+
+                            <Form.Control
+                                type="text"
+                                value={coffeeData.variety}
+                                name="variety"
+                                placeholder='Variety'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+                    </FormGroup>
+                </Col>
+                <Col>
+                    <FormGroup as={Col} className="mb-3" controlId="processField">
+
+                        <FloatingLabel
+                            controlId="processField"
+                            label="Process"
+                            className="mb-3"
+                        >
+
+                            <Form.Control
+                                type="text"
+                                value={coffeeData.process}
+                                name="process"
+                                placeholder='Process'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+                    </FormGroup>
+                </Col>
+
+                <Col>
+                    <FormGroup as={Col} className="mb-3" controlId="cataNotesField">
+
+                        <FloatingLabel
+                            controlId="cataNotesField"
+                            label="Cata Notes"
+                            className="mb-3"
+                        >
+
+                            <Form.Control
+                                type="text"
+                                value={coffeeData.cataNotes}
+                                name="cataNotes"
+                                placeholder='Cata Notes'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+                    </FormGroup>
+                </Col>
+
+            </Row>
+            <Row>
+                <Col>
+                    <FormGroup as={Col} className="mb-3" controlId="gridingField">
+
+                        <FloatingLabel
+                            controlId="gridingField"
+                            label="Griding"
+                            className="mb-3"
                         >
 
                             <Form.Select defaultValue="Choose...">
-                                <option>True</option>
-                                <option>False</option>
-                                value={coffeeData.available}
+                                <option>Fine Grind</option>
+                                <option>Medium Grind</option>
+                                <option>Course Grind</option>
+                                value={coffeeData.grinding}
                                 onChange={handleInputChange}
                             </Form.Select>
 
@@ -136,9 +295,35 @@ const AddNewCoffeeForm = () => {
                     </FormGroup>
                 </Col>
                 <Col>
+                    <FormGroup as={Col} className="mb-3" controlId="descriptionField">
+
+                        <FloatingLabel
+                            controlId="descriptionField"
+                            label="Description"
+                            className="mb-3"
+                        >
+
+                            <Form.Control
+                                as="textarea"
+                                rowa={10}
+                                type="text"
+                                value={coffeeData.description}
+                                name="description"
+                                aria-label='With textarea'
+                                placeholder='Description'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+
+                <Col sm={{ span: 6, offset: 0 }}>
                     <FormGroup>
                         <FormLabel>Option Packages</FormLabel>
                         <br></br>
+
                         {
                             packData.map((eachPack, idx) => {
 
@@ -169,16 +354,19 @@ const AddNewCoffeeForm = () => {
                             })
 
                         }
+
                         <Button variant='dark' size='sm' onClick={addNewCoffee}>New Coffee</Button>
                     </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                     <Form.Group as={Row} className="mb-3">
-                        <Col sm={{ span: 10, offset: 2 }}>
-                            <Button type="submit">Sign in</Button>
+                        <Col sm={{ span: 10, offset: 6 }}>
+                            <Button type="submit">Submit</Button>
 
                         </Col>
                     </Form.Group>
-
-
                 </Col>
             </Row>
 
