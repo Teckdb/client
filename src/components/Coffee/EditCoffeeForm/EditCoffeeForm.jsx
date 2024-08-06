@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 const API_URL = 'http://localhost:5005'
 
-const EditCoffeeForm = () => {
+const EditCoffeeForm = ({ id }) => {
 
     const [coffeeData, setCoffeeData] = useState({
         coffeePotId: 0,
@@ -33,7 +33,6 @@ const EditCoffeeForm = () => {
         ]
     )
 
-    const { id } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -103,7 +102,7 @@ const EditCoffeeForm = () => {
 
 
     return (
-        <Form onSubmit={handleFormSubmit}>
+        <Form onSubmit={handleFormSubmit} className='bg-white'>
 
             <FormLabel className='h1'>Edit Coffee</FormLabel>
             <hr></hr>

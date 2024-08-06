@@ -7,14 +7,15 @@ import CoffeeDetailsPage from '../pages/CoffeeDetailsPage/CoffeeDetailsPage'
 import CoffeeResultPage from '../pages/CoffeeResultPage/CoffeeResultPage'
 
 import AdminPage from '../pages/Admin/AdminPage';
-import AdminCoffeesPage from '../pages/Admin/AdminCoffee/AdminCoffeesPage';
-import NewCoffeePotsPage from '../pages/Admin/AdminCoffeePots/NewCoffeePotsPage';
+
+
 import EditCoffeePotForm from '../pages/Admin/AdminCoffeePots/EditCoffeePotPage';
 
 
 import { Route, Routes, useLocation } from "react-router-dom"
 import EditCoffeePage from '../pages/Admin/AdminCoffee/EditCoffeePage'
-import TransitionGroup from 'react-transition-group/Transition'
+
+import AdminEditList from '../pages/Admin/AdminEditList'
 
 
 const AppRoutes = () => {
@@ -32,9 +33,8 @@ const AppRoutes = () => {
             <Route path='/wiki-coffee' element={<WikiCoffeePage />} />
             <Route path='/about' element={<AboutPage />} />
             <Route path='/admin' element={<AdminPage />} />
-            <Route path='/admin-coffees' element={<AdminCoffeesPage />} />
-            <Route path='/admin-coffees/edit/:id' element={<EditCoffeePage />}> </Route>
-            <Route path='/admin-coffee-pots/new' element={<NewCoffeePotsPage />} />
+            <Route path='/admin-edit-list' element={<AdminEditList />} />
+            <Route path='/admin-coffees/edit/:id' element={<EditCoffeePage />} />
             <Route path='/admin-coffee-pots/edit/:id' element={<EditCoffeePotForm />} />
             <Route path='*' element={<ErrorPage />} />
         </Routes>

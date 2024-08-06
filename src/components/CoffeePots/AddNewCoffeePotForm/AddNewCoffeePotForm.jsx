@@ -137,11 +137,11 @@ const AddNewCoffeePotForm = () => {
                     </FloatingLabel>
                 </InputGroup>
             </Form.Group>
-
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
-
+            <Row>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Row>
         </Form >
     )
 }

@@ -4,7 +4,7 @@ import { Col, FloatingLabel, Row, Button, Form, InputGroup, Modal } from 'react-
 import { useNavigate, useParams } from 'react-router-dom';
 const API_URL = 'http://localhost:5005'
 
-const EditCoffeePotForm = () => {
+const EditCoffeePotForm = ({ id }) => {
 
     const [coffeePotData, setCoffeePotData] = useState({
         potId: 0,
@@ -15,7 +15,6 @@ const EditCoffeePotForm = () => {
         description: ""
     })
 
-    const { id } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {

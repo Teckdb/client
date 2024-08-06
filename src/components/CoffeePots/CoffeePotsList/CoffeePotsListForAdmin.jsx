@@ -1,11 +1,10 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Col, Row } from "react-bootstrap"
-import CoffeePotCard from "../CoffeePotCard/CoffeePotCard"
+import CoffeePotCardForAdmin from "../CoffeePotCard/CoffeePotCardForAdmin"
 
 const API_URL = 'http://localhost:5005'
 
-const CoffeePotsList = () => {
+const CoffeePotsListForAdmin = () => {
 
     const [coffeePots, setCoffeesPots] = useState([])
 
@@ -26,13 +25,11 @@ const CoffeePotsList = () => {
         <>
             {
                 coffeePots.map((elm) =>
-                    <Col key={elm.id}>
-                        <CoffeePotCard  {...elm} />
-                    </Col>
+                    <CoffeePotCardForAdmin {...elm} key={elm.id} />
                 )
             }
         </>
     )
 }
 
-export default CoffeePotsList
+export default CoffeePotsListForAdmin

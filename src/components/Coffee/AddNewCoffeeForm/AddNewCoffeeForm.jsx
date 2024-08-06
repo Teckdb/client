@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { Button, Col, Collapse, FloatingLabel, Form, FormControl, FormGroup, FormLabel, Row, InputGroup, FormSelect } from 'react-bootstrap'
+import { Button, Col, FloatingLabel, Form, FormControl, FormGroup, FormLabel, Row } from 'react-bootstrap'
 
 const API_URL = 'http://localhost:5005'
 
@@ -22,7 +22,7 @@ const AddNewCoffeeForm = () => {
 
     const [packData, setPackData] = useState(
         [
-            { grames: 0, price: 0 }
+            { grames: '', price: '' }
         ]
     )
 
@@ -59,9 +59,13 @@ const AddNewCoffeeForm = () => {
         setCoffeeData(grindingCopy)
     }
 
-    const addNewCoffee = () => {
+    const addNewPack = () => {
         setPackData([...packData, { grames: 0, price: 0 }])
     }
+
+    const removeLastPack = () => {
+        setPackData(packData.slice(0, -1));
+    };
 
     const handleFormSubmit = e => {
         e.preventDefault()
@@ -317,11 +321,11 @@ const AddNewCoffeeForm = () => {
                     </FormGroup>
                 </Col>
             </Row>
-            <Row>
+            <Row className='mb-5'>
 
                 <Col sm={{ span: 6, offset: 0 }}>
                     <FormGroup>
-                        <FormLabel>Option Packages</FormLabel>
+                        <FormLabel className='mb-5'>Option Packages</FormLabel>
                         <br></br>
 
                         {
@@ -329,15 +333,16 @@ const AddNewCoffeeForm = () => {
 
                                 return (
                                     <div key={idx}>
-                                        <FormLabel>Pack {idx + 1}</FormLabel>
-
+                                        <FormLabel className='mb-3'>Pack {idx + 1}</FormLabel>
                                         <FormControl
                                             type='text'
                                             onChange={e => handlePackChange(e, idx)}
                                             value={packData[idx].grames}
                                             placeholder='Grames per pack'
                                             name='grames'
+                                            className='mb-3'
                                         />
+
 
                                         <FormControl
                                             type='text'
@@ -345,31 +350,20 @@ const AddNewCoffeeForm = () => {
                                             value={packData[idx].price}
                                             placeholder='Price per pack'
                                             name='price'
+                                            className='mb-3'
                                         />
-
                                     </div>
                                 )
-
-
                             })
-
                         }
-
-                        <Button variant='dark' size='sm' onClick={addNewCoffee}>New Coffee</Button>
+                        <Button variant='dark' size='sm' onClick={addNewPack} className='me-2'>New Pack</Button>
+                        <Button variant='dark' size='sm' onClick={removeLastPack}>Remove Pack</Button>
                     </FormGroup>
                 </Col>
             </Row>
-            <Row>
-                <Col>
-                    <Form.Group as={Row} className="mb-3">
-                        <Col sm={{ span: 10, offset: 6 }}>
-                            <Button type="submit">Submit</Button>
-
-                        </Col>
-                    </Form.Group>
-                </Col>
+            <Row className='mb-5'>
+                <Button type="submit">Submit</Button>
             </Row>
-
         </Form >
 
 
