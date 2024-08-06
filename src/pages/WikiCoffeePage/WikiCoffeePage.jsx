@@ -1,5 +1,5 @@
 import "./WikiCoffePage.css"
-import { CardBody, Col, Container, Row, Card, ListGroup, Image, Ratio } from "react-bootstrap"
+import { CardBody, Col, Container, Row, Card, ListGroup, Image, Ratio, Badge, Stack } from "react-bootstrap"
 
 
 
@@ -9,29 +9,30 @@ const WikiCoffeePage = () => {
             <Row>
 
                 <Col md={{ span: 3 }}>
+                    <Stack direction="horizontal" gap={2}>
+                        <Badge bg="dark">Curiosities about Coffee</Badge>
+                    </Stack>
                     <Card className="mb-5">
                         <Card.Img variant="top" src="src/assets/roaster-at-local-coffee-business.jpg" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Coffee Roasting</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Coffee roasting transforms green beans into aromatic, flavorful coffee through controlled heat application.
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                            <ListGroup.Item>FairTrade</ListGroup.Item>
                         </ListGroup>
                         <Card.Body>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
+                            <Card.Link href="#">See Article</Card.Link>
                         </Card.Body>
                     </Card>
                 </Col>
 
                 <Col md={{ span: 6 }}>
-                    <h1>Tips</h1>
+                    <Stack direction="horizontal" gap={2}>
+                        <Badge bg="dark">Coffee Inspiration</Badge>
+                    </Stack>
                     <Image src="src/assets/lenses-lattes.jpg" thumbnail />
                     <Ratio aspectRatio="16x9">
                         <iframe
@@ -43,23 +44,25 @@ const WikiCoffeePage = () => {
                 </Col>
 
                 <Col md={{ span: 3 }}>
+                    <Stack direction="horizontal" gap={2}>
+                        <Badge bg="dark">Coffee Preparations</Badge>
+                    </Stack>
+
                     <Card className="mb-5">
                         <Card.Img variant="top" src="src/assets/coffee-press-into-crystal.jpg" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Aeropress Brewing</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Brewing coffee with an AeroPress is a simple yet versatile process that allows for different brewing techniques.
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                            <ListGroup.Item>Preparation</ListGroup.Item>
+                            <ListGroup.Item>Adding Coffee and Water</ListGroup.Item>
+                            <ListGroup.Item>Brewing</ListGroup.Item>
                         </ListGroup>
                         <Card.Body>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
+                            <Card.Link href="#">See Article</Card.Link>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -67,26 +70,23 @@ const WikiCoffeePage = () => {
                     <Card className="mb-5">
                         <Card.Img variant="top" src="src/assets/freshly-picked-coffee-beans.jpg" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Coffee Beans</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Selecting high-quality coffee beans involves several key considerations:
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                            <ListGroup.Item>Bean Type</ListGroup.Item>
+                            <ListGroup.Item>Freshness</ListGroup.Item>
+                            <ListGroup.Item>Origin</ListGroup.Item>
                         </ListGroup>
                         <Card.Body>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
+                            <Card.Link href="#">See Article</Card.Link>
                         </Card.Body>
                     </Card>
+
                 </Col>
             </Row>
-
-
         </Container>
     )
 }
