@@ -2,7 +2,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from './../../assets/logo.png'
 
-const Navigation = () => {
+const NavBar = () => {
     return (
         <Navbar expand="md" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
             <Container>
@@ -28,4 +28,4 @@ const Navigation = () => {
     );
 }
 
-export default Navigation;
+export default NavBar;

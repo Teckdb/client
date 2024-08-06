@@ -30,7 +30,7 @@ const CoffeeDetailsPage = () => {
         <Container fluid className="bg-secondary m-0 p-5 flex-grow-1">
             <Row>
                 <Col xs={{ span: 5 }} className="p-5 m-0 d-flex justify-content-center align-items-center">
-                    <Card.Img variant="top" src={testIMG} className='img-fluid img-limited-height' />
+                    <Card.Img variant="top" src={coffee.imagen} className='img-fluid img-limited-height' />
                 </Col>
                 <Col xs={{ span: 7 }} className="p-5 m-0 d-flex justify-content-center flex-column">
                     <Card.Title>{coffee.name}</Card.Title>

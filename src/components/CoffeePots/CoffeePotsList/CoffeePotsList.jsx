@@ -24,8 +24,6 @@ const CoffeePotsList = () => {
         fetchAllCoffePots()
     }, [])
 
-
-
     return (
         <>
             {

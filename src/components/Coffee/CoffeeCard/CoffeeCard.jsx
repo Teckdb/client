@@ -5,16 +5,16 @@ import './CoffeeCard.css'
 import { Link } from 'react-router-dom';
 
 
-const CoffeeCard = ({ name, description, id }) => {
+const CoffeeCard = ({ name, description, id, imagen }) => {
 
     return (
         <div className="d-flex justify-content-around">
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={testIMG} className='img-fluid img-limited-height' />
+                <Card.Img variant="top" src={imagen} className='img-fluid img-limited-height' />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
-                        {`${description}...`}
+                        {`${description.slice(0, 100)}...`}
                     </Card.Text>
                     <Button variant="primary" as={Link} to={`/coffee/${id}`}>Go Details</Button>
                 </Card.Body>

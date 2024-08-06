@@ -140,9 +140,9 @@ const AddNewCoffeeForm = () => {
 
                         >
 
-                            <Form.Select onChange={handleInputChange} >
+                            <Form.Select name="available" onChange={handleInputChange} value={coffeeData.available}>
                                 <option value="">Choose...</option>
-                                <option value="true" name="true">True</option>
+                                <option value="true" >True</option>
                                 <option value="false">False</option>
 
                             </Form.Select>

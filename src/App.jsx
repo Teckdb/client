@@ -1,8 +1,7 @@
-import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 import AppRoutes from './routes';
-import Footer from './components/Footer'
-import Navigation from './components/Navbar/Navigation';
+import Layout from './components/Layout';
 
 
 function App() {
@@ -11,11 +10,10 @@ function App() {
 
     <div className="d-flex flex-column min-vh-100">
 
-      <Navigation />
+      <Layout>
+        <AppRoutes />
+      </Layout>
 
-      <AppRoutes />
-
-      <Footer />
 
     </div>
 
