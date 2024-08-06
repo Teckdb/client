@@ -2,8 +2,10 @@ import { Accordion, Card, Col, Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import LocationMap from "../../components/LocationMap/LocationMap"
 const API_URL = 'http://localhost:5005'
 
+import { FEATURES } from "../../conts/features"
 
 const CoffeeDetailsPage = () => {
 
@@ -26,11 +28,12 @@ const CoffeeDetailsPage = () => {
             .catch((err) => console.log(err))
     }
 
+
     return (
-        <Container fluid className="bg-secondary m-0 p-5 flex-grow-1">
+        <Container fluid className="bg-white m-0 p-5 flex-grow-1">
             <Row>
                 <Col xs={{ span: 5 }} className="p-5 m-0 d-flex justify-content-center align-items-center">
-                    <Card.Img variant="top" src={coffee.imagen} className='img-fluid img-limited-height' />
+                    <Card.Img variant="top" src={coffee.image} className='img-fluid img-limited-height' />
                 </Col>
                 <Col xs={{ span: 7 }} className="p-5 m-0 d-flex justify-content-center flex-column">
                     <Card.Title>{coffee.name}</Card.Title>
@@ -62,6 +65,22 @@ const CoffeeDetailsPage = () => {
                                         return (<p key={idx}>{elm.grames} grams with a price of {elm.price}$</p>)
                                     }))
                                 }
+                            </>
+                        )}
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
+            <Accordion>
+                <Accordion.Item eventKey="1">
+                    <Accordion.Header>Location</Accordion.Header>
+                    <Accordion.Body>
+                        {loading ? (
+                            <>
+                                <p>No pack options available.</p>
+                            </>
+                        ) : (
+                            <>
+                                <LocationMap location={coffee.location} />
                             </>
                         )}
                     </Accordion.Body>

@@ -1,0 +1,56 @@
+.footer {
+    background: url('https://res.cloudinary.com/dsvyez2w5/image/upload/v1722951873/Footer/hxnd10mm9tvh4o2zqpxk.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 40px 0;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.footer-image {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+}
+
+.footer-text-row {
+    margin-bottom: 20px;
+}
+
+.footer-stores {
+    margin-bottom: 20px;
+}
+
+.footer-newsletter h5 {
+    margin-bottom: 10px;
+}
+
+.footer-newsletter .form-control {
+    max-width: 300px;
+    margin-right: 10px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+}

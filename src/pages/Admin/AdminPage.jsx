@@ -1,18 +1,28 @@
 import { Col, Container, Row } from "react-bootstrap"
-import CoffeeList from "../../components/Coffee/CoffeeList/CoffeeList"
+import AddNewCoffeePotForm from "../../components/CoffeePots/AddNewCoffeePotForm/AddNewCoffeePotForm"
+import AddNewCoffeeForm from "../../components/Coffee/AddNewCoffeeForm/AddNewCoffeeForm"
 
 const adminPage = () => {
 
 
     return (
-        <Container fluid className="bg-secondary m-0 flex-grow-1 text-white d-flex justify-content-center align-items-center">
-            <Row>
-                <Col xxl>
+        <>
+            <Row className="bg-white">
+                <Col>
                     <h1>Admin Page</h1>
-                    <CoffeeList />
                 </Col>
             </Row>
-        </Container>
+            <Row className="bg-white">
+                <Col className="p-5">
+                    <AddNewCoffeeForm />
+                </Col>
+                <Col className="p-5">
+                    <AddNewCoffeePotForm />
+                </Col>
+            </Row>
+
+        </>
+
 
     )
 }

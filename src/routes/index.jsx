@@ -12,12 +12,19 @@ import NewCoffeePotsPage from '../pages/Admin/AdminCoffeePots/NewCoffeePotsPage'
 import EditCoffeePotForm from '../pages/Admin/AdminCoffeePots/EditCoffeePotPage';
 
 
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom"
 import EditCoffeePage from '../pages/Admin/AdminCoffee/EditCoffeePage'
+import TransitionGroup from 'react-transition-group/Transition'
+
 
 const AppRoutes = () => {
+
+
+
     return (
-        <Routes>
+
+
+        <Routes >
             <Route path='/' element={<Homepage />} />
             <Route path='/coffee-selector' element={<CoffeeSelectorPage />} />
             <Route path='/coffee-selector/coffee-result/:potId' element={<CoffeeResultPage />} />
@@ -31,6 +38,8 @@ const AppRoutes = () => {
             <Route path='/admin-coffee-pots/edit/:id' element={<EditCoffeePotForm />} />
             <Route path='*' element={<ErrorPage />} />
         </Routes>
+
+
     )
 }
 

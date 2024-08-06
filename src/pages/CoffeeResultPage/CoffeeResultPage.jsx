@@ -27,18 +27,20 @@ const CoffeeResultPage = () => {
     }
 
     return (
-        <Container fluid className="bg-secondary m-0 flex-grow-1 text-white d-flex justify-content-center align-items-center">
+        <Container fluid className="bg-white text-black">
             <Row>
-                <Col>
+                <Col className="p-5 d-flex justify-content-center align-items-center">
                     <h1>
                         {
                             loading ?
-                                (<>This is our selection for this {coffeePot[0].name}</>)
+                                (<>This is our selection for {coffeePot[0].name}</>)
                                 :
                                 (<>Loading...</>)
                         }
                     </h1>
                 </Col>
+            </Row>
+            <Row>
                 <CoffeeList />
             </Row>
         </Container>

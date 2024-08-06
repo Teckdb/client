@@ -4,12 +4,12 @@ import './CoffeePotCard.css'
 import { Link } from 'react-router-dom';
 
 
-function CoffeePotCard({ name, description, potId, imagen }) {
+function CoffeePotCard({ name, description, potId, image }) {
 
     return (
         <>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={imagen} className='img-fixed-size' />
+                <Card.Img variant="top" src={image} className='img-fixed-size' />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
