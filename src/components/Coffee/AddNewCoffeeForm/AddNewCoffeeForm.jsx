@@ -305,7 +305,7 @@ const AddNewCoffeeForm = () => {
 
                             <Form.Control
                                 as="textarea"
-                                rowa={10}
+                                row={10}
                                 type="text"
                                 value={coffeeData.description}
                                 name="description"

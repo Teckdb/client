@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Button, Col, Form, Row, Modal } from 'react-bootstrap'
+import { Button, Col, Form, Row, Modal, FormGroup, FloatingLabel, FormFloating, FormControl, FormLabel } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
@@ -10,13 +10,7 @@ const EditCoffeeForm = () => {
     const [coffeeData, setCoffeeData] = useState({
         coffeePotId: 0,
         name: '',
-        available: true,
-        stock: 0,
-        pack: {
-            grames: 0,
-            price: 0
-        },
-
+        available: '',
         image: '',
         rating: 0,
         altitude: 0,
@@ -26,6 +20,18 @@ const EditCoffeeForm = () => {
         grinding: '',
         description: ''
     })
+
+    const [packData, setPackData] = useState(
+        [
+            { grames: 0, price: 0 }
+        ]
+    )
+
+    const [grindingData, setGriding] = useState(
+        [
+            { grinding: '' }
+        ]
+    )
 
     const { id } = useParams()
     const navigate = useNavigate()
@@ -37,7 +43,10 @@ const EditCoffeeForm = () => {
     const fetchCoffeeData = () => {
         axios
             .get(`${API_URL}/coffees/${id}`)
-            .then(res => setCoffeeData(res.data))
+            .then(res => {
+                setCoffeeData(res.data)
+                setPackData(res.data.pack)
+            })
             .catch(err => console.log(err))
     }
 
@@ -59,18 +68,33 @@ const EditCoffeeForm = () => {
 
 
     const handleInputChange = e => {
-        const { value, name } = e.target;
-
-        if (['grames', 'price'].includes(name)) {
-
-            setCoffeeData({
-                ...coffeeData, pack: { ...coffeeData.pack, [name]: value }
-            });
-        } else {
-            setCoffeeData({ ...coffeeData, [name]: value })
-
-        }
+        const { value, name } = e.target
+        setCoffeeData({ ...coffeeData, [name]: value })
     }
+
+    const handlePackChange = (event, currentIndex) => {
+        const { value, name } = event.target
+
+        const packsCopy = [...packData]
+        packsCopy[currentIndex][name] = value
+    }
+
+
+
+    const handleGridingChange = (event, currentIndex) => {
+        const { value, name } = event.target
+
+        const grindingCopy = [...grindingData]
+        grindingCopy[currentIndex][name] = value
+
+        setCoffeeData(grindingCopy)
+    }
+
+    const deleteCoffees = () => {
+        setPackData([...packData, { grames: 0, price: o }])
+    }
+
+
 
     const [show, setShow] = useState(false)
 
@@ -81,148 +105,278 @@ const EditCoffeeForm = () => {
     return (
         <Form onSubmit={handleFormSubmit}>
 
-            <Form.Group as={Row} className="mb-3" controlId="coffeePotIdField">
-                <Form.Label column sm={2}> CoffeePotId </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="number" value={coffeeData.coffeePotId} onChange={handleInputChange} name="coffeePotId" />
+            <FormLabel className='h1'>Edit Coffee</FormLabel>
+            <hr></hr>
+            <Row className='mb-3'>
+
+                <FormGroup as={Col} className='mb-3' controlId='potIdField'>
+
+                    <FloatingLabel
+                        controlId='coffeePotIdField'
+                        label='Coffee Pot Id'
+                        className='mb-3'
+                    >
+
+                        <FormControl
+                            type='number'
+                            value={coffeeData.coffeePotId}
+                            name='coffeePotId'
+                            placeholder='Coffee Por Id'
+                            onChange={handleInputChange} />
+                    </FloatingLabel>
+
+                </FormGroup>
+
+                <FormGroup as={Col} className='mb-3' controlId='nameField'>
+
+                    <FormFloating
+                        controlId='nameField'
+                        label='Name'
+                        className='mb-3'
+                    >
+
+                        <FormControl
+                            type='text'
+                            value={coffeeData.name}
+                            name='name'
+                            placeholder='Coffee Name'
+                            onChange={handleInputChange} />
+
+                    </FormFloating>
+
+                </FormGroup>
+                <Col>
+
+                    <FormGroup className='mb-3' controlId='available'>
+                        <FloatingLabel
+                            label='Available Coffees'
+                            className='mb-3'
+                        >
+                            <Form.Select name='available' onChange={handleInputChange} value={coffeeData.available} >
+                                <option value=''>Choose...</option>
+                                <option value='true'>True</option>
+                                <option value='false'>false</option>
+                            </Form.Select>
+
+                        </FloatingLabel>
+
+                    </FormGroup>
+
                 </Col>
-            </Form.Group>
+            </Row>
 
-            <Form.Group as={Row} className="mb-3" controlId="nameField">
-                <Form.Label column sm={2}> Name </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.name} onChange={handleInputChange} name="name" />
+            <Row>
+                <Col>
+                    <FormGroup as={Col} className='mb-3' controlId='imageField'>
+
+                        <FloatingLabel
+                            controlId='imageField'
+                            label='Image'
+                            className='mb-3'
+                        >
+
+                            <FormControl
+                                type='text'
+                                value={coffeeData.image}
+                                name='image'
+                                placeholder='Image'
+                                onChange={handleInputChange} />
+                        </FloatingLabel>
+
+                    </FormGroup>
+
                 </Col>
-            </Form.Group>
 
-            <Form.Group as={Row} className="mb-3" controlId="availableField">
-                <Form.Label column sm={2}> Available </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.available} onChange={handleInputChange} name="available" />
+                <Col>
+
+                    <FormGroup as={Col} className='mb-3' controlId='ratingField'>
+
+                        <FloatingLabel
+                            controlId='ratingField'
+                            label='Rating'
+                            className='mb-3'>
+
+                            <FormControl
+                                type='number'
+                                value={coffeeData.rating}
+                                name='rating'
+                                placeholder='Rating'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+
+                    </FormGroup>
+
                 </Col>
-            </Form.Group>
+                <Col>
 
+                    <FormGroup as={Col} className='mb-3' controlId='altitudeField'>
 
-            <Form.Group as={Row} className="mb-3" controlId="stockField">
-                <Form.Label column sm={2}> Stock </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="number" value={coffeeData.stock} onChange={handleInputChange} name="stock" />
+                        <FloatingLabel
+                            controlId='altitudeField'
+                            label='Altitude'
+                            className='mb-3'
+                        >
+
+                            <FormControl
+                                type='number'
+                                value={coffeeData.altitude}
+                                name='altitude'
+                                placeholder='Altitude'
+                                onChange={handleInputChange} />
+                        </FloatingLabel>
+                    </FormGroup>
                 </Col>
-            </Form.Group>
+            </Row>
 
-            <Form.Group as={Row} className="mb-3" controlId="packField">
-                <Form.Label column sm={2}> Pack </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.pack} onChange={handleInputChange} name="pack" />
+            <Row>
+
+                <Col>
+                    <FormGroup as={Col} className='mb-3' controlId='varietyField'>
+                        <FloatingLabel
+                            controlId='varietyField'
+                            label='Variety'
+                            className='mb-3'
+                        >
+                            <FormControl
+                                type='text'
+                                value={coffeeData.variety}
+                                name='Variety'
+                                placeholder='Variety'
+                                onChange={handleInputChange} />
+                        </FloatingLabel>
+                    </FormGroup>
                 </Col>
-            </Form.Group>
 
+                <Col>
+                    <FormGroup as={Col} className='mb-3' controlId='processField'>
 
-            <Form.Group as={Row} className="mb-3" controlId="gramesField">
-                <Form.Label as="legend" column sm={2}>
-                    Grames
-                </Form.Label>
-                <Col sm={10}>
-                    <Form.Check
-                        type="radio"
-                        label="250gr"
-                        name="grames"
-                        value={250}
-                        checked={coffeeData.pack.grames === 250}
-                        onChange={handleInputChange}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="500gr"
-                        name="grames"
-                        value={500}
-                        checked={coffeeData.pack.grames === 500}
-                        onChange={handleInputChange}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="1kg"
-                        name="grames"
-                        value={1000}
-                        checked={coffeeData.pack.grames === 1000}
-                        onChange={handleInputChange}
-                    />
+                        <FloatingLabel
+                            controlId='processField'
+                            label='Process'
+                            className='mb-3'>
+
+                            <FormControl
+                                type='text'
+                                value={coffeeData.process}
+                                name='process'
+                                placeholder='Process'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+                    </FormGroup>
+
                 </Col>
-            </Form.Group>
 
+                <Col>
+                    <FormGroup as={Col} className='mb-3' controlId='cataNotesField'>
 
+                        <FloatingLabel
+                            controlId='cataNotesField'
+                            label='Cata Notes'
+                            className='mb-3'
+                        >
 
-            <Form.Group as={Row} className="mb-3" controlId="priceField">
-                <Form.Label column sm={2}> Price </Form.Label>
-                <Col sm={10}>
-                    <Form.Control
-                        type="number"
-                        value={coffeeData.pack.price}
-                        onChange={handleInputChange}
-                        name="price" />
+                            <FormControl
+                                type='text'
+                                value={coffeeData.cataNotes}
+                                name='cataNotes'
+                                placeholder='Cata Notes'
+                                onChange={handleInputChange} />
+
+                        </FloatingLabel>
+                    </FormGroup>
                 </Col>
-            </Form.Group>
+            </Row>
 
+            <Row>
 
-            <Form.Group as={Row} className="mb-3" controlId="imageField">
-                <Form.Label column sm={2}> Image </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.image} onChange={handleInputChange} name="image" />
+                <Col>
+                    <FormGroup as={Col} className='mb-3' controlId='grindingField'>
+
+                        <FloatingLabel
+                            controlId='grindingField'
+                            label='Grinding'
+                            className='mb-3'
+                        >
+                            <Form.Select defaultValue='Choose...'>
+                                <option>Fine Grind</option>
+                                <option>Medium Grind</option>
+                                <option>Course Grind</option>
+                                value={coffeeData.grinding}
+                                onChange={handleInputChange}
+                            </Form.Select>
+
+                        </FloatingLabel>
+                    </FormGroup>
+
                 </Col>
-            </Form.Group>
+                <Col>
+                    <FormGroup as={Col} className='mb-3' controlId='descriptionField'>
+                        <FloatingLabel
+                            controlId='descriptionField'
+                            label='Description'
+                            className='mb-3'>
 
-            <Form.Group as={Row} className="mb-3" controlId="ratingField">
-                <Form.Label column sm={2}> Rating </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="number" value={coffeeData.rating} onChange={handleInputChange} name="rating" />
-                </Col>
-            </Form.Group>
+                            <FormControl
+                                as='textarea'
+                                row={10}
+                                type='text'
+                                value={coffeeData.description}
+                                name='description'
+                                arial-label='With textarea'
+                                placeholder='Description'
+                                onChange={handleInputChange}
+                            />
+                        </FloatingLabel>
 
-            <Form.Group as={Row} className="mb-3" controlId="altitudeField">
-                <Form.Label column sm={2}> Altitude </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="number" value={coffeeData.altitude} onChange={handleInputChange} name="altitude" />
+                    </FormGroup>
                 </Col>
-            </Form.Group>
 
-            <Form.Group as={Row} className="mb-3" controlId="varietyField">
-                <Form.Label column sm={2}> Variety </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.variety} onChange={handleInputChange} name="variety" />
-                </Col>
-            </Form.Group>
+            </Row>
+            <Row>
+                <Col sm={{ span: 6, offsetÇ: 0 }}>
+                    <FormGroup>
+                        <FormLabel>Option Packages</FormLabel>
+                        <br></br>
+                        {
+                            packData.map((eachPack, idx) => {
+                                return (
+                                    <div key={idx}>
+                                        <FormLabel>Pack {idx + 1}</FormLabel>
 
-            <Form.Group as={Row} className="mb-3" controlId="processField">
-                <Form.Label column sm={2}> Process </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.process} onChange={handleInputChange} name="process" />
-                </Col>
-            </Form.Group>
+                                        <FormControl
+                                            type='number'
+                                            controlId='gramesField'
+                                            onChange={e => handlePackChange(e, idx)}
+                                            value={eachPack.grames}
+                                            placeholder='Grames per pack'
+                                            name='grames'
+                                        />
 
-            <Form.Group as={Row} className="mb-3" controlId="cataNotesField">
-                <Form.Label column sm={2}> Cata notes </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.cataNotes} onChange={handleInputChange} name="cataNotes" />
-                </Col>
-            </Form.Group>
+                                        <FormControl
+                                            type='number'
+                                            controlId='priceField'
+                                            onChange={e => handlePackChange(e, idx)}
+                                            value={eachPack.price}
+                                            placeholder='Price per pack'
+                                            name='price'
+                                        />
 
-            <Form.Group as={Row} className="mb-3" controlId="gridingField">
-                <Form.Label column sm={2}> Grinding </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.grinding} onChange={handleInputChange} name="grinding" />
-                </Col>
-            </Form.Group>
+                                    </div>
+                                )
 
-            <Form.Group as={Row} className="mb-3" controlId="descriptionField">
-                <Form.Label column sm={2}> Description </Form.Label>
-                <Col sm={10}>
-                    <Form.Control type="text" value={coffeeData.description} onChange={handleInputChange} name="description" />
+                            })
+                        }
+                        <Button variant='dark' size='sm' onClick={deleteCoffee}>Delete Pack</Button>
+                    </FormGroup>
                 </Col>
-            </Form.Group>
+
+            </Row>
 
             <Form.Group as={Row} className="mb-3">
                 <Col sm={{ span: 10, offset: 2 }}>
-                    <Button type="submit">Sign in</Button>
+                    <Button type="submit">Submit</Button>
 
                     <Modal
                         show={show}
