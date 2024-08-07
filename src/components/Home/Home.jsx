@@ -1,4 +1,4 @@
-import { Carousel } from 'react-bootstrap';
+import { Carousel, CarouselCaption } from 'react-bootstrap';
 import * as IMAGES from './../../conts/imageData'
 
 
@@ -11,8 +11,10 @@ function Home() {
                     src={IMAGES.HERO_IMG_1}
                     alt="First slide"
                 />
-                <Carousel.Caption className='text-white text-align-rigth fw-bold bg-dark' >
-                    <h5>Elevate Your Coffee Experience</h5>
+                <Carousel.Caption className='custom-caption text-white fw-bold' >
+                    <h2>Elevate Your Coffee Experience</h2>
+
+                    <hr></hr>
                     <p>
                         Discover the finest specialty coffees sourced from the world's best farms.
                         Handpicked, expertly roasted, and delivered fresh to your door.
@@ -27,8 +29,10 @@ function Home() {
                     src={IMAGES.HERO_IMG_2}
                     alt="Second slide"
                 />
-                <Carousel.Caption className='text-white fw-bold bg-dark'>
-                    <h5>Savor the Art of Specialty Coffee</h5>
+                <Carousel.Caption className='custom-caption text-white fw-bold'>
+                    <h2>Savor the Art of Specialty Coffee</h2>
+
+                    <hr></hr>
                     <p>Explore the world of specialty coffee, where every bean is a masterpiece.
                         From farm to cup, our curated selection offers exceptional flavors, handpicked and expertly roasted to perfection.
                         Elevate your coffee ritual with unique blends and single-origin treasures that awaken your senses.
@@ -41,8 +45,10 @@ function Home() {
                     src={IMAGES.HERO_IMG_3}
                     alt="Third slide"
                 />
-                <Carousel.Caption className='text-white fw-bold bg-dark' >
-                    <h5>Discover Your Perfect Brew</h5>
+                <Carousel.Caption className='custom-caption text-white fw-bold' >
+                    <h2>Discover Your Perfect Brew</h2>
+
+                    <hr></hr>
                     <p>
                         Dive into the world of specialty coffee with our carefully curated selection.
                         Sourced from the finest farms around the globe, each bean is roasted to perfection to bring out unique, rich flavors.
