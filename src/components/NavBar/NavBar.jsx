@@ -1,6 +1,7 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Col, Container, Nav, Navbar, Row, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from './../../assets/logo.png'
+import SearchCoffees from '../Shared/SearchCoffees/SearchCoffees';
 
 const NavBar = () => {
     return (
@@ -15,6 +16,13 @@ const NavBar = () => {
                         alt="React Bootstrap logo"
                     />
                 </Navbar.Brand>
+                <Form >
+                    <Row>
+                        <Col xs="auto">
+                            <SearchCoffees />
+                        </Col>
+                    </Row>
+                </Form>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto d-flex align-items-center">

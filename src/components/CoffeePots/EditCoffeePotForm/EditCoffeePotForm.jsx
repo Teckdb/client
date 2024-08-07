@@ -156,12 +156,14 @@ const EditCoffeePotForm = ({ id }) => {
                     >
                         <Form.Control
                             as="textarea"
-                            rows={10}
+
                             value={coffeePotData.description}
                             name='description'
                             aria-label="With textarea"
                             placeholder='Description'
-                            onChange={handleInputChange} />
+                            onChange={handleInputChange}
+                            style={{ width: '100%', minHeight: '200px' }}
+                        />
                     </FloatingLabel>
                 </InputGroup>
             </Form.Group>

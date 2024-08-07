@@ -13,6 +13,7 @@ const CoffeCardForAdmin = ({ name, id }) => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
     return (
         <>
             <Link onClick={handleShow} className='linkDecorationNone'>
