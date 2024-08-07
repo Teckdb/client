@@ -1,7 +1,6 @@
-import Carousel from 'react-bootstrap/Carousel';
-import oneCarouselImg from './../../assets/carousel-img/1.jpg'
-import twoCarouselImg from './../../assets/carousel-img/2.jpg'
-import threeCarouselImg from './../../assets/carousel-img/3.jpg'
+import { Carousel } from 'react-bootstrap';
+import * as IMAGES from './../../conts/imageData'
+
 
 function Home() {
     return (
@@ -9,42 +8,46 @@ function Home() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={oneCarouselImg}
+                    src={IMAGES.HERO_IMG_1}
                     alt="First slide"
                 />
-                <Carousel.Caption className='text-white fw-bold bg-dark'>
-                    <h5>The Journey of Coffee Beans</h5>
+                <Carousel.Caption className='text-white text-align-rigth fw-bold bg-dark' >
+                    <h5>Elevate Your Coffee Experience</h5>
                     <p>
-                        Coffee is cultivated in tropical regions around the world,
-                        primarily in countries like Brazil, Colombia, and Ethiopia.
-                        The beans are harvested, processed, and shipped globally,
-                        bringing diverse flavors to your cup. Each region imparts
-                        unique characteristics to the beans, influenced by climate,
-                        altitude, and soil.
+                        Discover the finest specialty coffees sourced from the world's best farms.
+                        Handpicked, expertly roasted, and delivered fresh to your door.
+                        Experience rich, complex flavors with every cup and join a community of coffee lovers who demand the best.
+                        Start your journey with us today.
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={twoCarouselImg}
+                    src={IMAGES.HERO_IMG_2}
                     alt="Second slide"
                 />
                 <Carousel.Caption className='text-white fw-bold bg-dark'>
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5>Savor the Art of Specialty Coffee</h5>
+                    <p>Explore the world of specialty coffee, where every bean is a masterpiece.
+                        From farm to cup, our curated selection offers exceptional flavors, handpicked and expertly roasted to perfection.
+                        Elevate your coffee ritual with unique blends and single-origin treasures that awaken your senses.
+                        Discover the finest coffee experience, delivered fresh to your door.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={threeCarouselImg}
+                    src={IMAGES.HERO_IMG_3}
                     alt="Third slide"
                 />
                 <Carousel.Caption className='text-white fw-bold bg-dark' >
-                    <h5>Third slide label</h5>
+                    <h5>Discover Your Perfect Brew</h5>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Dive into the world of specialty coffee with our carefully curated selection.
+                        Sourced from the finest farms around the globe, each bean is roasted to perfection to bring out unique, rich flavors.
+                        Whether you prefer a bold espresso or a smooth pour-over, we have the perfect coffee to elevate your daily ritual.
+                        Shop now and experience coffee like never before.
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
