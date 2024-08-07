@@ -2,6 +2,7 @@ import { Col, Container, Nav, Navbar, Row, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import SearchCoffees from '../Shared/SearchCoffees/SearchCoffees';
+import { LOGO_SMALL } from '../../conts/imageData';
 
 const NavBar = () => {
     return (
@@ -9,7 +10,7 @@ const NavBar = () => {
             <Container>
                 <Navbar.Brand as={Link} to="/">
                     <img
-                        src=''
+                        src={LOGO_SMALL}
                         width="50"
                         height="50"
                         className="d-inline-block align-top"

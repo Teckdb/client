@@ -1,4 +1,4 @@
-import { Accordion, Card, Col, Container, Row } from "react-bootstrap"
+import { Accordion, Card, CardSubtitle, Col, Container, Row, Button, InputGroup, Form } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
@@ -33,15 +33,43 @@ const CoffeeDetailsPage = () => {
                     <Card.Img variant="top" src={coffee.image} className='img-fluid img-limited-height' />
                 </Col>
                 <Col xs={{ span: 7 }} className="p-5 m-0 d-flex justify-content-center flex-column">
-                    <Card.Title>{coffee.name}</Card.Title>
-                    <Card.Text>
-                        {coffee.cata_notes}
+                    <Card.Title className="custom-coffee-card-details mb-4"><h2>{coffee.name}</h2></Card.Title>
+                    <Card.Text className="custom-coffee-card-details">
+                        <h5 className="custom-coffee-card-subtile"><strong>Cata Notes:</strong> {coffee.cata_notes}</h5>
                     </Card.Text>
+                    <br></br>
+                    <CardSubtitle >
+                        <h5 className="custom-coffee-card-details-subtitle"><strong>Variety:</strong> {coffee.variety}</h5>
+                    </CardSubtitle>
+                    <br></br>
+                    <CardSubtitle className="custom-coffee-card-details">
+                        <h5 className="custom-coffee-card-details-subtitle"><strong>Process:</strong> {coffee.process}</h5>
+                    </CardSubtitle>
+                    <br></br>
+                    <CardSubtitle>
+                        <h5 className="custom-coffee-card-details-subtitle"><strong>Altitude:</strong> {coffee.altitude} metres</h5>
+                    </CardSubtitle>
+                    <br></br>
+                    <CardSubtitle>
+                        <h5 className="custom-coffee-card-details-subtitle mb-5"><strong>Rating:</strong> {coffee.rating} SCA</h5>
+                        <Button variant="primary" size="lg">Add to Cart</Button>{' '}
+                        <InputGroup className="mb-3">
+                            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                            <Form.Control
+                                placeholder="Username"
+                                aria-label="Username"
+                                aria-describedby="basic-addon1"
+                            />
+                        </InputGroup>
+
+                    </CardSubtitle>
+
+
                 </Col>
             </Row>
             <Accordion>
                 <Accordion.Item eventKey="0">
-                    <Accordion.Header>Description</Accordion.Header>
+                    <Accordion.Header><h5>Description</h5></Accordion.Header>
                     <Accordion.Body>
                         <p>{coffee.description}</p>
                     </Accordion.Body>
@@ -49,13 +77,13 @@ const CoffeeDetailsPage = () => {
             </Accordion>
             <Accordion>
                 <Accordion.Item eventKey="1">
-                    <Accordion.Header>Pack Options</Accordion.Header>
+                    <Accordion.Header><h5>Pack Options</h5></Accordion.Header>
                     <Accordion.Body>
                         {loading ? (
                             <p>No pack options available.</p>
                         ) : (
                             coffee.pack.map(((elm, idx) => {
-                                return (<p key={idx}>{elm.grames} grams with a price of {elm.price}$</p>)
+                                return (<p key={idx}><strong>{elm.grames}</strong> grams with a price of <strong>{elm.price}$</strong></p>)
                             }))
                         )}
                     </Accordion.Body>
@@ -63,7 +91,7 @@ const CoffeeDetailsPage = () => {
             </Accordion>
             <Accordion>
                 <Accordion.Item eventKey="1">
-                    <Accordion.Header>Location</Accordion.Header>
+                    <Accordion.Header><h5>Location</h5></Accordion.Header>
                     <Accordion.Body>
                         {
                             loading ? <p>No pack options available.</p> : <LocationMap location={coffee.location} />
