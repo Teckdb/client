@@ -1,4 +1,4 @@
-import { Col, Container, Nav, Navbar, Row, Form } from 'react-bootstrap';
+import { Container, Nav, Navbar, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import SearchCoffees from '../Shared/SearchCoffees/SearchCoffees';
@@ -17,17 +17,21 @@ const NavBar = () => {
                         alt="React Bootstrap logo"
                     />
                 </Navbar.Brand>
-                <Form >
-                    <SearchCoffees />
-                </Form>
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
                 <Navbar.Collapse id="basic-navbar-nav">
+
                     <Nav className="ms-auto d-flex align-items-center">
+
                         <Nav.Link as={Link} to="/coffee-selector">Coffees</Nav.Link>
                         <Nav.Link as={Link} to="/about">About us</Nav.Link>
                         <Nav.Link as={Link} to="/wiki-coffee">Wiki Coffee</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
+                <Form style={{ marginLeft: '20px' }}>
+                    <SearchCoffees />
+                </Form>
             </Container>
         </Navbar>
     );
