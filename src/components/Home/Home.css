@@ -1,14 +1,8 @@
 .custom-caption {
-    color: #ffffff;
-    /* Texto blanco */
-    font-weight: bold;
-    /* Texto en negrita */
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Fondo oscuro con transparencia */
-    padding: 20px;
-    /* Espacio interno */
-    border-radius: 10px;
-    /* Bordes redondeados */
-    text-align: center;
-    /* Alineación centrada */
+    left: 55%;
+    background-color: red;
+}
+
+.custom-caption h5 {
+    left: 55%;
 }

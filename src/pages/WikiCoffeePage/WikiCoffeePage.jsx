@@ -36,7 +36,7 @@ const WikiCoffeePage = () => {
                     <Image src="src/assets/lenses-lattes.jpg" thumbnail />
                     <Ratio aspectRatio="16x9">
                         <iframe
-                            src="src/assets/CAFE CLANDESTINO.mov"
+                            src=""
                             title="YouTube video"
                             allowFullScreen>
                         </iframe>
