@@ -4,10 +4,10 @@ import Carousel from "./Carousel"
 import Rig from "./Rig"
 import './util'
 
-const Main = () => {
+const MainThreeCarouselSelector = () => {
 
     return (
-        <Canvas camera={{ position: [0, 0, 100], fov: 18 }}>
+        <Canvas style={{ background: '#D2B48C' }} camera={{ position: [0, 0, 100], fov: 18 }}>
             <fog attach="fog" args={['#a79', 8.5, 12]} />
             <ScrollControls pages={4} infinite>
                 <Rig rotation={[0, 0, 0.15]}>
@@ -15,9 +15,8 @@ const Main = () => {
                 </Rig>
                 {/* <Banner position={[0, -0.15, 0]} /> */}
             </ScrollControls>
-            <Environment preset="dawn" background blur={0.5} />
         </Canvas>
     )
 }
 
-export default Main
+export default MainThreeCarouselSelector

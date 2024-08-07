@@ -5,25 +5,16 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import CoffeeSelectorPage from '../pages/CoffeeSelectorPage/CoffeeSelectorPage'
 import CoffeeDetailsPage from '../pages/CoffeeDetailsPage/CoffeeDetailsPage'
 import CoffeeResultPage from '../pages/CoffeeResultPage/CoffeeResultPage'
-
 import AdminPage from '../pages/Admin/AdminPage';
-
-
 import EditCoffeePotForm from '../pages/Admin/AdminCoffeePots/EditCoffeePotPage';
-
-
-import { Route, Routes, useLocation } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import EditCoffeePage from '../pages/Admin/AdminCoffee/EditCoffeePage'
-
 import AdminEditList from '../pages/Admin/AdminEditList'
 
 
+
 const AppRoutes = () => {
-
-
-
     return (
-
 
         <Routes >
             <Route path='/' element={<Homepage />} />
@@ -38,7 +29,6 @@ const AppRoutes = () => {
             <Route path='/admin-coffee-pots/edit/:id' element={<EditCoffeePotForm />} />
             <Route path='*' element={<ErrorPage />} />
         </Routes>
-
 
     )
 }
