@@ -1,21 +1,14 @@
-import { Col, Row } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import EditCoffeeForm from "../../../components/Coffee/EditCoffeeForm/EditCoffeeForm"
 import TabAdmin from './../../../components/TabAdmin/TabAdmin'
 
-
 const EditCoffeePage = () => {
-
     return (
-        <>
+        <Container>
             <TabAdmin />
-            <Row className="bg-white">
-                <Col>
-                    <h1>Admin Page</h1>
-                </Col>
-            </Row>
+            <h1>Admin Page</h1>
             <EditCoffeeForm />
-        </>
-
+        </Container>
     )
 }
 

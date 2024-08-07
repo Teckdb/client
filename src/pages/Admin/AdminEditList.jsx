@@ -5,17 +5,11 @@ import CoffeeListForAdmin from "../../components/Coffee/CoffeeList/CoffeeListFor
 import CoffeePotsListForAdmin from "../../components/CoffeePots/CoffeePotsList/CoffeePotsListForAdmin"
 
 const AdminEditList = () => {
-
-
     return (
         <>
             <TabAdmin />
-            <Row className="bg-white">
-                <Col>
-                    <h1>Admin Edit Page</h1>
-                </Col>
-            </Row>
-            <Row className="bg-white">
+            <h1>Admin Edit Page</h1>
+            <Row className="">
                 <Col>
                     <h2>List of Coffee Products</h2>
                     <CoffeeListForAdmin />
@@ -26,8 +20,6 @@ const AdminEditList = () => {
                 </Col>
             </Row>
         </>
-
-
     )
 }
 

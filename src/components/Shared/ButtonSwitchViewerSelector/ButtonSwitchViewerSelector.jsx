@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import ToggleButton from 'react-bootstrap/ToggleButton';
+import { ButtonGroup, ToggleButton } from 'react-bootstrap';
 
 function ButtonSwitchViewerSelector({ ItsChecked }) {
 

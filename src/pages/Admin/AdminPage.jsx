@@ -1,21 +1,14 @@
-import { Col, Row } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import AddNewCoffeePotForm from "../../components/CoffeePots/AddNewCoffeePotForm/AddNewCoffeePotForm"
 import AddNewCoffeeForm from "../../components/Coffee/AddNewCoffeeForm/AddNewCoffeeForm"
 import TabAdmin from "../../components/TabAdmin/TabAdmin"
 
-
 const adminPage = () => {
-
-
     return (
-        <>
+        <Container>
             <TabAdmin />
-            <Row className="bg-white">
-                <Col>
-                    <h1>Admin Page</h1>
-                </Col>
-            </Row>
-            <Row className="bg-white">
+            <h1 >Admin Page</h1>
+            <Row>
                 <Col className="p-5">
                     <AddNewCoffeeForm />
                 </Col>
@@ -23,9 +16,7 @@ const adminPage = () => {
                     <AddNewCoffeePotForm />
                 </Col>
             </Row>
-        </>
-
-
+        </Container>
     )
 }
 

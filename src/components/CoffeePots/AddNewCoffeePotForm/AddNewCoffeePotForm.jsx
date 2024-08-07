@@ -4,13 +4,12 @@ import { Col, FloatingLabel, Row, Button, Form, InputGroup } from 'react-bootstr
 const API_URL = 'http://localhost:5005'
 
 const AddNewCoffeePotForm = () => {
-
     const [coffeePotData, setCoffeePotData] = useState({
         potId: 0,
         name: "",
         extraction: "",
         barPressure: 0,
-        imagen: "URL",
+        image: "URL",                      // TODO: RENOMINAR A IMAGE
         description: ""
     })
 
@@ -33,9 +32,7 @@ const AddNewCoffeePotForm = () => {
             <Form.Label className='h1'>New Coffee Pot</Form.Label>
             <hr></hr>
             <Row className="mb-3">
-
                 <Form.Group as={Col} className="mb-3" controlId="potIdField">
-
                     <FloatingLabel
                         controlId="potIdField"
                         label="Coffee Pot ID"
@@ -46,12 +43,9 @@ const AddNewCoffeePotForm = () => {
                             name='potId'
                             placeholder="Coffee Pot"
                             onChange={handleInputChange} />
-
                     </FloatingLabel>
                 </Form.Group>
-
                 <Form.Group as={Col} className="mb-3" controlId="nameField">
-
                     <FloatingLabel
                         controlId="nameField"
                         label="Name"
@@ -65,12 +59,10 @@ const AddNewCoffeePotForm = () => {
                             onChange={handleInputChange} />
                     </FloatingLabel>
                 </Form.Group>
-
             </Row>
             <Row>
                 <Col lg={8}>
                     <Form.Group className="mb-3" controlId="extractionField">
-
                         <FloatingLabel
                             controlId="extractionField"
                             label="Extraction Method"
@@ -87,7 +79,6 @@ const AddNewCoffeePotForm = () => {
                 </Col>
                 <Col lg={4}>
                     <Form.Group className="mb-3" controlId="barPressureField">
-
                         <FloatingLabel
                             controlId="barPressureField"
                             label="Bar Pressure"
@@ -103,23 +94,20 @@ const AddNewCoffeePotForm = () => {
                     </Form.Group>
                 </Col>
             </Row>
-
-            <Form.Group className="mb-3" controlId="imagenField">
-
+            <Form.Group className="mb-3" controlId="imageField">
                 <FloatingLabel
-                    controlId="imagenField"
+                    controlId="imageField"
                     label="Image URL"
                     className="mb-3"
                 >
                     <Form.Control
                         type="text"
-                        value={coffeePotData.imagen}
-                        name='imagen'
+                        value={coffeePotData.image}
+                        name='image'
                         placeholder="Image URL"
                         onChange={handleInputChange} />
                 </FloatingLabel>
             </Form.Group>
-
             <Form.Group className="mb-3" controlId="descriptionField">
                 <InputGroup>
                     <FloatingLabel

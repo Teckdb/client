@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 import './CoffeePotCard.css'
 import { Link } from 'react-router-dom';
 
-
 function CoffeePotCard({ name, description, potId, image }) {
 
     return (

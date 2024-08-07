@@ -10,6 +10,7 @@ function CardThree({ id, url, ...props }) {
 
     const ref = useRef()
     const [hovered, hover] = useState(false)
+
     const navigate = useNavigate()
 
     const pointerOver = (e) => (e.stopPropagation(), hover(true))
@@ -17,7 +18,6 @@ function CardThree({ id, url, ...props }) {
 
     const handleClick = () => {
         hovered && navigate(`coffee-result/${id}`)
-
     }
 
     useFrame((state, delta) => {
@@ -28,7 +28,6 @@ function CardThree({ id, url, ...props }) {
         easing.damp(ref.current.material.color, 'g', hovered ? 1 : 0.3, 0.2, delta);
         easing.damp(ref.current.material.color, 'b', hovered ? 1 : 0.3, 0.2, delta);
     })
-
 
     return (
         <Image

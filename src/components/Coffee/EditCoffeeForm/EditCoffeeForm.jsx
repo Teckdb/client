@@ -1,12 +1,11 @@
 import axios from 'axios'
 import { Button, Col, Form, Row, Modal, FormGroup, FloatingLabel, FormFloating, FormControl, FormLabel } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const API_URL = 'http://localhost:5005'
 
 const EditCoffeeForm = ({ id }) => {
-
     const [coffeeData, setCoffeeData] = useState({
         coffeePotId: 0,
         name: '',
@@ -65,7 +64,6 @@ const EditCoffeeForm = ({ id }) => {
             .catch(err => console.log(err))
     }
 
-
     const handleInputChange = e => {
         const { value, name } = e.target
         setCoffeeData({ ...coffeeData, [name]: value })
@@ -77,8 +75,6 @@ const EditCoffeeForm = ({ id }) => {
         const packsCopy = [...packData]
         packsCopy[currentIndex][name] = value
     }
-
-
 
     const handleGridingChange = (event, currentIndex) => {
         const { value, name } = event.target
@@ -93,16 +89,13 @@ const EditCoffeeForm = ({ id }) => {
         setPackData([...packData, { grames: 0, price: o }])
     }
 
-
-
     const [show, setShow] = useState(false)
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
 
-
     return (
-        <Form onSubmit={handleFormSubmit} className='bg-white'>
+        <Form onSubmit={handleFormSubmit} className=''>
 
             <FormLabel className='h1'>Edit Coffee</FormLabel>
             <hr></hr>
@@ -115,7 +108,6 @@ const EditCoffeeForm = ({ id }) => {
                         label='Coffee Pot Id'
                         className='mb-3'
                     >
-
                         <FormControl
                             type='number'
                             value={coffeeData.coffeePotId}
@@ -123,29 +115,22 @@ const EditCoffeeForm = ({ id }) => {
                             placeholder='Coffee Por Id'
                             onChange={handleInputChange} />
                     </FloatingLabel>
-
                 </FormGroup>
-
                 <FormGroup as={Col} className='mb-3' controlId='nameField'>
-
                     <FormFloating
                         controlId='nameField'
                         label='Name'
                         className='mb-3'
                     >
-
                         <FormControl
                             type='text'
                             value={coffeeData.name}
                             name='name'
                             placeholder='Coffee Name'
                             onChange={handleInputChange} />
-
                     </FormFloating>
-
                 </FormGroup>
                 <Col>
-
                     <FormGroup className='mb-3' controlId='available'>
                         <FloatingLabel
                             label='Available Coffees'
@@ -156,24 +141,18 @@ const EditCoffeeForm = ({ id }) => {
                                 <option value='true'>True</option>
                                 <option value='false'>false</option>
                             </Form.Select>
-
                         </FloatingLabel>
-
                     </FormGroup>
-
                 </Col>
             </Row>
-
             <Row>
                 <Col>
                     <FormGroup as={Col} className='mb-3' controlId='imageField'>
-
                         <FloatingLabel
                             controlId='imageField'
                             label='Image'
                             className='mb-3'
                         >
-
                             <FormControl
                                 type='text'
                                 value={coffeeData.image}
@@ -181,15 +160,10 @@ const EditCoffeeForm = ({ id }) => {
                                 placeholder='Image'
                                 onChange={handleInputChange} />
                         </FloatingLabel>
-
                     </FormGroup>
-
                 </Col>
-
                 <Col>
-
                     <FormGroup as={Col} className='mb-3' controlId='ratingField'>
-
                         <FloatingLabel
                             controlId='ratingField'
                             label='Rating'
@@ -201,22 +175,16 @@ const EditCoffeeForm = ({ id }) => {
                                 name='rating'
                                 placeholder='Rating'
                                 onChange={handleInputChange} />
-
                         </FloatingLabel>
-
                     </FormGroup>
-
                 </Col>
                 <Col>
-
                     <FormGroup as={Col} className='mb-3' controlId='altitudeField'>
-
                         <FloatingLabel
                             controlId='altitudeField'
                             label='Altitude'
                             className='mb-3'
                         >
-
                             <FormControl
                                 type='number'
                                 value={coffeeData.altitude}
@@ -227,9 +195,7 @@ const EditCoffeeForm = ({ id }) => {
                     </FormGroup>
                 </Col>
             </Row>
-
             <Row>
-
                 <Col>
                     <FormGroup as={Col} className='mb-3' controlId='varietyField'>
                         <FloatingLabel
@@ -246,53 +212,41 @@ const EditCoffeeForm = ({ id }) => {
                         </FloatingLabel>
                     </FormGroup>
                 </Col>
-
                 <Col>
                     <FormGroup as={Col} className='mb-3' controlId='processField'>
-
                         <FloatingLabel
                             controlId='processField'
                             label='Process'
                             className='mb-3'>
-
                             <FormControl
                                 type='text'
                                 value={coffeeData.process}
                                 name='process'
                                 placeholder='Process'
                                 onChange={handleInputChange} />
-
                         </FloatingLabel>
                     </FormGroup>
-
                 </Col>
-
                 <Col>
                     <FormGroup as={Col} className='mb-3' controlId='cataNotesField'>
-
                         <FloatingLabel
                             controlId='cataNotesField'
                             label='Cata Notes'
                             className='mb-3'
                         >
-
                             <FormControl
                                 type='text'
                                 value={coffeeData.cataNotes}
                                 name='cataNotes'
                                 placeholder='Cata Notes'
                                 onChange={handleInputChange} />
-
                         </FloatingLabel>
                     </FormGroup>
                 </Col>
             </Row>
-
             <Row>
-
                 <Col>
                     <FormGroup as={Col} className='mb-3' controlId='grindingField'>
-
                         <FloatingLabel
                             controlId='grindingField'
                             label='Grinding'
@@ -305,10 +259,8 @@ const EditCoffeeForm = ({ id }) => {
                                 value={coffeeData.grinding}
                                 onChange={handleInputChange}
                             </Form.Select>
-
                         </FloatingLabel>
                     </FormGroup>
-
                 </Col>
                 <Col>
                     <FormGroup as={Col} className='mb-3' controlId='descriptionField'>
@@ -316,7 +268,6 @@ const EditCoffeeForm = ({ id }) => {
                             controlId='descriptionField'
                             label='Description'
                             className='mb-3'>
-
                             <FormControl
                                 as='textarea'
                                 row={10}
@@ -328,10 +279,8 @@ const EditCoffeeForm = ({ id }) => {
                                 onChange={handleInputChange}
                             />
                         </FloatingLabel>
-
                     </FormGroup>
                 </Col>
-
             </Row>
             <Row>
                 <Col sm={{ span: 6, offsetÇ: 0 }}>
@@ -343,7 +292,6 @@ const EditCoffeeForm = ({ id }) => {
                                 return (
                                     <div key={idx}>
                                         <FormLabel>Pack {idx + 1}</FormLabel>
-
                                         <FormControl
                                             type='number'
                                             controlId='gramesField'
@@ -352,7 +300,6 @@ const EditCoffeeForm = ({ id }) => {
                                             placeholder='Grames per pack'
                                             name='grames'
                                         />
-
                                         <FormControl
                                             type='number'
                                             controlId='priceField'
@@ -361,29 +308,23 @@ const EditCoffeeForm = ({ id }) => {
                                             placeholder='Price per pack'
                                             name='price'
                                         />
-
                                     </div>
                                 )
-
                             })
                         }
                         <Button variant='dark' size='sm' onClick={deleteCoffee}>Delete Pack</Button>
                     </FormGroup>
                 </Col>
-
             </Row>
-
             <Form.Group as={Row} className="mb-3">
                 <Col sm={{ span: 10, offset: 2 }}>
                     <Button type="submit">Submit</Button>
-
                     <Modal
                         show={show}
                         onHide={handleClose}
                         backdrop="static"
                         keyboard={false}
                     >
-
                         < Modal.Header closeButton >
                             <Modal.Title>Confirm Deletion</Modal.Title>
                         </Modal.Header >
@@ -399,16 +340,9 @@ const EditCoffeeForm = ({ id }) => {
                     <Button variant='danger' onClick={handleShow} className='ms-3'>
                         Delete
                     </Button>
-
                 </Col>
             </Form.Group>
-
         </Form>
-
-
-
-
     )
-
 }
 export default EditCoffeeForm

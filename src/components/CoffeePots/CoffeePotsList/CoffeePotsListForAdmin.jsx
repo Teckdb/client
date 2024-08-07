@@ -5,7 +5,6 @@ import CoffeePotCardForAdmin from "../CoffeePotCard/CoffeePotCardForAdmin"
 const API_URL = 'http://localhost:5005'
 
 const CoffeePotsListForAdmin = () => {
-
     const [coffeePots, setCoffeesPots] = useState([])
 
     const fetchAllCoffePots = () => {

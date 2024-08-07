@@ -1,12 +1,9 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import './CoffeeCardForAdmin.css';
 
-import './CoffeeCard.css'
+import EditCoffeeForm from '../EditCoffeeForm/EditCoffeeForm';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Modal } from 'react-bootstrap';
-import EditCoffeeForm from '../EditCoffeeForm/EditCoffeeForm';
-import './CoffeeCardForAdmin.css';
+import { Modal, Card, Button } from 'react-bootstrap';
 
 const CoffeCardForAdmin = ({ name, id }) => {
     const [show, setShow] = useState(false);
@@ -23,8 +20,6 @@ const CoffeCardForAdmin = ({ name, id }) => {
                     </Card.Body>
                 </Card>
             </Link>
-
-
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
@@ -39,7 +34,6 @@ const CoffeCardForAdmin = ({ name, id }) => {
                 </Modal.Footer>
             </Modal>
         </>
-
     );
 }
 

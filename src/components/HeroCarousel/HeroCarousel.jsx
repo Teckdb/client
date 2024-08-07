@@ -1,8 +1,7 @@
-import { Carousel, CarouselCaption } from 'react-bootstrap';
-import * as IMAGES from './../../conts/imageData'
+import { Carousel } from 'react-bootstrap';
+import * as IMAGES from '../../conts/imageData'
 
-
-function Home() {
+function HeroCarousel() {
     return (
         <Carousel data-bs-theme="dark">
             <Carousel.Item>
@@ -13,7 +12,6 @@ function Home() {
                 />
                 <Carousel.Caption className='custom-caption text-white fw-bold' >
                     <h2>Elevate Your Coffee Experience</h2>
-
                     <hr></hr>
                     <p>
                         Discover the finest specialty coffees sourced from the world's best farms.
@@ -31,7 +29,6 @@ function Home() {
                 />
                 <Carousel.Caption className='custom-caption text-white fw-bold'>
                     <h2>Savor the Art of Specialty Coffee</h2>
-
                     <hr></hr>
                     <p>Explore the world of specialty coffee, where every bean is a masterpiece.
                         From farm to cup, our curated selection offers exceptional flavors, handpicked and expertly roasted to perfection.
@@ -47,7 +44,6 @@ function Home() {
                 />
                 <Carousel.Caption className='custom-caption text-white fw-bold' >
                     <h2>Discover Your Perfect Brew</h2>
-
                     <hr></hr>
                     <p>
                         Dive into the world of specialty coffee with our carefully curated selection.
@@ -61,4 +57,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default HeroCarousel;

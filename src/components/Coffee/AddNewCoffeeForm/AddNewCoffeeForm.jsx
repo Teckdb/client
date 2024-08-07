@@ -5,7 +5,6 @@ import { Button, Col, FloatingLabel, Form, FormControl, FormGroup, FormLabel, Ro
 const API_URL = 'http://localhost:5005'
 
 const AddNewCoffeeForm = () => {
-
     const [coffeeData, setCoffeeData] = useState({
         coffeePotId: 0,
         name: '',
@@ -20,25 +19,18 @@ const AddNewCoffeeForm = () => {
         description: ''
     })
 
-    const [packData, setPackData] = useState(
-        [
-            { grames: '', price: '' }
-        ]
-    )
+    const [packData, setPackData] = useState([{
+        grames: '',
+        price: ''
+    }])
 
-    const [grindingData, setGriding] = useState(
-        [
-            { grinding: '' }
-        ]
-    )
-
-
-
+    const [grindingData, setGriding] = useState([{
+        grinding: ''
+    }])
 
     const handleInputChange = e => {
         const { value, name } = e.target
         setCoffeeData({ ...coffeeData, [name]: value })
-
     }
 
     const handlePackChange = (event, currentIndex) => {
@@ -48,15 +40,6 @@ const AddNewCoffeeForm = () => {
         packsCopy[currentIndex][name] = value
 
         setPackData(packsCopy)
-    }
-
-    const handleGridingChange = (event, currentIndex) => {
-        const { value, name } = event.target
-
-        const grindingCopy = [...grindingData]
-        grindingCopy[currentIndex][name] = value
-
-        setCoffeeData(grindingCopy)
     }
 
     const addNewPack = () => {
@@ -71,30 +54,17 @@ const AddNewCoffeeForm = () => {
         e.preventDefault()
 
         const newCoffee = {
-            coffeePotId: coffeeData.coffeePotId,
-            name: coffeeData.name,
-            available: coffeeData.available,
+            ...coffeeData,
             pack: packData,
-            image: coffeeData.image,
-            rating: coffeeData.rating,
-            altitude: coffeeData.altitude,
-            variety: coffeeData.variety,
-            process: coffeeData.process,
-            cataNotes: coffeeData.cataNotes,
-            grinding: coffeeData.grinding,
-            description: coffeeData.description
         }
 
         axios
             .post(`${API_URL}/coffees`, newCoffee)
-            .then(alert("send!"))
+            .then(() => alert("send!"))
             .catch(err => console.log(err))
-
-
     }
 
     return (
-
         <Form onSubmit={handleFormSubmit}>
 
             <FormLabel className="h1">New coffee</FormLabel>
@@ -156,7 +126,6 @@ const AddNewCoffeeForm = () => {
                 </Col>
             </Row>
             <Row>
-
                 <Col>
                     <FormGroup as={Col} className="mb-3" controlId="imageField">
 
@@ -255,7 +224,6 @@ const AddNewCoffeeForm = () => {
                         </FloatingLabel>
                     </FormGroup>
                 </Col>
-
                 <Col>
                     <FormGroup as={Col} className="mb-3" controlId="cataNotesField">
 
@@ -275,7 +243,6 @@ const AddNewCoffeeForm = () => {
                         </FloatingLabel>
                     </FormGroup>
                 </Col>
-
             </Row>
             <Row>
                 <Col>
@@ -322,7 +289,6 @@ const AddNewCoffeeForm = () => {
                 </Col>
             </Row>
             <Row className='mb-5'>
-
                 <Col sm={{ span: 6, offset: 0 }}>
                     <FormGroup>
                         <FormLabel className='mb-5'>Option Packages</FormLabel>
@@ -342,7 +308,6 @@ const AddNewCoffeeForm = () => {
                                             name='grames'
                                             className='mb-3'
                                         />
-
 
                                         <FormControl
                                             type='text'
@@ -365,12 +330,7 @@ const AddNewCoffeeForm = () => {
                 <Button type="submit">Submit</Button>
             </Row>
         </Form >
-
-
-    );
-
-
+    )
 }
 
 export default AddNewCoffeeForm
-

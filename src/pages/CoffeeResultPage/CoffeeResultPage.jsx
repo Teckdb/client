@@ -5,7 +5,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 const API_URL = 'http://localhost:5005'
 
-const CoffeeResultPage = () => {
+const CoffeeResultsPage = () => {
 
     const { potId } = useParams()
 
@@ -27,24 +27,18 @@ const CoffeeResultPage = () => {
     }
 
     return (
-        <Container fluid className="bg-white text-black">
-            <Row>
-                <Col className="p-5 d-flex justify-content-center align-items-center">
-                    <h1>
-                        {
-                            loading ?
-                                (<>This is our selection for {coffeePot[0].name}</>)
-                                :
-                                (<>Loading...</>)
-                        }
-                    </h1>
-                </Col>
-            </Row>
-            <Row>
-                <CoffeeList />
-            </Row>
+        <Container className=" text-black mt-5">
+            <h1>
+                {
+                    loading ?
+                        (<>This is our selection for {coffeePot[0].name}</>)
+                        :
+                        (<>Loading...</>)
+                }
+            </h1>
+            <CoffeeList potId={potId} />
         </Container>
     )
 }
 
-export default CoffeeResultPage
+export default CoffeeResultsPage

@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap"
 
-const Separator = () => {
+const GenericSeparator = () => {
     return (
         <Row className="d-flex justify-content-center align-items-center mb-5">
             <Col className="d-flex justify-content-center mt-5">
@@ -10,4 +10,4 @@ const Separator = () => {
     )
 }
 
-export default Separator
+export default GenericSeparator

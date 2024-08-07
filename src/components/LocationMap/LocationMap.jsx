@@ -1,18 +1,13 @@
 import { useState } from 'react'
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { useJsApiLoader } from '@react-google-maps/api';
 import { Map, APIProvider } from '@vis.gl/react-google-maps';
 
-
 function LocationMap({ location }) {
-
     const { isLoaded } = useJsApiLoader({
         googleMapsApiKey: "AIzaSyDV_9ec33TNnCVnAz8wBPp-QgwJcFk-oGs"
     })
 
     const [map, setMap] = useState(null)
-
-    const onLoad = (map) => console.log('Aquí haz lo que necesites tras la carga del mapa')
-    const onUnmount = () => setMap(null)
 
     return isLoaded && (
         <APIProvider apiKey={'AIzaSyDV_9ec33TNnCVnAz8wBPp-QgwJcFk-oGs'} onLoad={() => console.log('Maps API has loaded.')}>
