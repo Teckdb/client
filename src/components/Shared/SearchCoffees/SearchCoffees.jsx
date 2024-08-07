@@ -1,17 +1,9 @@
-import { Col, Dropdown, Row } from "react-bootstrap"
-import CoffeeList from "../../Coffee/CoffeeList/CoffeeList"
+import CoffeeListForSearch from "../../Coffee/CoffeeList/CoffeeListForSearch"
 
 const SearchCoffees = () => {
     return (
         <>
-            <Dropdown>
-                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                    Search Coffee
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                    <CoffeeList needFilter={true} />
-                </Dropdown.Menu>
-            </Dropdown>
+            <CoffeeListForSearch />
         </>
     )
 }
