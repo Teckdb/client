@@ -1,12 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Col, Row } from "react-bootstrap"
+import { Col } from "react-bootstrap"
 import CoffeePotCard from "../CoffeePotCard/CoffeePotCard"
 
 const API_URL = 'http://localhost:5005'
 
 const CoffeePotsList = () => {
-
     const [coffeePots, setCoffeesPots] = useState([])
 
     const fetchAllCoffePots = () => {

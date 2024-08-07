@@ -2,10 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-
 const DeleteCoffeePotModal = () => {
-
-
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -39,7 +36,6 @@ const DeleteCoffeePotModal = () => {
             </Modal>
         </>
     );
-
 }
 
 export default DeleteCoffeePotModal

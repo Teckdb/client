@@ -1,6 +1,6 @@
-import { Col, Container, Nav, Navbar, Row, Form, Button } from 'react-bootstrap';
+import { Col, Container, Nav, Navbar, Row, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from './../../assets/logo.png'
+
 import SearchCoffees from '../Shared/SearchCoffees/SearchCoffees';
 
 const NavBar = () => {
@@ -9,7 +9,7 @@ const NavBar = () => {
             <Container>
                 <Navbar.Brand as={Link} to="/">
                     <img
-                        src={logo}
+                        src=''
                         width="50"
                         height="50"
                         className="d-inline-block align-top"
@@ -17,11 +17,7 @@ const NavBar = () => {
                     />
                 </Navbar.Brand>
                 <Form >
-                    <Row>
-                        <Col xs="auto">
-                            <SearchCoffees />
-                        </Col>
-                    </Row>
+                    <SearchCoffees />
                 </Form>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

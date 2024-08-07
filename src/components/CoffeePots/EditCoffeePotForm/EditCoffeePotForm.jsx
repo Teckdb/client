@@ -1,17 +1,16 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Col, FloatingLabel, Row, Button, Form, InputGroup, Modal } from 'react-bootstrap';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const API_URL = 'http://localhost:5005'
 
 const EditCoffeePotForm = ({ id }) => {
-
     const [coffeePotData, setCoffeePotData] = useState({
         potId: 0,
         name: "",
         extraction: "",
         barPressure: 0,
-        imagen: "URL",
+        image: "URL",
         description: ""
     })
 
@@ -59,9 +58,7 @@ const EditCoffeePotForm = ({ id }) => {
             <Form.Label className='h1'>Edit Coffee Pot</Form.Label>
             <hr></hr>
             <Row className="mb-3">
-
                 <Form.Group as={Col} className="mb-3" controlId="potIdField">
-
                     <FloatingLabel
                         controlId="potIdField"
                         label="Coffee Pot ID"
@@ -73,12 +70,9 @@ const EditCoffeePotForm = ({ id }) => {
                             name='potId'
                             placeholder="Coffee Pot"
                             onChange={handleInputChange} />
-
                     </FloatingLabel>
                 </Form.Group>
-
                 <Form.Group as={Col} className="mb-3" controlId="nameField">
-
                     <FloatingLabel
                         controlId="nameField"
                         label="Name"
@@ -92,12 +86,10 @@ const EditCoffeePotForm = ({ id }) => {
                             onChange={handleInputChange} />
                     </FloatingLabel>
                 </Form.Group>
-
             </Row>
             <Row>
                 <Col lg={8}>
                     <Form.Group className="mb-3" controlId="extractionField">
-
                         <FloatingLabel
                             controlId="extractionField"
                             label="Extraction Method"
@@ -114,7 +106,6 @@ const EditCoffeePotForm = ({ id }) => {
                 </Col>
                 <Col lg={4}>
                     <Form.Group className="mb-3" controlId="barPressureField">
-
                         <FloatingLabel
                             controlId="barPressureField"
                             label="Bar Pressure"
@@ -130,23 +121,20 @@ const EditCoffeePotForm = ({ id }) => {
                     </Form.Group>
                 </Col>
             </Row>
-
-            <Form.Group className="mb-3" controlId="imagenField">
-
+            <Form.Group className="mb-3" controlId="imageField">
                 <FloatingLabel
-                    controlId="imagenField"
+                    controlId="imageField"
                     label="Image URL"
                     className="mb-3"
                 >
                     <Form.Control
                         type="text"
-                        value={coffeePotData.imagen}
-                        name='imagen'
+                        value={coffeePotData.image}
+                        name='image'
                         placeholder="Image URL"
                         onChange={handleInputChange} />
                 </FloatingLabel>
             </Form.Group>
-
             <Form.Group className="mb-3" controlId="descriptionField">
                 <InputGroup>
                     <FloatingLabel
@@ -156,7 +144,6 @@ const EditCoffeePotForm = ({ id }) => {
                     >
                         <Form.Control
                             as="textarea"
-
                             value={coffeePotData.description}
                             name='description'
                             aria-label="With textarea"
@@ -167,11 +154,9 @@ const EditCoffeePotForm = ({ id }) => {
                     </FloatingLabel>
                 </InputGroup>
             </Form.Group>
-
             <Button variant="primary" type="submit">
                 Submit
             </Button>
-
             <Modal
                 show={show}
                 onHide={handleClose}
@@ -188,13 +173,11 @@ const EditCoffeePotForm = ({ id }) => {
                     <Button variant="danger" onClick={deleteCoffeePot}>
                         Delete this item
                     </Button>
-
                 </Modal.Footer>
             </Modal>
             <Button variant='danger' onClick={handleShow} className='ms-3'>
                 Delete
             </Button>
-
         </Form >
     )
 }

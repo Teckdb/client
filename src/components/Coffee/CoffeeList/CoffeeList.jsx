@@ -5,11 +5,9 @@ import { Col, Form } from "react-bootstrap"
 
 const API_URL = 'http://localhost:5005'
 
-const CoffeeList = ({ needFilter }) => {
-
+const CoffeeList = ({ needFilter, potId }) => {
     const [coffees, setCoffees] = useState([])
     const [coffeesBackup, setcoffeesBackup] = useState([])
-
 
     const filterCoffees = query => {
         const filteredCoffees = coffeesBackup.filter(elm => elm.name.toLowerCase().includes(query))
@@ -22,7 +20,7 @@ const CoffeeList = ({ needFilter }) => {
 
     const fetchAllCoffees = () => {
         axios
-            .get(`${API_URL}/coffees`)
+            .get(`${API_URL}/coffees?coffeePotId=${potId}`)
             .then((res) => {
                 setCoffees(res.data)
                 setcoffeesBackup(res.data)
@@ -35,16 +33,14 @@ const CoffeeList = ({ needFilter }) => {
         filterCoffees(value)
     }
 
-
     return (
         <>
-
             {needFilter ? <Form.Control
                 type="text"
                 placeholder="Escribe un nombre..."
                 className=" mr-sm-2"
                 onKeyUp={handleFilter}
-            /> : <></>}
+            /> : null}
             {
                 coffees.map((elm) =>
                     <Col key={elm.id} className="mb-4">

@@ -1,13 +1,10 @@
 import "./WikiCoffePage.css"
-import { CardBody, Col, Container, Row, Card, ListGroup, Image, Ratio, Badge, Stack } from "react-bootstrap"
-
-
+import { Col, Container, Row, Card, ListGroup, Image, Ratio, Badge, Stack } from "react-bootstrap"
 
 const WikiCoffeePage = () => {
     return (
         <Container>
             <Row>
-
                 <Col md={{ span: 3 }}>
                     <Stack direction="horizontal" gap={2}>
                         <Badge bg="dark">Curiosities about Coffee</Badge>
@@ -28,7 +25,6 @@ const WikiCoffeePage = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-
                 <Col md={{ span: 6 }}>
                     <Stack direction="horizontal" gap={2}>
                         <Badge bg="dark">Coffee Inspiration</Badge>
@@ -42,7 +38,6 @@ const WikiCoffeePage = () => {
                         </iframe>
                     </Ratio>
                 </Col>
-
                 <Col md={{ span: 3 }}>
                     <Stack direction="horizontal" gap={2}>
                         <Badge bg="dark">Coffee Preparations</Badge>
@@ -84,7 +79,6 @@ const WikiCoffeePage = () => {
                             <Card.Link href="#">See Article</Card.Link>
                         </Card.Body>
                     </Card>
-
                 </Col>
             </Row>
         </Container>

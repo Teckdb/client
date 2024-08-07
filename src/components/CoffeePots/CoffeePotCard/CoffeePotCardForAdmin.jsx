@@ -1,13 +1,10 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import './CoffeePotCard.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Modal } from 'react-bootstrap';
+import { Modal, Button, Card } from 'react-bootstrap';
 import EditCoffeePotForm from '../../CoffeePots/EditCoffeePotForm/EditCoffeePotForm';
 
 function CoffeePotCardForAdmin({ name, id }) {
-
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -21,7 +18,6 @@ function CoffeePotCardForAdmin({ name, id }) {
                     </Card.Body>
                 </Card>
             </Link>
-
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -37,7 +33,6 @@ function CoffeePotCardForAdmin({ name, id }) {
                 </Modal.Footer>
             </Modal>
         </>
-
     );
 }
 

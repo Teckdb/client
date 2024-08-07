@@ -5,8 +5,6 @@ import axios from "axios"
 import LocationMap from "../../components/LocationMap/LocationMap"
 const API_URL = 'http://localhost:5005'
 
-import { FEATURES } from "../../conts/features"
-
 const CoffeeDetailsPage = () => {
 
     const { id } = useParams()
@@ -28,9 +26,8 @@ const CoffeeDetailsPage = () => {
             .catch((err) => console.log(err))
     }
 
-
     return (
-        <Container fluid className="bg-white m-0 p-5 flex-grow-1">
+        <Container fluid className=" m-0 p-5 flex-grow-1">
             <Row>
                 <Col xs={{ span: 5 }} className="p-5 m-0 d-flex justify-content-center align-items-center">
                     <Card.Img variant="top" src={coffee.image} className='img-fluid img-limited-height' />
@@ -55,17 +52,11 @@ const CoffeeDetailsPage = () => {
                     <Accordion.Header>Pack Options</Accordion.Header>
                     <Accordion.Body>
                         {loading ? (
-                            <>
-                                <p>No pack options available.</p>
-                            </>
+                            <p>No pack options available.</p>
                         ) : (
-                            <>
-                                {
-                                    coffee.pack.map(((elm, idx) => {
-                                        return (<p key={idx}>{elm.grames} grams with a price of {elm.price}$</p>)
-                                    }))
-                                }
-                            </>
+                            coffee.pack.map(((elm, idx) => {
+                                return (<p key={idx}>{elm.grames} grams with a price of {elm.price}$</p>)
+                            }))
                         )}
                     </Accordion.Body>
                 </Accordion.Item>
@@ -74,20 +65,13 @@ const CoffeeDetailsPage = () => {
                 <Accordion.Item eventKey="1">
                     <Accordion.Header>Location</Accordion.Header>
                     <Accordion.Body>
-                        {loading ? (
-                            <>
-                                <p>No pack options available.</p>
-                            </>
-                        ) : (
-                            <>
-                                <LocationMap location={coffee.location} />
-                            </>
-                        )}
+                        {
+                            loading ? <p>No pack options available.</p> : <LocationMap location={coffee.location} />
+                        }
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
         </Container>
-
     )
 }
 

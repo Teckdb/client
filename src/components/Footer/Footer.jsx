@@ -6,11 +6,6 @@ const Footer = () => {
     return (
         <footer className="footer">
             <Container>
-                <Row className="footer-content">
-                    <Col >
-
-                    </Col>
-                </Row>
                 <Row className="footer-links">
                     <Col className="text-center">
                         <a href="/" className="footer-link">Home</a>
