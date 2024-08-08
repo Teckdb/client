@@ -52,7 +52,7 @@ const CoffeeDetailsPage = () => {
                     <br></br>
                     <CardSubtitle>
                         <strong>Rating:</strong> {coffee.rating} SCA
-                        <Button variant="primary" size="lg">Add to Cart</Button>{' '}
+                        <Button className="custom-button" size="lg">Add to Cart</Button>{' '}
                         <InputGroup className="mb-3">
                             <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
                             <Form.Control
