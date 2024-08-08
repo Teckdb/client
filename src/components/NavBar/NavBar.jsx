@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import SearchCoffees from '../Shared/SearchCoffees/SearchCoffees';
 import { LOGO_SMALL } from '../../conts/imageData';
+import './NavBar.css'
 
 const NavBar = () => {
     return (
@@ -11,8 +12,8 @@ const NavBar = () => {
                 <Navbar.Brand as={Link} to="/">
                     <img
                         src={LOGO_SMALL}
-                        width="50"
-                        height="50"
+                        width="80"
+                        height="80"
                         className="d-inline-block align-top"
                         alt="React Bootstrap logo"
                     />
