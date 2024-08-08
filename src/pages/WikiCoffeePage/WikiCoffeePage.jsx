@@ -1,3 +1,4 @@
+import { COFFEEINSPIRATION_IMG_1, COFFEEPREPARATION_IMG_1, CURIOSITIESABOUTCOFFEE_IMG_1, CURIOSITIESABOUTCOFFEE_IMG_2 } from "../../conts/imageData"
 import "./WikiCoffePage.css"
 import { Col, Container, Row, Card, ListGroup, Image, Ratio, Badge, Stack } from "react-bootstrap"
 
@@ -7,10 +8,10 @@ const WikiCoffeePage = () => {
             <Row>
                 <Col md={{ span: 3 }}>
                     <Stack direction="horizontal" gap={2}>
-                        <Badge bg="dark">Curiosities about Coffee</Badge>
+                        <Badge bg="dark mb-3">Curiosities about Coffee</Badge>
                     </Stack>
                     <Card className="mb-5">
-                        <Card.Img variant="top" src="src/assets/roaster-at-local-coffee-business.jpg" />
+                        <Card.Img variant="top" src={CURIOSITIESABOUTCOFFEE_IMG_1} />
                         <Card.Body>
                             <Card.Title>Coffee Roasting</Card.Title>
                             <Card.Text>
@@ -27,9 +28,9 @@ const WikiCoffeePage = () => {
                 </Col>
                 <Col md={{ span: 6 }}>
                     <Stack direction="horizontal" gap={2}>
-                        <Badge bg="dark">Coffee Inspiration</Badge>
+                        <Badge bg="dark mb-3">Coffee Inspiration</Badge>
                     </Stack>
-                    <Image src="src/assets/lenses-lattes.jpg" thumbnail />
+                    <Image src={COFFEEINSPIRATION_IMG_1} thumbnail />
                     <Ratio aspectRatio="16x9">
                         <iframe
                             src=""
@@ -40,11 +41,11 @@ const WikiCoffeePage = () => {
                 </Col>
                 <Col md={{ span: 3 }}>
                     <Stack direction="horizontal" gap={2}>
-                        <Badge bg="dark">Coffee Preparations</Badge>
+                        <Badge bg="dark mb-3">Coffee Preparations</Badge>
                     </Stack>
 
                     <Card className="mb-5">
-                        <Card.Img variant="top" src="src/assets/coffee-press-into-crystal.jpg" />
+                        <Card.Img variant="top" src={COFFEEPREPARATION_IMG_1} />
                         <Card.Body>
                             <Card.Title>Aeropress Brewing</Card.Title>
                             <Card.Text>
@@ -63,7 +64,7 @@ const WikiCoffeePage = () => {
                 </Col>
                 <Col md={{ span: 4 }}>
                     <Card className="mb-5">
-                        <Card.Img variant="top" src="src/assets/freshly-picked-coffee-beans.jpg" />
+                        <Card.Img variant="top" src={CURIOSITIESABOUTCOFFEE_IMG_2} />
                         <Card.Body>
                             <Card.Title>Coffee Beans</Card.Title>
                             <Card.Text>

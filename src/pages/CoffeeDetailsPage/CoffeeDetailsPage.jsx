@@ -52,7 +52,7 @@ const CoffeeDetailsPage = () => {
                     <br></br>
                     <CardSubtitle>
                         <h5 className="custom-coffee-card-details-subtitle mb-5"><strong>Rating:</strong> {coffee.rating} SCA</h5>
-                        <Button variant="primary" size="lg">Add to Cart</Button>{' '}
+                        <Button className="custom-button" size="lg">Add to Cart</Button>
                         <InputGroup className="mb-3">
                             <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
                             <Form.Control
