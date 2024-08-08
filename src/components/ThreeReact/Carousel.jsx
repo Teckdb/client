@@ -2,12 +2,11 @@ import './util'
 import CardThree from "./CardThree"
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-const API_URL = 'http://localhost:5005'
+import { API_URL } from './../../conts/apiEndpoints'
 
 function Carousel() {
 
     const [coffeePots, setCoffeePots] = useState([])
-    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetchAllCoffePots()
@@ -18,7 +17,6 @@ function Carousel() {
             .get(`${API_URL}/coffeepots`)
             .then((res) => {
                 setCoffeePots(res.data)
-                setLoading(false)
             })
             .catch(err => console.log(err))
     }
@@ -34,7 +32,6 @@ function Carousel() {
                 url={coffeePots[i % coffeePots.length].image}
                 position={[Math.sin((i / count) * Math.PI * 2) * radius, 0, Math.cos((i / count) * Math.PI * 2) * radius]}
                 rotation={[0, Math.PI + (i / count) * Math.PI * 2, 0]}
-
             />
         ))
     )

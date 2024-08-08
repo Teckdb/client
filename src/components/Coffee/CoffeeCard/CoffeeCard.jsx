@@ -10,7 +10,7 @@ const CoffeeCard = ({ name, description, id, image }) => {
                 <Card.Text>
                     {`${description.slice(0, 100)}...`}
                 </Card.Text>
-                <Button variant="primary" as={Link} to={`/coffee/${id}`}>Go Details</Button>
+                <Button variant="secondary" as={Link} to={`/coffee/${id}`}>Coffee Info</Button>
             </Card.Body>
         </Card>
     );

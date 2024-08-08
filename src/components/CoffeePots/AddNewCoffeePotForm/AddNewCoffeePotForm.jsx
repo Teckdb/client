@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { Col, FloatingLabel, Row, Button, Form, InputGroup } from 'react-bootstrap';
-const API_URL = 'http://localhost:5005'
+import { API_URL } from './../../../conts/apiEndpoints'
 
 const AddNewCoffeePotForm = () => {
     const [coffeePotData, setCoffeePotData] = useState({
@@ -9,7 +9,7 @@ const AddNewCoffeePotForm = () => {
         name: "",
         extraction: "",
         barPressure: 0,
-        image: "URL",                      // TODO: RENOMINAR A IMAGE
+        image: "URL",
         description: ""
     })
 

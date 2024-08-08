@@ -6,9 +6,9 @@ import './util'
 
 const MainThreeCarouselSelector = () => {
     return (
-        <Canvas style={{ background: 'white' }} camera={{ position: [0, 0, 100], fov: 18 }}>
+        <Canvas style={{ background: '#FFFFFF' }} camera={{ position: [0, 0, 100], fov: 18 }}>
             <fog attach="fog" args={['#a79', 8.5, 12]} />
-            <ScrollControls pages={4} infinite>
+            <ScrollControls pages={4}>
                 <Rig rotation={[0, 0, 0.15]}>
                     <Carousel />
                 </Rig>

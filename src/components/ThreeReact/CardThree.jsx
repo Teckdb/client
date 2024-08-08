@@ -39,7 +39,6 @@ function CardThree({ id, url, ...props }) {
             onPointerOut={pointerOut}
             onClick={handleClick}
             {...props}>
-
             <bentPlaneGeometry args={[0.1, 1, 1, 20, 20]} />
         </Image>
     )

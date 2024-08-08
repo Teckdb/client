@@ -1,9 +1,9 @@
-import { Accordion, Card, CardSubtitle, Col, Container, Row, Button, InputGroup, Form } from "react-bootstrap"
+import { Accordion, Card, CardSubtitle, Col, Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import LocationMap from "../../components/LocationMap/LocationMap"
-const API_URL = 'http://localhost:5005'
+import { API_URL } from './../../conts/apiEndpoints'
 
 const CoffeeDetailsPage = () => {
 
@@ -52,19 +52,7 @@ const CoffeeDetailsPage = () => {
                     <br></br>
                     <CardSubtitle>
                         <strong>Rating:</strong> {coffee.rating} SCA
-                        <Button className="custom-button" size="lg">Add to Cart</Button>{' '}
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                            <Form.Control
-                                placeholder="Username"
-                                aria-label="Username"
-                                aria-describedby="basic-addon1"
-                            />
-                        </InputGroup>
-
                     </CardSubtitle>
-
-
                 </Col>
             </Row>
             <Accordion>

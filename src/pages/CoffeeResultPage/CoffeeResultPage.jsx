@@ -1,9 +1,9 @@
-import { Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap"
+import { Col, ListGroup, ListGroupItem, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import CoffeeList from "../../components/Coffee/CoffeeList/CoffeeList"
 import axios from "axios"
 import { useEffect, useState } from "react"
-const API_URL = 'http://localhost:5005'
+import { API_URL } from './../../conts/apiEndpoints'
 
 const CoffeeResultsPage = () => {
 
@@ -29,7 +29,7 @@ const CoffeeResultsPage = () => {
     return (
         <ListGroup>
             <Row >
-                <Col className="d-flex justify-content-center mt-5">
+                <Col className="d-flex justify-content-center mt-5 mb-5">
                     {
                         loading ?
                             (<h1>This is our selection for {coffeePot[0].name}</h1>)

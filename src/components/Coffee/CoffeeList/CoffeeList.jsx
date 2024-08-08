@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import CoffeeCard from "../CoffeeCard/CoffeeCard"
-import { Col, Container, Row } from "react-bootstrap"
+import { Row } from "react-bootstrap"
 
-const API_URL = 'http://localhost:5005'
+import { API_URL } from './../../../conts/apiEndpoints'
 
 const CoffeeList = ({ potId }) => {
     const [coffees, setCoffees] = useState([])

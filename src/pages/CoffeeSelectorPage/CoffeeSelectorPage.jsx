@@ -8,8 +8,8 @@ const CoffeeSelectorPage = () => {
     return (
         <ListGroup>
             <Row >
-                <Col className="d-flex justify-content-center mt-5">
-                    <h1>Iron Coffee Lovers</h1>
+                <Col className="d-flex justify-content-center mt-5 mb-5">
+                    <h1>Select Your Coffee Maker to Get Personalized Coffee Recommendations</h1>
                 </Col>
             </Row>
             <ListGroupItem >
@@ -19,7 +19,7 @@ const CoffeeSelectorPage = () => {
             </ListGroupItem>
             <div style={{ pointerEvents: 'none', top: 0, left: 0, width: '100vw', height: '100vh', margin: 0 }}>
                 <MainThreeCarouselSelector />
-            </div>{' '}
+            </div>
         </ListGroup>
     )
 }

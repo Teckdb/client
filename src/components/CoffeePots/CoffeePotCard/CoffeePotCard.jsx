@@ -14,7 +14,7 @@ function CoffeePotCard({ name, description, potId, image }) {
                     <Card.Text>
                         {`${description.slice(0, 50)}...`}
                     </Card.Text>
-                    <Button variant="primary" as={Link} to={`coffee-result/${potId}`}>Go list</Button>
+                    <Button className='center' variant="secondary" as={Link} to={`coffee-result/${potId}`}>See Coffee</Button>
                 </Card.Body>
             </Card>
             <br />
@@ -22,4 +22,4 @@ function CoffeePotCard({ name, description, potId, image }) {
     )
 }
 
-export default CoffeePotCard;
+export default CoffeePotCard

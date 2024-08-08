@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import CoffeeCard from "../CoffeeCard/CoffeeCard"
-import { Card, CardBody, Col, Form, ListGroup, ListGroupItem, Row } from "react-bootstrap"
+import { Form, ListGroup, ListGroupItem } from "react-bootstrap"
 import { Link } from "react-router-dom"
-
-const API_URL = 'http://localhost:5005'
+import { API_URL } from './../../../conts/apiEndpoints'
 
 const CoffeeListForSearch = () => {
 

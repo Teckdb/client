@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import CoffeCardForAdmin from "../CoffeeCard/CoffeCardForAdmin"
-import { Container } from "react-bootstrap"
-const API_URL = 'http://localhost:5005'
+import { API_URL } from './../../../conts/apiEndpoints'
 
 const CoffeeListForAdmin = () => {
     const [coffees, setCoffees] = useState([])

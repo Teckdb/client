@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { Button, Col, FloatingLabel, Form, FormControl, FormGroup, FormLabel, Row } from 'react-bootstrap'
 
-const API_URL = 'http://localhost:5005'
+import { API_URL } from './../../../conts/apiEndpoints'
 
 const AddNewCoffeeForm = () => {
     const [coffeeData, setCoffeeData] = useState({

@@ -1,8 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import CoffeePotCardForAdmin from "../CoffeePotCard/CoffeePotCardForAdmin"
-
-const API_URL = 'http://localhost:5005'
+import { API_URL } from './../../../conts/apiEndpoints'
 
 const CoffeePotsListForAdmin = () => {
     const [coffeePots, setCoffeesPots] = useState([])
