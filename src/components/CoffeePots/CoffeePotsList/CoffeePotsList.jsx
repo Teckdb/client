@@ -25,9 +25,9 @@ const CoffeePotsList = () => {
         <>
             {
                 coffeePots.map((elm) =>
-                    <Col key={elm.id}>
-                        <CoffeePotCard  {...elm} />
-                    </Col>
+
+                    <CoffeePotCard key={elm.id} {...elm} />
+
                 )
             }
         </>

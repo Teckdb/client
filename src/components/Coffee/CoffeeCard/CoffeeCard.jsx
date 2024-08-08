@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CoffeeCard = ({ name, description, id, image }) => {
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }} className='m-2'>
             <Card.Img variant="top" src={image} className='img-fluid img-limited-height' />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>

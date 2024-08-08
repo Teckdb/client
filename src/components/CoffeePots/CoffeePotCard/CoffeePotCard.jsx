@@ -7,7 +7,7 @@ function CoffeePotCard({ name, description, potId, image }) {
 
     return (
         <>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }} className='m-2'>
                 <Card.Img variant="top" src={image} className='img-fixed-size' />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>

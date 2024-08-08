@@ -23,14 +23,6 @@ function Carousel() {
             .catch(err => console.log(err))
     }
 
-    if (loading) {
-        return console.log("is loading...");
-    }
-
-    if (coffeePots.length === 0) {
-        return console.log("no coffeePots");
-    }
-
     const count = coffeePots.length
     const radius = coffeePots.length * 0.18
 

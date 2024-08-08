@@ -35,23 +35,23 @@ const CoffeeDetailsPage = () => {
                 <Col xs={{ span: 7 }} className="p-5 m-0 d-flex justify-content-center flex-column">
                     <Card.Title className="custom-coffee-card-details mb-4"><h2>{coffee.name}</h2></Card.Title>
                     <Card.Text className="custom-coffee-card-details">
-                        <h5 className="custom-coffee-card-subtile"><strong>Cata Notes:</strong> {coffee.cata_notes}</h5>
+                        <strong>Cata Notes:</strong> {coffee.cata_notes}
                     </Card.Text>
                     <br></br>
                     <CardSubtitle >
-                        <h5 className="custom-coffee-card-details-subtitle"><strong>Variety:</strong> {coffee.variety}</h5>
+                        <strong>Variety:</strong> {coffee.variety}
                     </CardSubtitle>
                     <br></br>
                     <CardSubtitle className="custom-coffee-card-details">
-                        <h5 className="custom-coffee-card-details-subtitle"><strong>Process:</strong> {coffee.process}</h5>
+                        <strong>Process:</strong> {coffee.process}
                     </CardSubtitle>
                     <br></br>
                     <CardSubtitle>
-                        <h5 className="custom-coffee-card-details-subtitle"><strong>Altitude:</strong> {coffee.altitude} metres</h5>
+                        <strong>Altitude:</strong> {coffee.altitude}
                     </CardSubtitle>
                     <br></br>
                     <CardSubtitle>
-                        <h5 className="custom-coffee-card-details-subtitle mb-5"><strong>Rating:</strong> {coffee.rating} SCA</h5>
+                        <strong>Rating:</strong> {coffee.rating} SCA
                         <Button variant="primary" size="lg">Add to Cart</Button>{' '}
                         <InputGroup className="mb-3">
                             <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
@@ -77,7 +77,7 @@ const CoffeeDetailsPage = () => {
             </Accordion>
             <Accordion>
                 <Accordion.Item eventKey="1">
-                    <Accordion.Header><h5>Pack Options</h5></Accordion.Header>
+                    <Accordion.Header>Pack Options</Accordion.Header>
                     <Accordion.Body>
                         {loading ? (
                             <p>No pack options available.</p>
@@ -99,7 +99,7 @@ const CoffeeDetailsPage = () => {
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
-        </Container>
+        </Container >
     )
 }
 

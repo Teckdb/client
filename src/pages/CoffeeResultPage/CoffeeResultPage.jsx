@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap"
+import { Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import CoffeeList from "../../components/Coffee/CoffeeList/CoffeeList"
 import axios from "axios"
@@ -27,17 +27,23 @@ const CoffeeResultsPage = () => {
     }
 
     return (
-        <Container className=" text-black mt-5">
-            <h1>
-                {
-                    loading ?
-                        (<>This is our selection for {coffeePot[0].name}</>)
-                        :
-                        (<>Loading...</>)
-                }
-            </h1>
-            <CoffeeList potId={potId} />
-        </Container>
+        <ListGroup>
+            <Row >
+                <Col className="d-flex justify-content-center mt-5">
+                    {
+                        loading ?
+                            (<h1>This is our selection for {coffeePot[0].name}</h1>)
+                            :
+                            (<>Loading...</>)
+                    }
+                </Col>
+            </Row>
+            <ListGroupItem >
+                <Row className="d-flex justify-content-center align-items-center">
+                    <CoffeeList potId={potId} />
+                </Row>
+            </ListGroupItem>
+        </ListGroup>
     )
 }
 

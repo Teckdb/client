@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import CoffeeCard from "../CoffeeCard/CoffeeCard"
 import { Card, CardBody, Col, Form, ListGroup, ListGroupItem, Row } from "react-bootstrap"
-
+import { Link } from "react-router-dom"
 
 const API_URL = 'http://localhost:5005'
 
@@ -10,11 +10,6 @@ const CoffeeListForSearch = () => {
 
     const [coffees, setCoffees] = useState([])
     const [coffeesBackup, setcoffeesBackup] = useState([])
-
-    const filterCoffees = query => {
-        const filteredCoffees = coffeesBackup.filter(elm => elm.name.toLowerCase().includes(query))
-        setCoffees(filteredCoffees)
-    }
 
     useEffect(() => {
         fetchAllCoffees()
@@ -37,8 +32,7 @@ const CoffeeListForSearch = () => {
     }
 
     const handleFilterValue = e => {
-        setcoffeesBackup([])
-
+        setcoffees([])
     }
 
     return (
@@ -48,19 +42,20 @@ const CoffeeListForSearch = () => {
                 placeholder="Escribe un nombre..."
                 className=" mr-sm-2"
                 onKeyUp={handleFilter}
-                onChange={handleFilterValue}
             />
             <ListGroup style={{ position: 'absolute', zIndex: '99' }}>
                 {
                     coffeesBackup.length === 0 ? <></> :
                         coffees.map((elm) =>
-                            <ListGroupItem key={elm.id}>
-                                {elm.name}
-                            </ListGroupItem>
+                            <Link to={`/coffee/${elm.id}`} onClick={handleFilterValue} key={elm.id}>
+                                <ListGroupItem >
+                                    {elm.name}
+                                </ListGroupItem>
+                            </Link>
+
                         )
                 }
             </ListGroup>
-
         </>
     )
 }

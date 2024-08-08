@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import CoffeeCard from "../CoffeeCard/CoffeeCard"
-import { Col, Form } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 
 const API_URL = 'http://localhost:5005'
 
@@ -34,22 +34,16 @@ const CoffeeList = ({ potId }) => {
     }
 
     return (
-        <>
-            <Form.Control
-                type="text"
-                placeholder="Escribe un nombre..."
-                className=" mr-sm-2"
-                onKeyUp={handleFilter}
-            />
+        <Row >
             {
                 coffeesBackup.length === 0 ? <></> :
                     coffees.map((elm) =>
-                        <Col key={elm.id} className="mb-4">
-                            <CoffeeCard {...elm} />
-                        </Col>
+                        <CoffeeCard {...elm} key={elm.id} />
                     )
             }
-        </>
+        </Row>
+
+
     )
 }
 
