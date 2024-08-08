@@ -1,4 +1,5 @@
-import { CardBody, CardImg, CardLink, CardText, CardTitle, Container, ListGroup, ListGroupItem, Row, Stack } from "react-bootstrap"
+import './CoffeeCollection.css'
+import { CardBody, CardImg, CardLink, CardText, CardTitle, Container, ListGroup, ListGroupItem, Row, Stack, Col, Card } from "react-bootstrap"
 
 const CoffeeCollection = () => {
 

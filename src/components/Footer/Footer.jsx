@@ -10,9 +10,8 @@ const Footer = () => {
                     <Col className="text-center">
                         <a href="/" className="footer-link">Home</a>
                         <a href="/about" className="footer-link">About Us</a>
-                        <a href="/services" className="footer-link">Services</a>
-                        <a href="/blog" className="footer-link">Blog</a>
-                        <a href="/contact" className="footer-link">Contact</a>
+                        <a href="/admin" className="footer-link">Admin Panel</a>
+                        <a href="/wiki-coffee" className="footer-link">Blog</a>
                     </Col>
                 </Row>
                 <Row>
