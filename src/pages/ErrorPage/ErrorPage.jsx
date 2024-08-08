@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import { PiEyesFill } from "react-icons/pi";
 import { FiAlertTriangle } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import { CiLogin } from "react-icons/ci";
 import { FaHand } from "react-icons/fa6";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const ErrorPage = () => {
     const [modalStep, setModalStep] = useState(0);

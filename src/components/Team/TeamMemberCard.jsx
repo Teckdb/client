@@ -1,5 +1,5 @@
-import React from 'react';
 import { Col, Card, Button } from 'react-bootstrap';
+import React from 'react';
 
 const TeamMemberCard = ({ member }) => (
     <Col className="d-flex justify-content-center mb-3 mt-5">

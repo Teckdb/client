@@ -1,12 +1,11 @@
 import './CoffeeCollection.css'
-import { CardBody, CardImg, CardLink, CardText, CardTitle, Container, ListGroup, ListGroupItem, Row, Stack, Col, Card } from "react-bootstrap"
+import { Container, ListGroup, Row, Col, Card } from "react-bootstrap"
 
 const CoffeeCollection = () => {
 
     return (
         <Container>
             <Row>
-
                 <Col md={{ span: 4 }}>
                     <Card className="mb-5">
                         <Card.Img variant="top" src="src/assets/freshly-picked-coffee-beans.jpg" />
@@ -25,12 +24,10 @@ const CoffeeCollection = () => {
                             <Card.Link href="#">See Article</Card.Link>
                         </Card.Body>
                     </Card>
-
                 </Col>
             </Row>
         </Container>
     )
-
 }
 
 export default CoffeeCollection

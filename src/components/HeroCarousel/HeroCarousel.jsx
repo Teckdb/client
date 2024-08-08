@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom';
 import { Carousel, Button } from 'react-bootstrap';
 import * as IMAGES from '../../conts/imageData'
-import { Link } from 'react-router-dom';
 
 function HeroCarousel() {
     return (

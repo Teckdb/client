@@ -1,9 +1,9 @@
 import { Accordion, Card, CardSubtitle, Col, Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { API_URL } from './../../conts/apiEndpoints'
 import axios from "axios"
 import LocationMap from "../../components/LocationMap/LocationMap"
-import { API_URL } from './../../conts/apiEndpoints'
 
 const CoffeeDetailsPage = () => {
 

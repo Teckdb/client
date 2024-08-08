@@ -3,7 +3,7 @@ import AddNewCoffeePotForm from "../../components/CoffeePots/AddNewCoffeePotForm
 import AddNewCoffeeForm from "../../components/Coffee/AddNewCoffeeForm/AddNewCoffeeForm"
 import TabAdmin from "../../components/TabAdmin/TabAdmin"
 
-const adminPage = () => {
+const AdminPage = () => {
     return (
         <Container>
             <TabAdmin />
@@ -20,4 +20,4 @@ const adminPage = () => {
     )
 }
 
-export default adminPage
+export default AdminPage

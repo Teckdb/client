@@ -1,8 +1,8 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Col, FloatingLabel, Row, Button, Form, InputGroup, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from './../../../conts/apiEndpoints'
+import axios from 'axios';
 
 const EditCoffeePotForm = ({ id }) => {
     const [coffeePotData, setCoffeePotData] = useState({

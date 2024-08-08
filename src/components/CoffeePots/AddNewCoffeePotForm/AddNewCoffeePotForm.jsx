@@ -1,7 +1,7 @@
-import axios from 'axios';
 import { useState } from 'react';
 import { Col, FloatingLabel, Row, Button, Form, InputGroup } from 'react-bootstrap';
 import { API_URL } from './../../../conts/apiEndpoints'
+import axios from 'axios';
 
 const AddNewCoffeePotForm = () => {
     const [coffeePotData, setCoffeePotData] = useState({
@@ -23,7 +23,7 @@ const AddNewCoffeePotForm = () => {
 
         axios
             .post(`${API_URL}/coffeePots`, coffeePotData)
-            .then(alert("ready"))
+            .then(alert("send"))
             .catch(err => console.log(err))
     }
 

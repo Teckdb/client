@@ -1,8 +1,7 @@
-import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import TeamMemberCard from './TeamMemberCard';
-
 import { TEAMMEMBERS } from '../../conts/teamMembers';
+import React from 'react';
+import TeamMemberCard from './TeamMemberCard';
 
 const TeamSection = () => (
     <Container className="my-5">

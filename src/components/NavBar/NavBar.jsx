@@ -1,11 +1,9 @@
 import './NavBar.css'
 import { Container, Nav, Navbar, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import SearchCoffees from '../Shared/SearchCoffees/SearchCoffees';
 import { LOGO_SMALL } from '../../conts/imageData';
-import { TiSocialFacebookCircular } from "react-icons/ti";
-import { TiSocialTwitterCircular } from "react-icons/ti";
-import { TiSocialYoutubeCircular } from "react-icons/ti";
+import { TiSocialFacebookCircular, TiSocialTwitterCircular, TiSocialYoutubeCircular } from "react-icons/ti";
+import SearchCoffees from '../Shared/SearchCoffees/SearchCoffees';
 
 const NavBar = () => {
     return (

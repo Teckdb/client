@@ -1,8 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap"
 
-
 const WikiCoffee = () => {
-
     return (
         <Container fluid className="bg-secondary m-0 flex-grow-1 text-white d-flex justify-content-center align-items-center">
             <Row>
@@ -24,10 +22,8 @@ const WikiCoffee = () => {
                             <CardBody>
                                 <CardLink href='#'>See Article</CardLink>
                             </CardBody>
-
                         </CardImg>
                     </Card>
-
                 </Col>
             </Row>
         </Container>

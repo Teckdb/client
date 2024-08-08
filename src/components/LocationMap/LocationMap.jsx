@@ -7,8 +7,6 @@ function LocationMap({ location }) {
         googleMapsApiKey: "AIzaSyDV_9ec33TNnCVnAz8wBPp-QgwJcFk-oGs"
     })
 
-    const [map, setMap] = useState(null)
-
     return isLoaded && (
         <APIProvider apiKey={'AIzaSyDV_9ec33TNnCVnAz8wBPp-QgwJcFk-oGs'} onLoad={() => console.log('Maps API has loaded.')}>
             <Map

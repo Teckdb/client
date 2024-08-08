@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react"
+import { Row } from "react-bootstrap"
+import { API_URL } from './../../../conts/apiEndpoints'
 import axios from "axios"
 import CoffeeCard from "../CoffeeCard/CoffeeCard"
-import { Row } from "react-bootstrap"
-
-import { API_URL } from './../../../conts/apiEndpoints'
 
 const CoffeeList = ({ potId }) => {
     const [coffees, setCoffees] = useState([])
     const [coffeesBackup, setcoffeesBackup] = useState([])
-
-    const filterCoffees = query => {
-        const filteredCoffees = coffeesBackup.filter(elm => elm.name.toLowerCase().includes(query))
-        setCoffees(filteredCoffees)
-    }
 
     useEffect(() => {
         fetchAllCoffees()
@@ -26,11 +20,6 @@ const CoffeeList = ({ potId }) => {
                 setcoffeesBackup(res.data)
             })
             .catch((err) => console.log(err))
-    }
-
-    const handleFilter = event => {
-        const { value } = event.target
-        filterCoffees(value)
     }
 
     return (

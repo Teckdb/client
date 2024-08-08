@@ -1,5 +1,5 @@
-import { Row, Col, ListGroup, ListGroupItem } from "react-bootstrap"
 import './CoffeeSelectorPage.css'
+import { Row, Col, ListGroup, ListGroupItem } from "react-bootstrap"
 import CoffeePotsList from "../../components/CoffeePots/CoffeePotsList/CoffeePotsList";
 import MainThreeCarouselSelector from "../../components/ThreeReact/MainThree";
 

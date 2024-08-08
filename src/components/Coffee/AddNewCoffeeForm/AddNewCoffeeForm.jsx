@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { Button, Col, FloatingLabel, Form, FormControl, FormGroup, FormLabel, Row } from 'react-bootstrap'
-
 import { API_URL } from './../../../conts/apiEndpoints'
 
 const AddNewCoffeeForm = () => {
@@ -22,10 +21,6 @@ const AddNewCoffeeForm = () => {
     const [packData, setPackData] = useState([{
         grames: '',
         price: ''
-    }])
-
-    const [grindingData, setGriding] = useState([{
-        grinding: ''
     }])
 
     const handleInputChange = e => {

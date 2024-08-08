@@ -1,7 +1,7 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
-import CoffeePotCard from "../CoffeePotCard/CoffeePotCard"
 import { API_URL } from './../../../conts/apiEndpoints'
+import CoffeePotCard from "../CoffeePotCard/CoffeePotCard"
+import axios from "axios"
 
 const CoffeePotsList = () => {
     const [coffeePots, setCoffeesPots] = useState([])
@@ -23,9 +23,7 @@ const CoffeePotsList = () => {
         <>
             {
                 coffeePots.map((elm) =>
-
                     <CoffeePotCard key={elm.id} {...elm} />
-
                 )
             }
         </>

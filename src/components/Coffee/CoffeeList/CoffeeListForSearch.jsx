@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import axios from "axios"
 import { Form, ListGroup, ListGroupItem } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { API_URL } from './../../../conts/apiEndpoints'
+import axios from "axios"
 
 const CoffeeListForSearch = () => {
 
@@ -14,7 +14,6 @@ const CoffeeListForSearch = () => {
     }, [])
 
     const fetchAllCoffees = query => {
-
         query && axios
             .get(`${API_URL}/coffees?name_like=${query}`)
             .then((res) => {

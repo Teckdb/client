@@ -1,5 +1,5 @@
-import { Container } from "react-bootstrap"
 import "./HomePage.css"
+import { Container } from "react-bootstrap"
 import HeroCarousel from "../../components/HeroCarousel/HeroCarousel"
 
 const Homepage = () => {

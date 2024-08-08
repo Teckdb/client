@@ -1,9 +1,9 @@
 import { Col, ListGroup, ListGroupItem, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
-import CoffeeList from "../../components/Coffee/CoffeeList/CoffeeList"
-import axios from "axios"
 import { useEffect, useState } from "react"
 import { API_URL } from './../../conts/apiEndpoints'
+import CoffeeList from "../../components/Coffee/CoffeeList/CoffeeList"
+import axios from "axios"
 
 const CoffeeResultsPage = () => {
 

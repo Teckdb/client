@@ -1,7 +1,7 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
-import CoffeePotCardForAdmin from "../CoffeePotCard/CoffeePotCardForAdmin"
 import { API_URL } from './../../../conts/apiEndpoints'
+import CoffeePotCardForAdmin from "../CoffeePotCard/CoffeePotCardForAdmin"
+import axios from "axios"
 
 const CoffeePotsListForAdmin = () => {
     const [coffeePots, setCoffeesPots] = useState([])

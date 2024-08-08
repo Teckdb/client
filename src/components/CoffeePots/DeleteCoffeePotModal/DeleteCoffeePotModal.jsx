@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { Button, Modal } from 'react-bootstrap';
 
 const DeleteCoffeePotModal = () => {
     const [show, setShow] = useState(false);

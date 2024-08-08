@@ -1,7 +1,7 @@
 export const TEAMMEMBERS = [
     {
         id: 1,
-        name: 'Jonh Erick',
+        name: 'John Arévalo',
         position: 'IronHack, Web Development in Madrid',
         image: 'https://res.cloudinary.com/dsvyez2w5/image/upload/v1722955081/Team/hdt3nnombggrwxb1t74n.jpg'
     },

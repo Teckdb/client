@@ -1,8 +1,8 @@
-import axios from 'axios'
 import { Button, Col, Form, Row, Modal, FormGroup, FloatingLabel, FormFloating, FormControl, FormLabel } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { API_URL } from './../../../conts/apiEndpoints'
+import axios from 'axios'
 
 const EditCoffeeForm = ({ id }) => {
     const [coffeeData, setCoffeeData] = useState({
@@ -22,12 +22,6 @@ const EditCoffeeForm = ({ id }) => {
     const [packData, setPackData] = useState(
         [
             { grames: 0, price: 0 }
-        ]
-    )
-
-    const [grindingData, setGriding] = useState(
-        [
-            { grinding: '' }
         ]
     )
 
@@ -75,19 +69,6 @@ const EditCoffeeForm = ({ id }) => {
         packsCopy[currentIndex][name] = value
     }
 
-    const handleGridingChange = (event, currentIndex) => {
-        const { value, name } = event.target
-
-        const grindingCopy = [...grindingData]
-        grindingCopy[currentIndex][name] = value
-
-        setCoffeeData(grindingCopy)
-    }
-
-    const deleteCoffees = () => {
-        setPackData([...packData, { grames: 0, price: o }])
-    }
-
     const [show, setShow] = useState(false)
 
     const handleClose = () => setShow(false)
@@ -95,7 +76,6 @@ const EditCoffeeForm = ({ id }) => {
 
     return (
         <Form onSubmit={handleFormSubmit} className=''>
-
             <FormLabel className='h1'>Edit Coffee</FormLabel>
             <hr></hr>
             <Row className='mb-3'>
@@ -282,7 +262,7 @@ const EditCoffeeForm = ({ id }) => {
                 </Col>
             </Row>
             <Row>
-                <Col sm={{ span: 6, offsetÇ: 0 }}>
+                <Col sm={{ span: 6, offset: 0 }}>
                     <FormGroup>
                         <FormLabel>Option Packages</FormLabel>
                         <br></br>

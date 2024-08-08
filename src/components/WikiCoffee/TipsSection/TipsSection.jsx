@@ -1,5 +1,5 @@
 
-import { Container, Row, Col, Stack, Badge, Ratio, Image, Card, Nav, Button } from "react-bootstrap"
+import { Container, Row, Col, Stack, Badge, Image, Card, Nav, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { COFFEEINSPIRATION_IMG_1 } from "../../../conts/imageData"
 
@@ -12,7 +12,6 @@ const TipsSection = () => {
                         <Badge bg="dark mb-3">Coffee Tips</Badge>
                     </Stack>
                     <Image src={COFFEEINSPIRATION_IMG_1} thumbnail />
-
                     <Card>
                         <Card.Header>
                             <Nav variant="tabs" defaultActiveKey="#first">
@@ -37,12 +36,9 @@ const TipsSection = () => {
                             <Button as={Link} to='https://www.instagram.com/cafesclandestino/?igsh=MTdxbzh3M3EybXBxag%3D%3D' variant="primary">See More</Button>
                         </Card.Body>
                     </Card>
-
                 </Col>
-
             </Row>
         </Container>
-
     )
 }
 

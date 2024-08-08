@@ -1,5 +1,4 @@
 import './CoffeeCardForAdmin.css';
-
 import EditCoffeeForm from '../EditCoffeeForm/EditCoffeeForm';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -7,7 +6,6 @@ import { Modal, Card, Button } from 'react-bootstrap';
 
 const CoffeCardForAdmin = ({ name, id }) => {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
