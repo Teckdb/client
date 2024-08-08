@@ -65,7 +65,7 @@ const CoffeeDetailsPage = () => {
             </Accordion>
             <Accordion>
                 <Accordion.Item eventKey="1">
-                    <Accordion.Header>Pack Options</Accordion.Header>
+                    <Accordion.Header><h5>Pack Options</h5></Accordion.Header>
                     <Accordion.Body>
                         {loading ? (
                             <p>No pack options available.</p>

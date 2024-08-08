@@ -1,5 +1,7 @@
 import { Carousel, Button } from 'react-bootstrap';
 import * as IMAGES from '../../conts/imageData'
+import { Link } from 'react-router-dom';
+import { SocialIcon } from 'react-social-icons'
 
 function HeroCarousel() {
     return (
@@ -19,7 +21,9 @@ function HeroCarousel() {
                         Experience rich, complex flavors with every cup and join a community of coffee lovers who demand the best.
                         Start your journey with us today.
                     </p>
-                    <Button variant="outline-light">Shop Now</Button>{' '}
+                    <Link as={Link} to='/coffee-selector'>
+                        <Button variant="outline-light">Shop Now</Button>
+                    </Link>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -35,6 +39,7 @@ function HeroCarousel() {
                         From farm to cup, our curated selection offers exceptional flavors, handpicked and expertly roasted to perfection.
                         Elevate your coffee ritual with unique blends and single-origin treasures that awaken your senses.
                         Discover the finest coffee experience, delivered fresh to your door.</p>
+                    <Button as={Link} to='/coffee-selector' variant="outline-light">Shop Now</Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -52,6 +57,7 @@ function HeroCarousel() {
                         Whether you prefer a bold espresso or a smooth pour-over, we have the perfect coffee to elevate your daily ritual.
                         Shop now and experience coffee like never before.
                     </p>
+                    <Button as={Link} to='/coffee-selector' variant="outline-light">Shop Now</Button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
