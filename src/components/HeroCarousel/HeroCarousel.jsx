@@ -1,7 +1,6 @@
 import { Carousel, Button } from 'react-bootstrap';
 import * as IMAGES from '../../conts/imageData'
 import { Link } from 'react-router-dom';
-import { SocialIcon } from 'react-social-icons'
 
 function HeroCarousel() {
     return (
