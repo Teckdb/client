@@ -11,7 +11,7 @@ function CoffeePotCardForAdmin({ name, id }) {
     const handleShow = () => setShow(true);
     return (
         <>
-            <Link onClick={handleShow}>
+            <Link onClick={handleShow} style={{ textDecoration: 'none' }}>
                 <Card>
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>

@@ -14,7 +14,7 @@ const CoffeeDetailsPage = () => {
 
     useEffect(() => {
         fetchCoffe()
-    }, [])
+    }, [id])
 
     const fetchCoffe = () => {
         axios

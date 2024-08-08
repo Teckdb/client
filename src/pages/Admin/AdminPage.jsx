@@ -7,7 +7,7 @@ const adminPage = () => {
     return (
         <Container>
             <TabAdmin />
-            <h1 >Admin Page</h1>
+            <h1 className="mt-5">Admin Page</h1>
             <Row>
                 <Col className="p-5">
                     <AddNewCoffeeForm />

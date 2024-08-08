@@ -5,11 +5,9 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import CoffeeSelectorPage from '../pages/CoffeeSelectorPage/CoffeeSelectorPage'
 import CoffeeDetailsPage from '../pages/CoffeeDetailsPage/CoffeeDetailsPage'
 import CoffeeResultPage from '../pages/CoffeeResultPage/CoffeeResultPage'
-import AdminPage from '../pages/Admin/AdminPage';
-import EditCoffeePotPage from '../pages/Admin/AdminCoffeePots/EditCoffeePotPage';
-import { Route, Routes } from "react-router-dom"
-import EditCoffeePage from '../pages/Admin/AdminCoffee/EditCoffeePage'
+import AdminPage from '../pages/Admin/AdminPage'
 import AdminEditList from '../pages/Admin/AdminEditList'
+import { Route, Routes } from "react-router-dom"
 
 const AppRoutes = () => {
     return (
@@ -22,8 +20,6 @@ const AppRoutes = () => {
             <Route path='/about' element={<AboutPage />} />
             <Route path='/admin' element={<AdminPage />} />
             <Route path='/admin-edit-list' element={<AdminEditList />} />
-            <Route path='/admin-coffees/edit/:id' element={<EditCoffeePage />} />
-            <Route path='/admin-coffee-pots/edit/:id' element={<EditCoffeePotPage />} />
             <Route path='*' element={<ErrorPage />} />
         </Routes>
     )

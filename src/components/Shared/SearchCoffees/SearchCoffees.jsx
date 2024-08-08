@@ -68,11 +68,11 @@ const SearchCoffees = () => {
                 value={searchTerm}
                 ref={searchInputRef}
             />
-            <ListGroup style={{ position: 'absolute', zIndex: '99' }}>
+            <ListGroup style={{ position: 'absolute', zIndex: '99' }} ref={listRef}>
                 {
                     coffees.length === 0 ? <></> :
                         coffees.map((elm) =>
-                            <Link to={`/coffee/${elm.id}`} onClick={handleFilterValue} key={elm.id} ref={listRef}>
+                            <Link to={`/coffee/${elm.id}`} onClick={handleFilterValue} key={elm.id} style={{ textDecoration: 'none' }}>
                                 <ListGroupItem >
                                     {elm.name}
                                 </ListGroupItem>
