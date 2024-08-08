@@ -1,4 +1,4 @@
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Button } from 'react-bootstrap';
 import * as IMAGES from '../../conts/imageData'
 
 function HeroCarousel() {
@@ -19,6 +19,7 @@ function HeroCarousel() {
                         Experience rich, complex flavors with every cup and join a community of coffee lovers who demand the best.
                         Start your journey with us today.
                     </p>
+                    <Button variant="outline-light">Shop Now</Button>{' '}
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

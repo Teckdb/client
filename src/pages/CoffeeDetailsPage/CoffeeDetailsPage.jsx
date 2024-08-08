@@ -29,7 +29,7 @@ const CoffeeDetailsPage = () => {
     return (
         <Container fluid className=" m-0 p-5 flex-grow-1">
             <Row>
-                <Col xs={{ span: 5 }} className="p-5 m-0 d-flex justify-content-center align-items-center">
+                <Col xs={{ span: 5 }} className="p-1 m-0 d-flex justify-content-center align-items-center ">
                     <Card.Img variant="top" src={coffee.image} className='img-fluid img-limited-height' />
                 </Col>
                 <Col xs={{ span: 7 }} className="p-5 m-0 d-flex justify-content-center flex-column">
@@ -52,19 +52,7 @@ const CoffeeDetailsPage = () => {
                     <br></br>
                     <CardSubtitle>
                         <strong>Rating:</strong> {coffee.rating} SCA
-                        <Button className="custom-button" size="lg">Add to Cart</Button>{' '}
-                        <InputGroup className="mb-3">
-                            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                            <Form.Control
-                                placeholder="Username"
-                                aria-label="Username"
-                                aria-describedby="basic-addon1"
-                            />
-                        </InputGroup>
-
                     </CardSubtitle>
-
-
                 </Col>
             </Row>
             <Accordion>
