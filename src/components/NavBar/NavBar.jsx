@@ -1,10 +1,11 @@
 import './NavBar.css'
 import { Container, Nav, Navbar, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { SocialIcon } from 'react-social-icons';
-
 import SearchCoffees from '../Shared/SearchCoffees/SearchCoffees';
 import { LOGO_SMALL } from '../../conts/imageData';
+import { TiSocialFacebookCircular } from "react-icons/ti";
+import { TiSocialTwitterCircular } from "react-icons/ti";
+import { TiSocialYoutubeCircular } from "react-icons/ti";
 
 const NavBar = () => {
     return (
@@ -28,10 +29,12 @@ const NavBar = () => {
                         <Nav.Link as={Link} to="/admin">Admin Panel</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-                <Form style={{ marginLeft: '20px' }}>
+                <Form className='m-3'>
                     <SearchCoffees className='instaicon' />
                 </Form>
-                <SocialIcon url='https://www.instagram.com/cafesclandestino/?igsh=MTdxbzh3M3EybXBxag%3D%3D' />
+                <TiSocialFacebookCircular size={30} color='white' />
+                <TiSocialTwitterCircular size={30} color='white' />
+                <TiSocialYoutubeCircular size={30} color='white' />
             </Container>
         </Navbar>
     );
