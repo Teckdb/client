@@ -43,7 +43,7 @@ This project is organized modularly to facilitate maintenance and scalability. B
 - **WikiCoffee.jsx**: Main component that combines all elements of the WikiCoffee section.
 
 <p align="center">
-<img src="./src/assets/wiki-coffee.webp" alt="Wiki-Coffee" width="400"/>
+<img src="./src/assets/wiki-Coffee.webp" alt="Wiki-Coffee" width="400"/>
 </p>
 
 ### CoffeePot
