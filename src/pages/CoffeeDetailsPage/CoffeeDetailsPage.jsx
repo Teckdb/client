@@ -55,7 +55,7 @@ const CoffeeDetailsPage = () => {
                     </CardSubtitle>
                 </Col>
             </Row>
-            <Accordion>
+            <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
                     <Accordion.Header><h5>Description</h5></Accordion.Header>
                     <Accordion.Body>
